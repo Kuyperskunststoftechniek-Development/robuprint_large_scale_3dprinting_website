@@ -1,0 +1,25 @@
+{
+  "title": "Wat wij doen",
+  "lead": "Robotische extrusie van HDPE en PP op grote schaal, met geïntegreerd nafrezen — alles in één opstelling.",
+  "sections": [
+    {
+      "eyebrow": "PRINT",
+      "heading": "Robotic large-scale 3D printing",
+      "body": "Een industriële robotarm met granulaat-extruder bouwt onderdelen laag voor laag op tot 4 × 4 × 8 meter. Geen formaatbeperkingen door printbed-grenzen, geen lasnaden in het eindproduct.",
+      "specs": [
+        { "k": "Build envelope", "v": "4 × 4 × 8 m" },
+        { "k": "Proces", "v": "FGF (Fused Granulate Fabrication)" },
+        { "k": "Materialen", "v": "HDPE, PP, food-grade HDPE" }
+      ]
+    },
+    {
+      "eyebrow": "FREES",
+      "heading": "Subtractief nafrezen",
+      "body": "Dezelfde robot wisselt naar een freesopzet en bewerkt het geprinte onderdeel na voor strakke vlakken, scherpe kanten en pasvlakken op tolerantie. Geen ronde omweg via een aparte CNC-machine.",
+      "specs": [
+        { "k": "Tolerantie", "v": "tot ±0.2 mm" },
+        { "k": "Toepassing", "v": "Pasvlakken, montagepunten, decoratieve finish" }
+      ]
+    }
+  ]
+}

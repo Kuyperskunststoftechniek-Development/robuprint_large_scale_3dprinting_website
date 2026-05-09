@@ -1,0 +1,25 @@
+{
+  "title": "Capabilities",
+  "lead": "Robotic extrusion of HDPE and PP at large scale, with integrated post-milling — all in a single setup.",
+  "sections": [
+    {
+      "eyebrow": "PRINT",
+      "heading": "Robotic large-scale 3D printing",
+      "body": "An industrial robot arm with a granulate extruder builds parts layer by layer up to 4 × 4 × 8 metres. No bed-size limits, no welded seams in the final piece.",
+      "specs": [
+        { "k": "Build envelope", "v": "4 × 4 × 8 m" },
+        { "k": "Process", "v": "FGF (Fused Granulate Fabrication)" },
+        { "k": "Materials", "v": "HDPE, PP, food-grade HDPE" }
+      ]
+    },
+    {
+      "eyebrow": "MILL",
+      "heading": "Subtractive post-milling",
+      "body": "The same robot switches to a milling head and finishes the printed part for clean surfaces, sharp edges, and mating faces to tolerance. No round-trip to a separate CNC machine.",
+      "specs": [
+        { "k": "Tolerance", "v": "to ±0.2 mm" },
+        { "k": "Use", "v": "Mating faces, mounting points, decorative finish" }
+      ]
+    }
+  ]
+}

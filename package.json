@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.2.7",
@@ -19,6 +21,9 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",
-    "tailwindcss": "^4.3.0"
+    "@vitest/ui": "^4.1.5",
+    "happy-dom": "^20.9.0",
+    "tailwindcss": "^4.3.0",
+    "vitest": "^4.1.5"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "title": "Materials",
+  "lead": "We specialise in HDPE and PP — two polyolefins that are notoriously hard to print at scale. We do it daily, and we make our own recyclate in-house.",
+  "items": [
+    {
+      "name": "HDPE",
+      "tagline": "High-density polyethylene",
+      "body": "Strong, impact-resistant, chemical-resistant and weatherproof. UV-stable with the right compound. Fully recyclable. For industrial applications, marine, storage tanks, facade elements.",
+      "props": ["Impact-tough to −40°C", "Chemical-resistant", "100% recyclable"]
+    },
+    {
+      "name": "PP",
+      "tagline": "Polypropylene",
+      "body": "Lighter than HDPE, higher melting point, excellent fatigue resistance. Suited for living-hinge applications, automotive trim, lab equipment.",
+      "props": ["High melting point (160°C)", "Fatigue-resistant", "Easily welded"]
+    },
+    {
+      "name": "Food-grade HDPE",
+      "tagline": "Food-contact polyethylene",
+      "body": "HDPE with EU certification for food contact. For production environments, food processing, dispenser parts, cookware components.",
+      "props": ["EU 10/2011 compliant", "Odour and taste neutral", "Hygienically washable"]
+    }
+  ],
+  "recycle_heading": "Factory-fresh recyclate",
+  "recycle_body": "We use industrial offcuts directly from the production line of our parent company, Kuypers Kunststoftechniek. No post-consumer mixed streams, no unknown contamination — single-stream, traceable, and in quality equivalent to virgin material. By default we run a blend; 100% recyclate is available on request.",
+  "recycle_specs": [
+    { "k": "Source", "v": "Kuypers Kunststoftechniek production stream" },
+    { "k": "Type", "v": "Single-stream HDPE / PP" },
+    { "k": "Contamination", "v": "None (industrial offcuts)" },
+    { "k": "Blend ratio", "v": "On request, up to 100% recyclate" }
+  ]
+}

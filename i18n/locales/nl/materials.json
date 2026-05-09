@@ -1,0 +1,32 @@
+{
+  "title": "Materialen",
+  "lead": "We zijn gespecialiseerd in HDPE en PP — twee polyolefinen die op grote schaal printen lastig is. Wij doen dat dagelijks, en we maken ons eigen recyclaat in eigen huis.",
+  "items": [
+    {
+      "name": "HDPE",
+      "tagline": "Hoge-dichtheid polyethyleen",
+      "body": "Sterk, slagvast, chemicaliënbestendig en weersbestendig. UV-stabiel met juiste compound. Volledig recyclebaar. Voor industriële toepassingen, marine, opslagtanks, gevelelementen.",
+      "props": ["Slagvast tot −40°C", "Chemicaliënbestendig", "100% recyclebaar"]
+    },
+    {
+      "name": "PP",
+      "tagline": "Polypropyleen",
+      "body": "Lichter dan HDPE, hoger smeltpunt, uitstekende vermoeiingsweerstand. Geschikt voor scharnierende toepassingen, autotoebehoren, lab-apparatuur.",
+      "props": ["Hoog smeltpunt (160°C)", "Vermoeiingsbestendig", "Goed te lassen"]
+    },
+    {
+      "name": "Food-grade HDPE",
+      "tagline": "Voedselveilig polyethyleen",
+      "body": "HDPE met EU-certificering voor voedselcontact. Voor productieomgevingen, voedselverwerking, dispenserdelen, kookgerei-componenten.",
+      "props": ["EU 10/2011 conform", "Geur- en smaakneutraal", "Hygiënisch reinigbaar"]
+    }
+  ],
+  "recycle_heading": "Factory-fresh recyclaat",
+  "recycle_body": "Wij gebruiken industrieel restmateriaal direct uit de productiestroom van moederbedrijf Kuypers Kunststoftechniek. Geen post-consumer mengstromen, geen onbekende vervuiling — single-stream, traceerbaar, en in kwaliteit gelijkwaardig aan virgin materiaal. Standaard maken we een mix; 100% recyclaat is mogelijk op aanvraag.",
+  "recycle_specs": [
+    { "k": "Bron", "v": "Productiestroom Kuypers Kunststoftechniek" },
+    { "k": "Type", "v": "Single-stream HDPE / PP" },
+    { "k": "Vervuiling", "v": "Niet aanwezig (industrieel restmateriaal)" },
+    { "k": "Mengverhouding", "v": "Op aanvraag, tot 100% recyclaat" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Neem contact op",
+  "lead": "Stuur een bericht — we reageren binnen 2 werkdagen.",
+  "fields": {
+    "name": "Naam",
+    "company": "Bedrijf",
+    "email": "E-mail",
+    "phone": "Telefoon (optioneel)",
+    "message": "Bericht"
+  },
+  "submit": "Verstuur bericht"
+}

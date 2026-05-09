@@ -1,0 +1,12 @@
+{
+  "title": "Get in touch",
+  "lead": "Send us a message — we'll respond within 2 business days.",
+  "fields": {
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "message": "Message"
+  },
+  "submit": "Send message"
+}

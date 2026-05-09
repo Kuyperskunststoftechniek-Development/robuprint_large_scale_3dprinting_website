@@ -1,0 +1,17 @@
+{
+  "eyebrow": "Robotic large-scale 3D printing",
+  "h1_lead": "Polymer parts up to 4 × 4 × 8 metres — printed and milled by a single robot.",
+  "lead": "HDPE and PP from our own factory-fresh recyclate. For architecture, food-grade and industrial applications.",
+  "cta_primary": "Request a quote",
+  "cta_secondary": "See projects",
+  "usps_heading": "Why RoBuPRINT",
+  "usps": [
+    { "title": "4 × 4 × 8 metres", "body": "128 m³ build volume in one setup. Single piece, no welded seams." },
+    { "title": "HDPE & PP", "body": "Including food-grade HDPE. Polyolefins at this scale — our standard." },
+    { "title": "Print + mill", "body": "The same robot mills the finish smooth. No layer lines where you don't want them." },
+    { "title": "Own recyclate", "body": "Material straight from Kuypers Kunststoftechniek — single-stream, clean, traceable." }
+  ],
+  "projects_heading": "Recent projects",
+  "projects_cta": "All projects →",
+  "projects_empty": "First cases coming — our portfolio is building."
+}

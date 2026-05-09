@@ -1,0 +1,17 @@
+{
+  "eyebrow": "Robotic large-scale 3D printing",
+  "h1_lead": "Polymeer-onderdelen tot 4 × 4 × 8 meter — geprint en gefreesd door één robot.",
+  "lead": "HDPE en PP uit eigen factory-fresh recyclaat. Voor architectuur, food-grade en industriële toepassingen.",
+  "cta_primary": "Vraag offerte aan",
+  "cta_secondary": "Bekijk projecten",
+  "usps_heading": "Waarom RoBuPRINT",
+  "usps": [
+    { "title": "4 × 4 × 8 meter", "body": "128 m³ printvolume in één opstelling. Eén stuk, geen lasnaden." },
+    { "title": "HDPE & PP", "body": "Inclusief food-grade HDPE. Polyolefinen op deze schaal — bij ons standaard." },
+    { "title": "Print + frees", "body": "Dezelfde robot frees de finish strak na. Geen layer lines waar het niet hoeft." },
+    { "title": "Eigen recyclaat", "body": "Materiaal direct uit Kuypers Kunststoftechniek — single-stream, schoon, traceerbaar." }
+  ],
+  "projects_heading": "Recente projecten",
+  "projects_cta": "Alle projecten →",
+  "projects_empty": "Eerste cases volgen — onze portfolio bouwt op."
+}

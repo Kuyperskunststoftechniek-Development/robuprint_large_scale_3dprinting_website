@@ -16,7 +16,10 @@ const mobileOpen = ref(false)
 <template>
   <header class="sticky top-0 z-50 bg-bg/85 backdrop-blur border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-6">
-      <NuxtLink :to="localePath('/')" class="font-bold text-[15px] tracking-tight">{{ t('common.company') }}</NuxtLink>
+      <NuxtLink :to="localePath('/')" class="inline-flex items-center gap-2 font-bold text-[15px] tracking-tight">
+        <BrandMark />
+        <span>{{ t('common.company') }}</span>
+      </NuxtLink>
 
       <nav class="hidden md:flex items-center gap-6 text-[13px] text-text-muted">
         <NuxtLink

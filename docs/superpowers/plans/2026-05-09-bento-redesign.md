@@ -630,25 +630,25 @@ definePageMeta({ layout: false })
     <h1 class="text-2xl font-bold mb-6">Bento sandbox</h1>
 
     <BentoGrid>
-      <BentoTile span="3" variant="dark" eyebrow="Build envelope">
+      <BentoTile :span="3" variant="dark" eyebrow="Build envelope">
         <h2 class="text-5xl font-extrabold tracking-tight">4×4×8</h2>
         <p class="font-mono text-[10px] text-[#9aa3b0]">METER (W × D × H) — 128 m³</p>
         <template #illustration><SchemIllustration name="envelope" class="w-44 h-44 text-[#7CA1FF]" /></template>
       </BentoTile>
 
-      <BentoTile span="3" variant="accent" eyebrow="Print + post-mill">
+      <BentoTile :span="3" variant="accent" eyebrow="Print + post-mill">
         <h2 class="text-2xl font-bold">Dezelfde robot frees de finish strak na.</h2>
         <template #illustration><SchemIllustration name="robot-arm" class="w-24 h-24 text-white" /></template>
       </BentoTile>
 
-      <BentoTile span="2" eyebrow="Materialen"><h2 class="font-bold">HDPE & PP</h2></BentoTile>
-      <BentoTile span="2" eyebrow="Circulair"><h2 class="font-bold">Eigen recyclaat</h2></BentoTile>
-      <BentoTile span="2" variant="muted" eyebrow="Process">
+      <BentoTile :span="2" eyebrow="Materialen"><h2 class="font-bold">HDPE & PP</h2></BentoTile>
+      <BentoTile :span="2" eyebrow="Circulair"><h2 class="font-bold">Eigen recyclaat</h2></BentoTile>
+      <BentoTile :span="2" variant="muted" eyebrow="Process">
         <h2 class="font-bold">Layer voor layer</h2>
         <template #illustration><SchemIllustration name="layer-stack" class="w-32 h-32 text-accent" /></template>
       </BentoTile>
 
-      <BentoTile span="6" to="/projecten" eyebrow="Recente projecten">
+      <BentoTile :span="6" to="/projecten" eyebrow="Recente projecten">
         <h2 class="text-2xl font-bold">Wat we voor anderen hebben gemaakt.</h2>
       </BentoTile>
     </BentoGrid>
@@ -834,7 +834,7 @@ onMounted(() => observeAll())
     </section>
 
     <BentoGrid>
-      <BentoTile span="3" variant="dark" :eyebrow="t('home.tiles.envelope_eyebrow')">
+      <BentoTile :span="3" variant="dark" :eyebrow="t('home.tiles.envelope_eyebrow')">
         <p class="text-[48px] md:text-[56px] font-extrabold tracking-[-0.03em] leading-none mt-1">4×4×8</p>
         <p class="font-mono text-[10px] tracking-[0.15em] text-[#9aa3b0]">{{ t('home.tiles.envelope_caption') }}</p>
         <p class="text-[13px] text-white/70 mt-2 max-w-[280px]">{{ t('home.tiles.envelope_body') }}</p>
@@ -843,7 +843,7 @@ onMounted(() => observeAll())
         </template>
       </BentoTile>
 
-      <BentoTile span="3" variant="accent" :eyebrow="t('home.tiles.process_eyebrow')">
+      <BentoTile :span="3" variant="accent" :eyebrow="t('home.tiles.process_eyebrow')">
         <h2 class="text-[20px] md:text-[22px] font-bold leading-snug max-w-[320px]">{{ t('home.tiles.process_title') }}</h2>
         <p class="text-[13px] text-white/80 mt-1 max-w-[300px]">{{ t('home.tiles.process_body') }}</p>
         <template #illustration>
@@ -851,17 +851,17 @@ onMounted(() => observeAll())
         </template>
       </BentoTile>
 
-      <BentoTile span="2" :eyebrow="t('home.tiles.materials_eyebrow')">
+      <BentoTile :span="2" :eyebrow="t('home.tiles.materials_eyebrow')">
         <h3 class="text-[18px] font-bold">{{ t('home.tiles.materials_title') }}</h3>
         <p class="text-[13px] text-text-muted">{{ t('home.tiles.materials_body') }}</p>
       </BentoTile>
 
-      <BentoTile span="2" :eyebrow="t('home.tiles.recyclate_eyebrow')">
+      <BentoTile :span="2" :eyebrow="t('home.tiles.recyclate_eyebrow')">
         <h3 class="text-[18px] font-bold">{{ t('home.tiles.recyclate_title') }}</h3>
         <p class="text-[13px] text-text-muted">{{ t('home.tiles.recyclate_body') }}</p>
       </BentoTile>
 
-      <BentoTile span="2" variant="muted" :eyebrow="t('home.tiles.layers_eyebrow')">
+      <BentoTile :span="2" variant="muted" :eyebrow="t('home.tiles.layers_eyebrow')">
         <h3 class="text-[18px] font-bold">{{ t('home.tiles.layers_title') }}</h3>
         <p class="text-[13px] text-text-muted">{{ t('home.tiles.layers_body') }}</p>
         <template #illustration>
@@ -869,7 +869,7 @@ onMounted(() => observeAll())
         </template>
       </BentoTile>
 
-      <BentoTile span="6" :to="localePath('/projecten')" :eyebrow="t('home.projects.eyebrow')">
+      <BentoTile :span="6" :to="localePath('/projecten')" :eyebrow="t('home.projects.eyebrow')">
         <h2 class="text-[24px] font-bold tracking-tight">{{ t('home.projects.heading') }}</h2>
         <p class="text-[13px] text-text-muted max-w-[420px]">{{ t('home.projects.body') }}</p>
       </BentoTile>
@@ -1023,7 +1023,7 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
     <div class="space-y-6">
       <BentoGrid v-for="(s, i) in sections" :key="i">
         <BentoTile
-          span="3"
+          :span="3"
           :variant="i % 2 === 0 ? 'dark' : 'accent'"
           :eyebrow="s.eyebrow"
         >
@@ -1037,7 +1037,7 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
         <BentoTile
           v-for="(p, j) in s.points.slice(0, 3)"
           :key="j"
-          span="1"
+          :span="1"
           variant="muted"
         >
           <p class="text-[13px] leading-relaxed">{{ p }}</p>
@@ -1115,7 +1115,7 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
       <BentoTile
         v-for="(m, i) in materials"
         :key="i"
-        span="3"
+        :span="3"
         variant="dark"
         :eyebrow="m.name"
       >
@@ -1130,7 +1130,7 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
         </ul>
       </BentoTile>
 
-      <BentoTile span="6" variant="accent" :eyebrow="t('materials.recycle_heading')">
+      <BentoTile :span="6" variant="accent" :eyebrow="t('materials.recycle_heading')">
         <h2 class="text-[22px] md:text-[26px] font-bold leading-tight max-w-[640px]">{{ t('materials.recycle_body') }}</h2>
         <template #illustration>
           <SchemIllustration name="recyclate-flow" class="w-40 h-20 text-white" />
@@ -1140,7 +1140,7 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
       <BentoTile
         v-for="(s, i) in recycleSpecs"
         :key="i"
-        span="2"
+        :span="2"
       >
         <p class="font-mono text-[10px] uppercase tracking-wider text-text-muted">{{ s.k }}</p>
         <p class="text-[15px] font-semibold mt-1">{{ s.v }}</p>
@@ -1217,14 +1217,14 @@ const sections = computed(() => tm('about.sections') as Section[])
       <BentoTile
         v-for="(s, i) in sections"
         :key="i"
-        span="2"
+        :span="2"
         :variant="i === 0 ? 'muted' : 'default'"
         :eyebrow="s.heading"
       >
         <p class="text-[14px] leading-relaxed text-text-muted">{{ s.body }}</p>
       </BentoTile>
 
-      <BentoTile span="6" variant="dark" eyebrow="Bedrijfsgegevens">
+      <BentoTile :span="6" variant="dark" eyebrow="Bedrijfsgegevens">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-2 text-[13px]">
           <div>
             <p class="font-mono text-[10px] uppercase tracking-wider text-[#9aa3b0]">Vestiging</p>
@@ -1315,7 +1315,7 @@ const { data: projects } = await useAsyncData('projects', () =>
       <BentoTile
         v-for="p in projects"
         :key="p.path"
-        span="3"
+        :span="3"
         :to="localePath(p.path)"
         :eyebrow="p.client || ''"
       >
@@ -1365,13 +1365,13 @@ ls app/pages/projecten/[slug].vue 2>/dev/null && echo EXISTS || echo MISSING
       <ContentRenderer v-if="page" :value="page" />
     </div>
     <aside class="md:sticky md:top-24 md:self-start space-y-3">
-      <BentoTile span="2" variant="muted" eyebrow="Klant">
+      <BentoTile :span="2" variant="muted" eyebrow="Klant">
         <p class="text-[14px] font-semibold">{{ page?.client || '—' }}</p>
       </BentoTile>
-      <BentoTile span="2" variant="muted" eyebrow="Materiaal">
+      <BentoTile :span="2" variant="muted" eyebrow="Materiaal">
         <p class="text-[14px]">{{ page?.material || '—' }}</p>
       </BentoTile>
-      <BentoTile span="2" variant="dark" eyebrow="Status">
+      <BentoTile :span="2" variant="dark" eyebrow="Status">
         <p class="text-[13px] text-white">{{ page?.year || '—' }}</p>
       </BentoTile>
     </aside>
@@ -1425,14 +1425,14 @@ onMounted(() => observeAll())
       </div>
 
       <aside class="space-y-3">
-        <BentoTile span="2" variant="muted" eyebrow="Adres">
+        <BentoTile :span="2" variant="muted" eyebrow="Adres">
           <p class="text-[14px] leading-relaxed">Diamantweg 48<br>5527 LC Hapert</p>
         </BentoTile>
-        <BentoTile span="2" variant="muted" eyebrow="Bedrijfsgegevens">
+        <BentoTile :span="2" variant="muted" eyebrow="Bedrijfsgegevens">
           <p class="font-mono text-[11px] text-text-muted">KvK 18036761</p>
           <p class="font-mono text-[11px] text-text-muted">BTW NL801225401B01</p>
         </BentoTile>
-        <BentoTile span="2" variant="dark" eyebrow="E-mail">
+        <BentoTile :span="2" variant="dark" eyebrow="E-mail">
           <a href="mailto:info@robuprint.nl" class="text-[14px] text-white underline-offset-2 hover:underline">info@robuprint.nl</a>
         </BentoTile>
       </aside>
@@ -1496,14 +1496,14 @@ onMounted(() => observeAll())
       </div>
 
       <aside class="space-y-3">
-        <BentoTile span="2" variant="muted" eyebrow="Wat ontvangen we graag">
+        <BentoTile :span="2" variant="muted" eyebrow="Wat ontvangen we graag">
           <ul class="text-[13px] text-text-muted space-y-1">
             <li>— STL of STEP-bestand</li>
             <li>— Gewenst materiaal</li>
             <li>— Aantallen + lever-deadline</li>
           </ul>
         </BentoTile>
-        <BentoTile span="2" variant="dark" eyebrow="Reactietijd">
+        <BentoTile :span="2" variant="dark" eyebrow="Reactietijd">
           <p class="text-[14px] text-white">Binnen 2 werkdagen.</p>
         </BentoTile>
       </aside>

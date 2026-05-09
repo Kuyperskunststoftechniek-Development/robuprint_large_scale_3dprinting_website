@@ -37,6 +37,11 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'nl' },
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'theme-color', content: '#1652F0' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'alternate icon', type: 'image/x-icon', href: '/favicon.ico' },
       ],
     },
   },

@@ -9,9 +9,9 @@
   --color-text: #0B0B0F;
   --color-text-muted: #5B6470;
   --color-border: #E5E2DA;
-  --color-accent: #1652F0;
-  --color-accent-2: #2F6BFF;
-  --color-accent-soft: rgba(22, 82, 240, 0.08);
+  --color-accent: #0E4644;
+  --color-accent-2: #1B6E68;
+  --color-accent-soft: rgba(14, 70, 68, 0.08);
 
   --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
 

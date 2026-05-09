@@ -35,7 +35,7 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
           <h2 class="text-[24px] md:text-[28px] font-bold tracking-tight leading-tight max-w-[320px]">{{ s.heading }}</h2>
           <p class="text-[13px] mt-2 max-w-[320px]" :class="i % 2 === 0 ? 'text-white/70' : 'text-white/85'">{{ s.body }}</p>
           <template #illustration>
-            <SchemIllustration :name="schemFor(i)" class="w-28 h-28" :class="i % 2 === 0 ? 'text-[#7CA1FF]' : 'text-white'" />
+            <SchemIllustration :name="schemFor(i)" class="w-28 h-28" :class="i % 2 === 0 ? 'text-[#7CC9C0]' : 'text-white'" />
           </template>
         </BentoTile>
 

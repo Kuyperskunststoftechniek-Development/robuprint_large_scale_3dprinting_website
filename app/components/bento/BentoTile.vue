@@ -46,7 +46,7 @@ const tag = props.to ? 'NuxtLink' : 'div'
     <p
       v-if="eyebrow"
       class="font-mono text-[10px] tracking-[0.18em] uppercase"
-      :class="variant === 'dark' || variant === 'accent' ? 'text-[#7CA1FF]' : 'text-accent'"
+      :class="variant === 'dark' || variant === 'accent' ? 'text-[#7CC9C0]' : 'text-accent'"
     >// {{ eyebrow }}</p>
 
     <slot />

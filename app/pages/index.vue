@@ -19,7 +19,7 @@ onMounted(() => observeAll())
         {{ t('home.hero.title_tail') }}
       </h1>
       <p class="mt-5 text-[15px] md:text-[16px] text-text-muted max-w-[560px] leading-relaxed">{{ t('home.hero.subtitle') }}</p>
-      <NuxtLink :to="localePath('/offerte')" class="inline-flex mt-7 items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#1241C7] transition-colors">
+      <NuxtLink :to="localePath('/offerte')" class="inline-flex mt-7 items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#0A3534] transition-colors">
         {{ t('home.hero.cta') }} →
       </NuxtLink>
     </section>
@@ -30,7 +30,7 @@ onMounted(() => observeAll())
         <p class="font-mono text-[10px] tracking-[0.15em] text-[#9aa3b0]">{{ t('home.tiles.envelope_caption') }}</p>
         <p class="text-[13px] text-white/70 mt-2 max-w-[280px]">{{ t('home.tiles.envelope_body') }}</p>
         <template #illustration>
-          <SchemIllustration name="envelope" class="w-44 h-44 text-[#7CA1FF]" />
+          <SchemIllustration name="envelope" class="w-44 h-44 text-[#7CC9C0]" />
         </template>
       </BentoTile>
 
@@ -68,7 +68,7 @@ onMounted(() => observeAll())
 
     <section class="mt-6 rounded-[var(--radius-xl)] bg-[var(--color-surface-dark)] text-white p-7 md:p-9 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-reveal-target>
       <h2 class="text-[20px] md:text-[24px] font-bold leading-snug max-w-[520px]">{{ t('home.cta_band.title') }}</h2>
-      <NuxtLink :to="localePath('/offerte')" class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#1241C7] transition-colors">
+      <NuxtLink :to="localePath('/offerte')" class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#0A3534] transition-colors">
         {{ t('home.cta_band.button') }} →
       </NuxtLink>
     </section>

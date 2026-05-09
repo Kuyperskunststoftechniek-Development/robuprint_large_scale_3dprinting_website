@@ -11,3 +11,7 @@ playwright-report
 test-results
 .vercel
 .superpowers
+
+# Source design files (originals — copies live in public/)
+Logo Design*.svg
+Logo Design*.png

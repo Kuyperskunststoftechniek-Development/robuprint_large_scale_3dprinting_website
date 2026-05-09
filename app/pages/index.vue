@@ -11,7 +11,7 @@ onMounted(() => observeAll())
 <template>
   <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
 
-    <section class="max-w-[760px] mb-12 md:mb-16" data-reveal-target>
+    <section class="max-w-[780px] mb-12 md:mb-16" data-reveal-target>
       <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-4">// {{ t('home.hero.eyebrow') }}</p>
       <h1 class="text-[40px] md:text-[64px] font-extrabold tracking-tight leading-[1.02]">
         {{ t('home.hero.title_lead') }}

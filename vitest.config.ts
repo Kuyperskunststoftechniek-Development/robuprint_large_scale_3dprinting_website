@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 export default defineConfig({
   test: {
     environment: 'happy-dom',
+    exclude: ['**/node_modules/**', '**/tests/e2e/**'],
   },
   resolve: {
     alias: {

@@ -7,9 +7,22 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/content',
     '@nuxt/image',
-    '@nuxt/sitemap',
+    '@nuxtjs/sitemap',
     '@nuxtjs/robots',
   ],
+  site: {
+    url: 'https://robuprint.nl',
+    name: 'RoBuPRINT',
+  },
+  sitemap: {
+    sources: ['/api/__sitemap__/urls'],
+  },
+  robots: {
+    groups: [
+      { userAgent: ['*'], allow: ['/'] },
+    ],
+    sitemap: ['/sitemap.xml'],
+  },
   css: ['~/assets/css/tokens.css'],
   runtimeConfig: {
     turnstileSecretKey: '',

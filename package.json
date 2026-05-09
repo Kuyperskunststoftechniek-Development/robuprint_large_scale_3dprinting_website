@@ -15,7 +15,10 @@
     "@fontsource-variable/inter-tight": "^5.2.7",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@nuxt/content": "^3.13.0",
+    "@nuxt/image": "^2.0.0",
     "@nuxtjs/i18n": "^10.3.0",
+    "@nuxtjs/robots": "^6.0.8",
+    "@nuxtjs/sitemap": "^8.0.15",
     "nuxt": "^4.4.4",
     "vue": "^3.5.33",
     "vue-router": "^5.0.6"
@@ -23,8 +26,17 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "@vitest/ui": "^4.1.5",
+    "better-sqlite3": "^12.9.0",
     "happy-dom": "^20.9.0",
     "tailwindcss": "^4.3.0",
     "vitest": "^4.1.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "sharp",
+      "esbuild",
+      "@parcel/watcher"
+    ]
   }
 }

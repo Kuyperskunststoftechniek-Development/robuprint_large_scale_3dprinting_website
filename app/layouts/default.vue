@@ -1,3 +1,7 @@
+<script setup lang="ts">
+useOrgJsonLd()
+</script>
+
 <template>
   <div class="min-h-screen flex flex-col">
     <SiteHeader />

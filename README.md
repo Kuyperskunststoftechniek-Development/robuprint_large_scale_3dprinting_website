@@ -1,75 +1,35 @@
-# Nuxt Minimal Starter
+# RoBuPRINT website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Bilingual (NL/EN) Nuxt 3 marketing site. Forms POST to a separately-hosted FastAPI backend.
 
-## Setup
-
-Make sure to install dependencies:
+## Local dev
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+cp .env.example .env
+# Fill in NUXT_PUBLIC_API_BASE (e.g. http://localhost:8000 for local backend)
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## Tests
 
 ```bash
-# npm
-npm run build
+pnpm test
+```
 
-# pnpm
+## Build / preview
+
+```bash
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+## Deploy (Vercel)
 
-```bash
-# npm
-npm run preview
+1. Connect the repo on Vercel.
+2. Set environment variables: `NUXT_PUBLIC_API_BASE`, `NUXT_PUBLIC_TURNSTILE_SITE_KEY`, `NUXT_PUBLIC_SITE_URL`, `NUXT_TURNSTILE_SECRET_KEY`.
+3. Push to `main` — Vercel auto-deploys.
 
-# pnpm
-pnpm preview
+## DNS (Cloudflare)
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- `robuprint.nl` and `www.robuprint.nl` → Vercel (per Vercel docs)
+- `api.robuprint.nl` → user's FastAPI server (Cloudflare proxied)

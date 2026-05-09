@@ -1,34 +1,54 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 const { t, tm } = useI18n()
-const sections = computed(() => tm('capabilities.sections') as Array<{ eyebrow: string; heading: string; body: string; specs: Array<{ k: string; v: string }> }>)
 useHead({ title: `${t('capabilities.title')} · ${t('common.company')}` })
 
 definePageMeta({
   alias: ['/en/capabilities'],
 })
+
+const { observeAll } = useReveal()
+onMounted(() => observeAll())
+
+interface Spec { k: string; v: string }
+interface Section { eyebrow: string; heading: string; body: string; specs: Spec[] }
+const sections = computed(() => tm('capabilities.sections') as Section[])
+
+const SCHEM = ['envelope', 'robot-arm', 'post-mill', 'layer-stack'] as const
+function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
 </script>
 
 <template>
-  <div class="max-w-[1100px] mx-auto px-6 py-20">
-    <h1 class="text-[42px] font-semibold tracking-tight">{{ t('capabilities.title') }}</h1>
-    <p class="mt-4 text-text-muted text-[15px] max-w-[760px]">{{ t('capabilities.lead') }}</p>
+  <div class="max-w-300 mx-auto px-6 pt-16 pb-12">
+    <section class="max-w-190 mb-12" data-reveal-target>
+      <h1 class="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.04]">{{ t('capabilities.title') }}</h1>
+      <p class="mt-4 text-text-muted text-[15px] max-w-150">{{ t('capabilities.lead') }}</p>
+    </section>
 
-    <div class="mt-16 space-y-20">
-      <section v-for="(s, i) in sections" :key="i" class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12">
-        <div>
-          <p class="font-mono text-[11px] text-accent tracking-wider mb-3">// {{ s.eyebrow }}</p>
-          <h2 class="text-[28px] font-semibold tracking-tight">{{ s.heading }}</h2>
-          <p class="mt-4 text-text-muted text-[15px] leading-[1.6]">{{ s.body }}</p>
-        </div>
-        <BaseCard>
-          <dl class="space-y-3 text-[13px]">
-            <div v-for="spec in s.specs" :key="spec.k" class="flex justify-between gap-4 border-b border-border pb-2 last:border-0">
-              <dt class="font-mono text-[11px] text-text-muted uppercase tracking-wider">{{ spec.k }}</dt>
-              <dd class="font-medium text-text">{{ spec.v }}</dd>
-            </div>
-          </dl>
-        </BaseCard>
-      </section>
+    <div class="space-y-6">
+      <BentoGrid v-for="(s, i) in sections" :key="i">
+        <BentoTile
+          :span="3"
+          :variant="i % 2 === 0 ? 'dark' : 'accent'"
+          :eyebrow="s.eyebrow"
+        >
+          <h2 class="text-[24px] md:text-[28px] font-bold tracking-tight leading-tight max-w-[320px]">{{ s.heading }}</h2>
+          <p class="text-[13px] mt-2 max-w-[320px]" :class="i % 2 === 0 ? 'text-white/70' : 'text-white/85'">{{ s.body }}</p>
+          <template #illustration>
+            <SchemIllustration :name="schemFor(i)" class="w-28 h-28" :class="i % 2 === 0 ? 'text-[#7CA1FF]' : 'text-white'" />
+          </template>
+        </BentoTile>
+
+        <BentoTile
+          v-for="(spec, j) in s.specs.slice(0, 3)"
+          :key="j"
+          :span="1"
+          variant="muted"
+        >
+          <p class="font-mono text-[10px] text-text-muted uppercase tracking-wider">{{ spec.k }}</p>
+          <p class="text-[13px] font-medium leading-relaxed">{{ spec.v }}</p>
+        </BentoTile>
+      </BentoGrid>
     </div>
   </div>
 </template>

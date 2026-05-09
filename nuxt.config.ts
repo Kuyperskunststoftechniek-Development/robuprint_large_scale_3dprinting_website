@@ -50,6 +50,7 @@ export default defineNuxtConfig({
     { path: '~/components/site', pathPrefix: false },
     { path: '~/components/home', pathPrefix: false },
     { path: '~/components/forms', pathPrefix: false },
+    { path: '~/components/bento', pathPrefix: false },
   ],
   i18n: {
     vueI18n: './i18n.config.ts',

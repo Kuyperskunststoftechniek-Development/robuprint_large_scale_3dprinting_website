@@ -20,17 +20,20 @@ definePageMeta({ alias: ['/en/projects/:slug'] })
 </script>
 
 <template>
-  <article v-if="project" class="max-w-[860px] mx-auto px-6 py-20">
-    <NuxtLink :to="localePath('/projecten')" class="text-[13px] text-text-muted hover:text-text">{{ t('projects.back_to_projects') }}</NuxtLink>
-    <h1 class="mt-4 text-[36px] font-semibold tracking-tight">{{ project.title }}</h1>
-    <dl class="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-[12px] font-mono text-text-muted">
-      <div v-if="project.client"><dt class="inline">CLIENT</dt> <dd class="inline text-text">{{ project.client }}</dd></div>
-      <div v-if="project.material"><dt class="inline">MATERIAL</dt> <dd class="inline text-text">{{ project.material }}</dd></div>
-      <div v-if="project.year"><dt class="inline">YEAR</dt> <dd class="inline text-text">{{ project.year }}</dd></div>
-    </dl>
-    <p class="mt-6 text-[16px] text-text-muted leading-[1.6]">{{ project.summary }}</p>
-    <div class="prose mt-12 max-w-none">
-      <ContentRenderer :value="project" />
+  <article class="max-w-[1200px] mx-auto px-6 pt-16 pb-16 grid grid-cols-1 md:grid-cols-[1fr_280px] gap-10">
+    <div class="prose prose-neutral max-w-[720px]">
+      <ContentRenderer v-if="project" :value="project" />
     </div>
+    <aside class="md:sticky md:top-24 md:self-start space-y-3">
+      <BentoTile :span="2" variant="muted" eyebrow="Klant">
+        <p class="text-[14px] font-semibold">{{ project?.client || '—' }}</p>
+      </BentoTile>
+      <BentoTile :span="2" variant="muted" eyebrow="Materiaal">
+        <p class="text-[14px]">{{ project?.material || '—' }}</p>
+      </BentoTile>
+      <BentoTile :span="2" variant="dark" eyebrow="Status">
+        <p class="text-[13px] text-white">{{ project?.year || '—' }}</p>
+      </BentoTile>
+    </aside>
   </article>
 </template>

@@ -27,6 +27,12 @@ export default defineNuxtConfig({
       ],
     },
   },
+  components: [
+    { path: '~/components/base', pathPrefix: false },
+    { path: '~/components/site', pathPrefix: false },
+    { path: '~/components/home', pathPrefix: false },
+    { path: '~/components/forms', pathPrefix: false },
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

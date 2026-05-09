@@ -1,17 +1,40 @@
 {
-  "eyebrow": "Robotic large-scale 3D printing",
-  "h1_lead": "Polymer parts up to 4 × 4 × 8 metres — printed and milled by a single robot.",
-  "lead": "HDPE and PP from our own factory-fresh recyclate. For architecture, food-grade and industrial applications.",
-  "cta_primary": "Request a quote",
-  "cta_secondary": "See projects",
-  "usps_heading": "Why RoBuPRINT",
-  "usps": [
-    { "title": "4 × 4 × 8 metres", "body": "128 m³ build volume in one setup. Single piece, no welded seams." },
-    { "title": "HDPE & PP", "body": "Including food-grade HDPE. Polyolefins at this scale — our standard." },
-    { "title": "Print + mill", "body": "The same robot mills the finish smooth. No layer lines where you don't want them." },
-    { "title": "Own recyclate", "body": "Material straight from Kuypers Kunststoftechniek — single-stream, clean, traceable." }
-  ],
-  "projects_heading": "Recent projects",
-  "projects_cta": "All projects →",
-  "projects_empty": "First cases coming — our portfolio is building."
+  "hero": {
+    "eyebrow": "Robotic large-scale 3D printing",
+    "title_lead": "Parts that are",
+    "title_accent": "too big",
+    "title_tail": "for ordinary 3D printing.",
+    "subtitle": "HDPE and PP, robotic-arm extrusion, 4 × 4 × 8 m build envelope, post-mill finish. From Hapert to clients in NL/BE/DE.",
+    "cta": "Request a quote"
+  },
+  "tiles": {
+    "envelope_eyebrow": "Build envelope",
+    "envelope_caption": "METRES (W × D × H) — 128 m³",
+    "envelope_body": "Print in one piece what others have to weld or segment.",
+
+    "process_eyebrow": "Print + post-mill",
+    "process_title": "The same robot mills the finish smooth.",
+    "process_body": "No layer lines where you don't want them. Hybrid additive + subtractive in one cell.",
+
+    "materials_eyebrow": "Materials",
+    "materials_title": "HDPE & PP",
+    "materials_body": "Polyolefins at this scale — our standard. Includes food-grade HDPE.",
+
+    "recyclate_eyebrow": "Circular",
+    "recyclate_title": "Own recyclate",
+    "recyclate_body": "Single-stream offcuts straight from Kuypers Kunststoftechniek. Traceable to batch.",
+
+    "layers_eyebrow": "Process",
+    "layers_title": "Layer by layer",
+    "layers_body": "FGF pellet extrusion via robot arm. Fast, clean, scalable."
+  },
+  "projects": {
+    "eyebrow": "Recent projects",
+    "heading": "What we've made for others.",
+    "body": "Case studies from architectural elements to industrial parts."
+  },
+  "cta_band": {
+    "title": "Got a part in mind? Send it over for a quote.",
+    "button": "Request a quote"
+  }
 }

@@ -34,6 +34,7 @@ const year = new Date().getFullYear()
           <p>{{ t('common.footer.kvk') }}</p>
           <p>{{ t('common.footer.btw') }}</p>
           <p class="text-white/75 mt-1">{{ t('common.footer.address') }}</p>
+          <p class="mt-1"><a href="tel:+31135096611" class="hover:text-white text-white/90">{{ t('common.footer.phone') }}</a></p>
         </div>
       </div>
     </div>

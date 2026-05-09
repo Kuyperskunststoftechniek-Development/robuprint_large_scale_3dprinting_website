@@ -39,10 +39,11 @@ const sections = computed(() => tm('about.sections') as Section[])
             <p class="font-mono text-[10px] uppercase tracking-wider text-[#9aa3b0]">Vestiging</p>
             <p class="mt-1">Diamantweg 48</p>
             <p>5527 LC Hapert</p>
+            <p class="mt-1"><a href="tel:+31135096611" class="hover:underline underline-offset-2">013 509 66 11</a></p>
           </div>
           <div>
             <p class="font-mono text-[10px] uppercase tracking-wider text-[#9aa3b0]">Moederbedrijf</p>
-            <p class="mt-1">Kuypers Kunststoftechniek</p>
+            <p class="mt-1">Kuypers Kunststoftechniek BV</p>
           </div>
           <div>
             <p class="font-mono text-[10px] uppercase tracking-wider text-[#9aa3b0]">KvK</p>

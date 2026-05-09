@@ -26,6 +26,9 @@ onMounted(() => observeAll())
           <p class="font-mono text-[11px] text-text-muted">KvK 18036761</p>
           <p class="font-mono text-[11px] text-text-muted">BTW NL801225401B01</p>
         </BentoTile>
+        <BentoTile :span="2" variant="muted" eyebrow="Telefoon">
+          <a href="tel:+31135096611" class="text-[14px] underline-offset-2 hover:underline">013 509 66 11</a>
+        </BentoTile>
         <BentoTile :span="2" variant="dark" eyebrow="E-mail">
           <a href="mailto:info@robuprint.nl" class="text-[14px] text-white underline-offset-2 hover:underline">info@robuprint.nl</a>
         </BentoTile>

@@ -16,6 +16,7 @@ export function useOrgJsonLd() {
             addressRegion: 'Noord-Brabant',
             addressCountry: 'NL',
           },
+          telephone: '+31 13 509 66 11',
           vatID: 'NL801225401B01',
           taxID: '18036761',
           parentOrganization: {

@@ -33,6 +33,20 @@ export default defineNuxtConfig({
     { path: '~/components/home', pathPrefix: false },
     { path: '~/components/forms', pathPrefix: false },
   ],
+  i18n: {
+    vueI18n: './i18n/i18n.config.ts',
+    defaultLocale: 'nl',
+    strategy: 'prefix_except_default',
+    locales: [
+      { code: 'nl', language: 'nl-NL', name: 'Nederlands' },
+      { code: 'en', language: 'en-GB', name: 'English' },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'robuprint_locale',
+      redirectOn: 'root',
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

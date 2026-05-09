@@ -1,0 +1,31 @@
+{
+  "company": "RoBuPRINT",
+  "tagline_short": "Robotic large-scale 3D printing",
+  "parent_company_line": "Part of Kuypers Kunststoftechniek",
+  "nav": {
+    "what_we_do": "Capabilities",
+    "materials": "Materials",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "quote_cta": "Request a quote"
+  },
+  "footer": {
+    "newsletter_heading": "Stay updated",
+    "newsletter_placeholder": "Email address",
+    "newsletter_submit": "Subscribe",
+    "kvk": "KvK 00000000",
+    "btw": "VAT NL000000000B00",
+    "address": "Address pending",
+    "rights": "All rights reserved."
+  },
+  "lang": { "nl": "NL", "en": "EN" },
+  "form": {
+    "required_marker": "*",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "success": "Thanks — we'll be in touch within 2 business days.",
+    "error_generic": "Something went wrong. Please try again or email us directly.",
+    "consent": "I agree to the processing of my data per the privacy policy."
+  }
+}

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 const route = useRoute()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
@@ -17,6 +18,9 @@ if (!project.value) {
 useHead({ title: `${project.value.title} · ${t('common.company')}` })
 
 definePageMeta({ alias: ['/en/projects/:slug'] })
+
+const { observeAll } = useReveal()
+onMounted(() => observeAll())
 </script>
 
 <template>

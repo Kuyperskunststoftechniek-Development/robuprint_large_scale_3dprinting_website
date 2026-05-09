@@ -19,10 +19,10 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
 </script>
 
 <template>
-  <div class="max-w-300 mx-auto px-6 pt-16 pb-12">
-    <section class="max-w-190 mb-12" data-reveal-target>
+  <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
+    <section class="max-w-[760px] mb-12" data-reveal-target>
       <h1 class="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.04]">{{ t('capabilities.title') }}</h1>
-      <p class="mt-4 text-text-muted text-[15px] max-w-150">{{ t('capabilities.lead') }}</p>
+      <p class="mt-4 text-text-muted text-[15px] max-w-[600px]">{{ t('capabilities.lead') }}</p>
     </section>
 
     <div class="space-y-6">

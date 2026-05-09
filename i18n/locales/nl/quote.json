@@ -1,0 +1,31 @@
+{
+  "title": "Vraag een offerte aan",
+  "lead": "Upload je bestand(en) en geef wat context. We reageren binnen 2 werkdagen met een eerste inschatting of vervolgvragen.",
+  "drop": {
+    "title": "Sleep bestanden hier of klik om te uploaden",
+    "subtitle": "Tot 1 GB per bestand · meerdere bestanden mogelijk",
+    "button": "Bestanden kiezen",
+    "formats": ".STL · .STEP · .STP · .OBJ · .3MF · .IGS · .X_T"
+  },
+  "section_project": "PROJECT",
+  "section_contact": "CONTACT",
+  "fields": {
+    "material": "Materiaal-voorkeur",
+    "quantity": "Aantal stuks",
+    "milling": "Nafrezen?",
+    "deadline": "Gewenste opleverdatum",
+    "deadline_placeholder": "bv. medio juni",
+    "description": "Beschrijf het project (optioneel)",
+    "description_placeholder": "Toepassing, omgeving, eisen, vragen...",
+    "name": "Naam",
+    "company": "Bedrijf",
+    "email": "E-mail",
+    "phone": "Telefoon (optioneel)"
+  },
+  "options": {
+    "material": ["HDPE", "PP", "Food-grade HDPE", "Advies graag"],
+    "quantity": ["1 (prototype)", "2 – 5", "6 – 25", "25+"],
+    "milling": ["Nee", "Ja, voor strakke finish", "Onzeker"]
+  },
+  "submit": "Verstuur aanvraag"
+}

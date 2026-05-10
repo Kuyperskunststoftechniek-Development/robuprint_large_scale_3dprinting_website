@@ -7,7 +7,7 @@ export function useOrgJsonLd() {
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'RoBuPRINT',
-          url: 'https://robuprint.nl',
+          url: 'https://robuprint.com',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'Diamantweg 48',

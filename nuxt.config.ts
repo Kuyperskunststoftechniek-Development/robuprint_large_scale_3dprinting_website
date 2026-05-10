@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
   ],
   site: {
-    url: 'https://robuprint.nl',
+    url: 'https://robuprint.com',
     name: 'RoBuPRINT',
   },
   sitemap: {

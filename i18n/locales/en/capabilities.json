@@ -20,6 +20,16 @@
         { "k": "Tolerance", "v": "to ±0.2 mm" },
         { "k": "Use", "v": "Mating faces, mounting points, decorative finish" }
       ]
+    },
+    {
+      "eyebrow": "ROLLERS & SHAFTS",
+      "heading": "Plastic rollers & shafts",
+      "body": "Cladding steel shafts in HDPE, PP or food-grade blue HDPE — or printing a complete plastic shaft. Used for conveyor rollers, dough rollers in food, guide and tension rollers, and renewing worn cladding on existing rollers.",
+      "specs": [
+        { "k": "Diameter", "v": "up to Ø600 mm" },
+        { "k": "Length", "v": "up to 3000 mm, larger on request" },
+        { "k": "Materials", "v": "HDPE, PP, food-grade blue HDPE" }
+      ]
     }
   ]
 }

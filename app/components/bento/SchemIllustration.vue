@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type SchemName = 'envelope' | 'robot-arm' | 'layer-stack' | 'post-mill' | 'recyclate-flow' | 'pellet'
+type SchemName = 'envelope' | 'robot-arm' | 'layer-stack' | 'post-mill' | 'recyclate-flow' | 'pellet' | 'shaft'
 defineProps<{ name: SchemName }>()
 </script>
 
@@ -49,5 +49,15 @@ defineProps<{ name: SchemName }>()
 
   <svg v-else-if="name === 'pellet'" data-schem="pellet" viewBox="0 0 24 16" fill="currentColor" aria-hidden="true">
     <ellipse cx="12" cy="8" rx="10" ry="6" />
+  </svg>
+
+  <svg v-else-if="name === 'shaft'" data-schem="shaft" viewBox="0 0 160 80" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <line x1="10" y1="40" x2="40" y2="40" />
+    <line x1="120" y1="40" x2="150" y2="40" />
+    <ellipse cx="40" cy="40" rx="6" ry="20" />
+    <ellipse cx="120" cy="40" rx="6" ry="20" />
+    <line x1="40" y1="20" x2="120" y2="20" />
+    <line x1="40" y1="60" x2="120" y2="60" />
+    <line x1="40" y1="40" x2="120" y2="40" stroke-dasharray="3 3" opacity="0.6" />
   </svg>
 </template>

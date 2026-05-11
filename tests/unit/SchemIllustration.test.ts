@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import SchemIllustration from '~/components/bento/SchemIllustration.vue'
 
-const NAMES = ['envelope', 'robot-arm', 'layer-stack', 'post-mill', 'recyclate-flow', 'pellet'] as const
+const NAMES = ['envelope', 'robot-arm', 'layer-stack', 'post-mill', 'recyclate-flow', 'pellet', 'shaft'] as const
 
 describe('SchemIllustration', () => {
   for (const name of NAMES) {

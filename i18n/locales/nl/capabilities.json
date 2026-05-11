@@ -20,6 +20,16 @@
         { "k": "Tolerantie", "v": "tot ±0.2 mm" },
         { "k": "Toepassing", "v": "Pasvlakken, montagepunten, decoratieve finish" }
       ]
+    },
+    {
+      "eyebrow": "ROLLEN & ASSEN",
+      "heading": "Kunststof rollen & assen",
+      "body": "Metalen assen bekleden met HDPE, PP of food-grade blauwe HDPE — of een volledige kunststofas printen. Geschikt voor transportrollers, deegrollers in de food sector, geleide- en spanrollen, en het vernieuwen van versleten kunststof op bestaande rollen.",
+      "specs": [
+        { "k": "Diameter", "v": "tot Ø600 mm" },
+        { "k": "Lengte", "v": "tot 3000 mm, groter in overleg" },
+        { "k": "Materialen", "v": "HDPE, PP, food-grade blauwe HDPE" }
+      ]
     }
   ]
 }

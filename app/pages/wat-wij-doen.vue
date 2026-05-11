@@ -14,7 +14,7 @@ interface Spec { k: string; v: string }
 interface Section { eyebrow: string; heading: string; body: string; specs: Spec[] }
 const sections = computed(() => tm('capabilities.sections') as Section[])
 
-const SCHEM = ['envelope', 'robot-arm', 'post-mill', 'layer-stack'] as const
+const SCHEM = ['envelope', 'robot-arm', 'shaft', 'layer-stack'] as const
 function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
 </script>
 

@@ -18,7 +18,6 @@ const { getToken } = useTurnstile()
 
 const ACCEPT = '.stl,.step,.stp,.obj,.3mf,.iges,.igs,.x_t,.x_b'
 const materialOpts = computed(() => tm('quote.options.material') as string[])
-const quantityOpts = computed(() => (tm('quote.options.quantity') as string[]).map((v) => ({ value: v, label: v })))
 const millingOpts = computed(() => tm('quote.options.milling') as string[])
 
 const form = reactive({
@@ -157,11 +156,7 @@ async function onSubmit() {
           </div>
           <div>
             <label class="block text-[11px] font-medium mb-1.5">{{ t('quote.fields.quantity') }} <span class="text-accent">*</span></label>
-            <BaseSelect
-              v-model="entry.quantity"
-              :options="[{ value: '', label: '—' }, ...quantityOpts]"
-              required
-            />
+            <BaseInput v-model="entry.quantity" type="number" min="1" inputmode="numeric" />
             <p v-if="errors[`file_${idx}_quantity`]" class="text-[11px] text-red-600 mt-1">{{ errors[`file_${idx}_quantity`] }}</p>
           </div>
         </div>

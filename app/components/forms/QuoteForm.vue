@@ -11,7 +11,7 @@ type LocalFile = {
   quantity: string
 }
 
-const { t, tm } = useI18n()
+const { t, tm, locale } = useI18n()
 const { request } = useApi()
 const { upload } = useChunkedUpload()
 const { getToken } = useTurnstile()
@@ -93,6 +93,7 @@ async function onSubmit() {
     const token = turnstileEl.value ? await getToken(turnstileEl.value) : 'dev-no-turnstile'
     await request('/quote/submit', {
       body: {
+        locale: locale.value === 'en' ? 'en' : 'nl',
         milling: form.milling,
         deadline: form.deadline,
         description: form.description,

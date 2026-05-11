@@ -2,6 +2,14 @@
 import { isEmail, isNonEmpty } from '~/utils/validators'
 
 type UploadedFile = { uploadId: string; filename: string; size: number; progress: number }
+type LocalFile = {
+  file: File
+  progress: number
+  uploadId?: string
+  error?: string
+  material: string
+  quantity: string
+}
 
 const { t, tm } = useI18n()
 const { request } = useApi()
@@ -14,8 +22,6 @@ const quantityOpts = computed(() => (tm('quote.options.quantity') as string[]).m
 const millingOpts = computed(() => tm('quote.options.milling') as string[])
 
 const form = reactive({
-  material: '',
-  quantity: '',
   milling: '',
   deadline: '',
   description: '',
@@ -25,14 +31,14 @@ const form = reactive({
   phone: '',
   consent: false,
 })
-const localFiles = ref<Array<{ file: File; progress: number; uploadId?: string; error?: string }>>([])
+const localFiles = ref<LocalFile[]>([])
 const errors = ref<Record<string, string>>({})
 const status = ref<'idle' | 'uploading' | 'submitting' | 'success' | 'error'>('idle')
 const turnstileEl = ref<HTMLElement | null>(null)
 
 function onFilesSelected(files: File[]) {
   for (const f of files) {
-    localFiles.value.push({ file: f, progress: 0 })
+    localFiles.value.push({ file: f, progress: 0, material: '', quantity: '' })
   }
 }
 function removeFile(idx: number) {
@@ -47,12 +53,14 @@ function fmtBytes(n: number) {
 
 function validate() {
   const e: Record<string, string> = {}
-  if (!isNonEmpty(form.material)) e.material = t('quote.fields.material')
-  if (!isNonEmpty(form.quantity)) e.quantity = t('quote.fields.quantity')
   if (!isNonEmpty(form.name)) e.name = t('quote.fields.name')
   if (!isEmail(form.email)) e.email = t('quote.fields.email')
   if (!form.consent) e.consent = t('common.form.consent')
   if (localFiles.value.length === 0) e.files = t('quote.drop.title')
+  for (const [i, f] of localFiles.value.entries()) {
+    if (!isNonEmpty(f.material)) e[`file_${i}_material`] = t('quote.fields.material')
+    if (!isNonEmpty(f.quantity)) e[`file_${i}_quantity`] = t('quote.fields.quantity')
+  }
   errors.value = e
   return Object.keys(e).length === 0
 }
@@ -86,8 +94,6 @@ async function onSubmit() {
     const token = turnstileEl.value ? await getToken(turnstileEl.value) : 'dev-no-turnstile'
     await request('/quote/submit', {
       body: {
-        material: form.material,
-        quantity: form.quantity,
         milling: form.milling,
         deadline: form.deadline,
         description: form.description,
@@ -95,7 +101,13 @@ async function onSubmit() {
         company: form.company,
         email: form.email,
         phone: form.phone,
-        files: uploaded.map((f) => ({ upload_id: f.uploadId, filename: f.filename, size: f.size })),
+        files: uploaded.map((f, i) => ({
+          upload_id: f.uploadId,
+          filename: f.filename,
+          size: f.size,
+          material: localFiles.value[i].material,
+          quantity: localFiles.value[i].quantity,
+        })),
         turnstile_token: token,
       },
     })
@@ -115,40 +127,49 @@ async function onSubmit() {
     <FileDropzone :accept="ACCEPT" @files-selected="onFilesSelected" />
     <p v-if="errors.files" class="text-[11px] text-red-600 mt-2">{{ errors.files }}</p>
 
-    <ul class="mt-3 space-y-2">
-      <li v-for="(entry, idx) in localFiles" :key="idx" class="flex items-center gap-3 p-3 bg-surface border border-border rounded-[var(--radius-md)]">
-        <div class="w-9 h-9 bg-accent text-white rounded-md flex items-center justify-center font-mono text-[10px] font-semibold">{{ entry.file.name.split('.').pop()?.toUpperCase().slice(0,3) }}</div>
-        <div class="flex-1 min-w-0">
-          <p class="text-[13px] font-medium truncate">{{ entry.file.name }}</p>
-          <p class="text-[11px] text-text-muted font-mono">{{ fmtBytes(entry.file.size) }}<span v-if="entry.progress > 0 && entry.progress < 100"> · {{ entry.progress }}%</span><span v-if="entry.error" class="text-red-600"> · {{ entry.error }}</span></p>
-          <div v-if="entry.progress > 0 && entry.progress < 100" class="h-[3px] bg-border rounded mt-2 overflow-hidden">
-            <div class="h-full bg-accent" :style="{ width: entry.progress + '%' }" />
+    <ul class="mt-3 space-y-3">
+      <li v-for="(entry, idx) in localFiles" :key="idx" class="p-3 bg-surface border border-border rounded-[var(--radius-md)] space-y-3">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-accent text-white rounded-md flex items-center justify-center font-mono text-[10px] font-semibold">
+            {{ entry.file.name.split('.').pop()?.toUpperCase().slice(0,3) }}
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-[13px] font-medium truncate">{{ entry.file.name }}</p>
+            <p class="text-[11px] text-text-muted font-mono">
+              {{ fmtBytes(entry.file.size) }}
+              <span v-if="entry.progress > 0 && entry.progress < 100"> · {{ entry.progress }}%</span>
+              <span v-if="entry.error" class="text-red-600"> · {{ entry.error }}</span>
+            </p>
+            <div v-if="entry.progress > 0 && entry.progress < 100" class="h-[3px] bg-border rounded mt-2 overflow-hidden">
+              <div class="h-full bg-accent" :style="{ width: entry.progress + '%' }" />
+            </div>
+          </div>
+          <button type="button" class="text-text-muted hover:text-text text-lg" @click="removeFile(idx)">×</button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-border">
+          <div>
+            <label class="block text-[11px] font-medium mb-1.5">{{ t('quote.fields.material') }} <span class="text-accent">*</span></label>
+            <div class="flex gap-1.5 flex-wrap">
+              <BasePill v-for="m in materialOpts" :key="m" :selected="entry.material === m" @click="entry.material = m">{{ m }}</BasePill>
+            </div>
+            <p v-if="errors[`file_${idx}_material`]" class="text-[11px] text-red-600 mt-1">{{ errors[`file_${idx}_material`] }}</p>
+          </div>
+          <div>
+            <label class="block text-[11px] font-medium mb-1.5">{{ t('quote.fields.quantity') }} <span class="text-accent">*</span></label>
+            <BaseSelect
+              v-model="entry.quantity"
+              :options="[{ value: '', label: '—' }, ...quantityOpts]"
+              required
+            />
+            <p v-if="errors[`file_${idx}_quantity`]" class="text-[11px] text-red-600 mt-1">{{ errors[`file_${idx}_quantity`] }}</p>
           </div>
         </div>
-        <button type="button" class="text-text-muted hover:text-text text-lg" @click="removeFile(idx)">×</button>
       </li>
     </ul>
 
     <section class="mt-10">
       <p class="font-mono text-[11px] text-text-muted tracking-wider pb-3 border-b border-border">{{ t('quote.section_project') }}</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <div>
-          <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.material') }} <span class="text-accent">*</span></label>
-          <div class="flex gap-2 flex-wrap">
-            <BasePill v-for="m in materialOpts" :key="m" :selected="form.material === m" @click="form.material = m">{{ m }}</BasePill>
-          </div>
-          <p v-if="errors.material" class="text-[11px] text-red-600 mt-1">{{ errors.material }}</p>
-        </div>
-        <div>
-          <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.quantity') }} <span class="text-accent">*</span></label>
-          <BaseSelect
-            v-model="form.quantity"
-            :options="[{ value: '', label: '—' }, ...quantityOpts]"
-            required
-          />
-          <p v-if="errors.quantity" class="text-[11px] text-red-600 mt-1">{{ errors.quantity }}</p>
-        </div>
-      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.milling') }}</label>

@@ -10,8 +10,6 @@ const year = new Date().getFullYear()
       <div class="md:col-span-2">
         <p class="font-bold text-text text-[15px] mb-2">{{ t('common.company') }}</p>
         <p class="text-[12px]">{{ t('common.parent_company_line') }}</p>
-        <p class="font-medium text-text mt-6 mb-2 text-[13px]">{{ t('common.footer.newsletter_heading') }}</p>
-        <NewsletterForm />
       </div>
 
       <div>

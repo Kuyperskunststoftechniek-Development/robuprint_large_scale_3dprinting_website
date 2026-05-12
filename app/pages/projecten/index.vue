@@ -33,7 +33,18 @@ definePageMeta({ alias: ['/en/projects'] })
         :to="localePath(p.path)"
         :eyebrow="p.client || ''"
       >
-        <div class="-mt-2 -mx-2 mb-3 h-32 rounded-lg bg-[linear-gradient(135deg,var(--color-border),var(--color-surface))]" />
+        <NuxtImg
+          v-if="p.cover"
+          :src="p.cover"
+          :alt="p.title"
+          class="-mt-2 -mx-2 mb-3 h-32 w-[calc(100%+1rem)] rounded-lg object-cover"
+          sizes="50vw md:400px"
+          loading="lazy"
+        />
+        <div
+          v-else
+          class="-mt-2 -mx-2 mb-3 h-32 rounded-lg bg-[linear-gradient(135deg,var(--color-border),var(--color-surface))]"
+        />
         <h2 class="text-[18px] font-bold tracking-tight">{{ p.title }}</h2>
         <p class="text-[13px] text-text-muted line-clamp-3 mt-1">{{ p.summary }}</p>
         <p class="mt-3 text-accent text-[12px] font-medium">{{ t('projects.view_project') }} →</p>

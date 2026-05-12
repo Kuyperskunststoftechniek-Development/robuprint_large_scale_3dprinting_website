@@ -3,5 +3,10 @@
   "lead": "A rolling selection of what we've made. Photos and case studies coming.",
   "empty": "First cases coming soon.",
   "view_project": "View project →",
-  "back_to_projects": "← Back to projects"
+  "back_to_projects": "← Back to projects",
+  "aside": {
+    "client": "Client",
+    "material": "Material",
+    "year": "Year"
+  }
 }

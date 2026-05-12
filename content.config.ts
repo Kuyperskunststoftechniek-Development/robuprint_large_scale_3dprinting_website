@@ -11,6 +11,7 @@ export default defineContentConfig({
         material: z.string().optional(),
         year: z.number().optional(),
         cover: z.string().optional(),
+        gallery: z.array(z.string()).optional(),
         summary: z.string(),
         locale: z.enum(['nl', 'en']).default('nl'),
       }),

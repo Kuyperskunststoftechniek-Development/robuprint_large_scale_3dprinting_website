@@ -24,6 +24,19 @@ onMounted(() => observeAll())
       </NuxtLink>
     </section>
 
+    <section class="mb-8 md:mb-12 rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-surface-dark)]" data-reveal-target>
+      <video
+        src="/content/algemeen/proces.mp4"
+        class="w-full h-auto aspect-video object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="RoBuPRINT productieproces"
+      />
+    </section>
+
     <BentoGrid>
       <BentoTile :span="3" variant="dark" :eyebrow="t('home.tiles.envelope_eyebrow')">
         <p class="text-[48px] md:text-[56px] font-extrabold tracking-[-0.03em] leading-none mt-1">4×4×8</p>

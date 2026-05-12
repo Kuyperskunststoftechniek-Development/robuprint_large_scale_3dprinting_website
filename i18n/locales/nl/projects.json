@@ -3,5 +3,10 @@
   "lead": "Een doorlopende selectie van wat we hebben gemaakt. Foto's en case studies komen binnen.",
   "empty": "De eerste cases volgen binnenkort.",
   "view_project": "Bekijk project →",
-  "back_to_projects": "← Terug naar projecten"
+  "back_to_projects": "← Terug naar projecten",
+  "aside": {
+    "client": "Klant",
+    "material": "Materiaal",
+    "year": "Jaar"
+  }
 }

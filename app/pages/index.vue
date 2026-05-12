@@ -11,30 +11,36 @@ onMounted(() => observeAll())
 <template>
   <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
 
-    <section class="max-w-[780px] mb-12 md:mb-16" data-reveal-target>
-      <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-4">// {{ t('home.hero.eyebrow') }}</p>
-      <h1 class="text-[40px] md:text-[64px] font-extrabold tracking-tight leading-[1.02]">
-        {{ t('home.hero.title_lead') }}
-        <em class="not-italic text-accent">{{ t('home.hero.title_accent') }}</em>
-        {{ t('home.hero.title_tail') }}
-      </h1>
-      <p class="mt-5 text-[15px] md:text-[16px] text-text-muted max-w-[560px] leading-relaxed">{{ t('home.hero.subtitle') }}</p>
-      <NuxtLink :to="localePath('/offerte')" class="inline-flex mt-7 items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#0A3534] transition-colors">
-        {{ t('home.hero.cta') }} →
-      </NuxtLink>
-    </section>
-
-    <section class="mb-8 md:mb-12 rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-surface-dark)]" data-reveal-target>
+    <section
+      class="relative overflow-hidden rounded-[var(--radius-xl)] mb-12 md:mb-16 min-h-[520px] md:min-h-[600px] flex items-center"
+      data-reveal-target
+    >
       <video
         src="/content/algemeen/proces.mp4"
-        class="w-full h-auto aspect-video object-cover"
+        class="absolute inset-0 w-full h-full object-cover"
         autoplay
         muted
         loop
         playsinline
         preload="metadata"
-        aria-label="RoBuPRINT productieproces"
+        aria-hidden="true"
       />
+      <div class="absolute inset-0 bg-black/55" />
+      <div class="relative z-10 px-8 md:px-12 py-12 md:py-16 max-w-[780px] text-white">
+        <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-[#7CC9C0] mb-4">// {{ t('home.hero.eyebrow') }}</p>
+        <h1 class="text-[40px] md:text-[64px] font-extrabold tracking-tight leading-[1.02]">
+          {{ t('home.hero.title_lead') }}
+          <em class="not-italic text-[#7CC9C0]">{{ t('home.hero.title_accent') }}</em>
+          {{ t('home.hero.title_tail') }}
+        </h1>
+        <p class="mt-5 text-[15px] md:text-[16px] text-white/80 max-w-[560px] leading-relaxed">{{ t('home.hero.subtitle') }}</p>
+        <NuxtLink
+          :to="localePath('/offerte')"
+          class="inline-flex mt-7 items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#0A3534] transition-colors"
+        >
+          {{ t('home.hero.cta') }} →
+        </NuxtLink>
+      </div>
     </section>
 
     <BentoGrid>

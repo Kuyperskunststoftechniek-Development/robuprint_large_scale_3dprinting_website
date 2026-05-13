@@ -66,8 +66,8 @@ onMounted(() => observeAll())
       <BentoTile :span="2" variant="muted" :eyebrow="t('projects.aside.material')">
         <p class="text-[14px]">{{ project?.material || '—' }}</p>
       </BentoTile>
-      <BentoTile :span="2" variant="dark" :eyebrow="t('projects.aside.year')">
-        <p class="text-[13px] text-white">{{ project?.year || '—' }}</p>
+      <BentoTile :span="2" variant="muted" :eyebrow="t('projects.aside.year')">
+        <p class="text-[13px]">{{ project?.year || '—' }}</p>
       </BentoTile>
     </aside>
   </article>

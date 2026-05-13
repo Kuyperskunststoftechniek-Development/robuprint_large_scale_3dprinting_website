@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type Variant = 'default' | 'muted' | 'dark' | 'accent'
+type Variant = 'default' | 'muted' | 'accent'
 type Span = 1 | 2 | 3 | 4 | 6
 
 const props = withDefaults(
@@ -23,8 +23,7 @@ const SPAN_CLASS: Record<Span, string> = {
 const VARIANT_CLASS: Record<Variant, string> = {
   default: 'bg-surface border border-border text-text',
   muted: 'bg-[var(--color-surface-muted)] border border-border text-text',
-  dark: 'bg-[var(--color-surface-dark)] text-white',
-  accent: 'bg-[image:var(--gradient-accent)] text-white',
+  accent: 'bg-[var(--color-accent)] text-white',
 }
 
 const tag = props.to ? 'NuxtLink' : 'div'
@@ -45,9 +44,9 @@ const tag = props.to ? 'NuxtLink' : 'div'
   >
     <p
       v-if="eyebrow"
-      class="font-mono text-[10px] tracking-[0.18em] uppercase"
-      :class="variant === 'dark' || variant === 'accent' ? 'text-[#7CC9C0]' : 'text-accent'"
-    >// {{ eyebrow }}</p>
+      class="font-medium text-[11px] tracking-[0.14em] uppercase"
+      :class="variant === 'accent' ? 'text-white/80' : 'text-accent'"
+    >{{ eyebrow }}</p>
 
     <slot />
 

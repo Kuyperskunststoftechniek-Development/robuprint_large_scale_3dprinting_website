@@ -26,7 +26,7 @@ onMounted(() => observeAll())
             <li>— Aantallen + lever-deadline</li>
           </ul>
         </BentoTile>
-        <BentoTile :span="2" variant="dark" eyebrow="Reactietijd">
+        <BentoTile :span="2" variant="accent" eyebrow="Reactietijd">
           <p class="text-[14px] text-white">Binnen 2 werkdagen.</p>
         </BentoTile>
       </aside>

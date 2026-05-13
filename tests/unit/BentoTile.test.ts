@@ -19,9 +19,9 @@ describe('BentoTile', () => {
     expect(w.find('a').attributes('href')).toBe('/projecten')
   })
 
-  it('applies the dark variant class', () => {
-    const w = mount(BentoTile, { props: { variant: 'dark' } })
-    expect(w.attributes('data-variant')).toBe('dark')
+  it('applies the muted variant class', () => {
+    const w = mount(BentoTile, { props: { variant: 'muted' } })
+    expect(w.attributes('data-variant')).toBe('muted')
   })
 
   it('applies the accent variant class', () => {
@@ -36,6 +36,6 @@ describe('BentoTile', () => {
 
   it('renders the eyebrow when given', () => {
     const w = mount(BentoTile, { props: { eyebrow: 'Materialen' } })
-    expect(w.text()).toContain('// Materialen')
+    expect(w.text()).toContain('Materialen')
   })
 })

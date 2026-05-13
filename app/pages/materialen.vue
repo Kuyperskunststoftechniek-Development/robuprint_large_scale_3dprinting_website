@@ -29,12 +29,11 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
         v-for="(m, i) in materials"
         :key="i"
         :span="3"
-        variant="dark"
         :eyebrow="m.tagline"
       >
-        <h2 class="text-[20px] font-bold text-white leading-tight mb-2">{{ m.name }}</h2>
-        <p class="text-[12px] text-white/70 leading-[1.55] mb-3">{{ m.body }}</p>
-        <ul class="text-[12px] text-white/75 mt-3 space-y-1">
+        <h2 class="text-[20px] font-bold leading-tight mb-2">{{ m.name }}</h2>
+        <p class="text-[12px] text-text-muted leading-[1.55] mb-3">{{ m.body }}</p>
+        <ul class="text-[12px] text-text-muted mt-3 space-y-1">
           <li v-for="(p, k) in m.props" :key="k">— {{ p }}</li>
         </ul>
       </BentoTile>
@@ -51,7 +50,7 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
         :key="i"
         :span="2"
       >
-        <p class="font-mono text-[10px] uppercase tracking-wider text-text-muted">{{ s.k }}</p>
+        <p class="font-medium text-[11px] uppercase tracking-[0.14em] text-text-muted">{{ s.k }}</p>
         <p class="text-[15px] font-semibold mt-1">{{ s.v }}</p>
       </BentoTile>
     </BentoGrid>

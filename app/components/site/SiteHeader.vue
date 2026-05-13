@@ -36,7 +36,7 @@ const mobileOpen = ref(false)
       <div class="flex items-center gap-3">
         <NuxtLink
           :to="localePath('/offerte')"
-          class="hidden md:inline-flex items-center text-[12.5px] font-medium px-4 py-2 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#0A3534] transition-colors"
+          class="hidden md:inline-flex items-center text-[12.5px] font-medium px-4 py-2 bg-accent text-white rounded-[var(--radius-md)] hover:bg-accent-hover transition-colors"
         >
           {{ t('common.nav.quote_cta') }} →
         </NuxtLink>

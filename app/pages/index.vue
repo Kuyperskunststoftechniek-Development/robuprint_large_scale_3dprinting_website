@@ -27,16 +27,16 @@ onMounted(() => observeAll())
       />
       <div class="absolute inset-0 bg-black/55" />
       <div class="relative z-10 px-8 md:px-12 py-12 md:py-16 max-w-[780px] text-white">
-        <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-[#7CC9C0] mb-4">// {{ t('home.hero.eyebrow') }}</p>
+        <p class="font-medium text-[11px] tracking-[0.14em] uppercase text-white/90 mb-4">{{ t('home.hero.eyebrow') }}</p>
         <h1 class="text-[40px] md:text-[64px] font-extrabold tracking-tight leading-[1.02]">
           {{ t('home.hero.title_lead') }}
-          <em class="not-italic text-[#7CC9C0]">{{ t('home.hero.title_accent') }}</em>
+          <em class="not-italic text-[#A9C2FF]">{{ t('home.hero.title_accent') }}</em>
           {{ t('home.hero.title_tail') }}
         </h1>
         <p class="mt-5 text-[15px] md:text-[16px] text-white/80 max-w-[560px] leading-relaxed">{{ t('home.hero.subtitle') }}</p>
         <NuxtLink
           :to="localePath('/offerte')"
-          class="inline-flex mt-7 items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#0A3534] transition-colors"
+          class="inline-flex mt-7 items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-accent-hover transition-colors"
         >
           {{ t('home.hero.cta') }} →
         </NuxtLink>
@@ -44,12 +44,12 @@ onMounted(() => observeAll())
     </section>
 
     <BentoGrid>
-      <BentoTile :span="3" variant="dark" :eyebrow="t('home.tiles.envelope_eyebrow')">
+      <BentoTile :span="3" variant="muted" :eyebrow="t('home.tiles.envelope_eyebrow')">
         <p class="text-[48px] md:text-[56px] font-extrabold tracking-[-0.03em] leading-none mt-1">4×4×8</p>
-        <p class="font-mono text-[10px] tracking-[0.15em] text-[#9aa3b0]">{{ t('home.tiles.envelope_caption') }}</p>
-        <p class="text-[13px] text-white/70 mt-2 max-w-[280px]">{{ t('home.tiles.envelope_body') }}</p>
+        <p class="text-[11px] tracking-[0.14em] text-text-muted">{{ t('home.tiles.envelope_caption') }}</p>
+        <p class="text-[13px] text-text-muted mt-2 max-w-[280px]">{{ t('home.tiles.envelope_body') }}</p>
         <template #illustration>
-          <SchemIllustration name="envelope" class="w-44 h-44 text-[#7CC9C0]" />
+          <SchemIllustration name="envelope" class="w-44 h-44 text-accent" />
         </template>
       </BentoTile>
 
@@ -85,9 +85,9 @@ onMounted(() => observeAll())
       </BentoTile>
     </BentoGrid>
 
-    <section class="mt-6 rounded-[var(--radius-xl)] bg-[var(--color-surface-dark)] text-white p-7 md:p-9 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-reveal-target>
+    <section class="mt-6 rounded-[var(--radius-xl)] bg-accent text-white p-7 md:p-9 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-reveal-target>
       <h2 class="text-[20px] md:text-[24px] font-bold leading-snug max-w-[520px]">{{ t('home.cta_band.title') }}</h2>
-      <NuxtLink :to="localePath('/offerte')" class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-[#0A3534] transition-colors">
+      <NuxtLink :to="localePath('/offerte')" class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 bg-white text-accent rounded-[var(--radius-md)] hover:bg-white/90 transition-colors">
         {{ t('home.cta_band.button') }} →
       </NuxtLink>
     </section>

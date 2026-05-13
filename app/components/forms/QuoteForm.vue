@@ -120,7 +120,7 @@ async function onSubmit() {
 
 <template>
   <form class="bg-surface border border-border rounded-[var(--radius-xl)] p-8 md:p-10 max-w-[780px] mx-auto" @submit.prevent="onSubmit">
-    <p class="font-mono text-[11px] text-accent tracking-wider mb-2">// {{ t('quote.section_project') }}</p>
+    <p class="font-medium text-[11px] text-accent uppercase tracking-[0.14em] mb-2">{{ t('quote.section_project') }}</p>
     <h1 class="text-[28px] font-semibold tracking-tight mb-2">{{ t('quote.title') }}</h1>
     <p class="text-[14px] text-text-muted mb-8">{{ t('quote.lead') }}</p>
 
@@ -130,12 +130,12 @@ async function onSubmit() {
     <ul class="mt-3 space-y-3">
       <li v-for="(entry, idx) in localFiles" :key="idx" class="p-3 bg-surface border border-border rounded-[var(--radius-md)] space-y-3">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 bg-accent text-white rounded-md flex items-center justify-center font-mono text-[10px] font-semibold">
+          <div class="w-9 h-9 bg-accent text-white rounded-md flex items-center justify-center text-[10px] font-semibold tracking-wider">
             {{ entry.file.name.split('.').pop()?.toUpperCase().slice(0,3) }}
           </div>
           <div class="flex-1 min-w-0">
             <p class="text-[13px] font-medium truncate">{{ entry.file.name }}</p>
-            <p class="text-[11px] text-text-muted font-mono">
+            <p class="text-[11px] text-text-muted">
               {{ fmtBytes(entry.file.size) }}
               <span v-if="entry.progress > 0 && entry.progress < 100"> · {{ entry.progress }}%</span>
               <span v-if="entry.error" class="text-red-600"> · {{ entry.error }}</span>
@@ -165,7 +165,7 @@ async function onSubmit() {
     </ul>
 
     <section class="mt-10">
-      <p class="font-mono text-[11px] text-text-muted tracking-wider pb-3 border-b border-border">{{ t('quote.section_project') }}</p>
+      <p class="font-medium text-[11px] text-text-muted uppercase tracking-[0.14em] pb-3 border-b border-border">{{ t('quote.section_project') }}</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.milling') }}</label>
@@ -185,7 +185,7 @@ async function onSubmit() {
     </section>
 
     <section class="mt-10">
-      <p class="font-mono text-[11px] text-text-muted tracking-wider pb-3 border-b border-border">{{ t('quote.section_contact') }}</p>
+      <p class="font-medium text-[11px] text-text-muted uppercase tracking-[0.14em] pb-3 border-b border-border">{{ t('quote.section_contact') }}</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.name') }} <span class="text-accent">*</span></label>

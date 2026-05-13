@@ -28,11 +28,11 @@ const year = new Date().getFullYear()
           <li><NuxtLink :to="localePath('/contact')">{{ t('common.nav.contact') }}</NuxtLink></li>
           <li><NuxtLink :to="localePath('/offerte')">{{ t('common.nav.quote_cta') }}</NuxtLink></li>
         </ul>
-        <div class="mt-6 rounded-[var(--radius-md)] bg-[var(--color-surface-dark)] text-white p-3 text-[11px] leading-relaxed font-mono">
+        <div class="mt-6 rounded-[var(--radius-md)] bg-surface-muted text-text p-3 text-[12px] leading-relaxed border border-border">
           <p>{{ t('common.footer.kvk') }}</p>
           <p>{{ t('common.footer.btw') }}</p>
-          <p class="text-white/75 mt-1">{{ t('common.footer.address') }}</p>
-          <p class="mt-1"><a href="tel:+31135096611" class="hover:text-white text-white/90">{{ t('common.footer.phone') }}</a></p>
+          <p class="text-text-muted mt-1">{{ t('common.footer.address') }}</p>
+          <p class="mt-1"><a href="tel:+31135096611" class="text-accent hover:underline">{{ t('common.footer.phone') }}</a></p>
         </div>
       </div>
     </div>

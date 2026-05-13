@@ -63,7 +63,7 @@ function slugOf(path: string) {
         />
         <h2 class="text-[28px] md:text-[36px] font-extrabold tracking-tight">{{ p.title }}</h2>
         <p class="mt-3 text-[15px] text-text-muted max-w-[760px]">{{ p.summary }}</p>
-        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-[12px] font-mono uppercase tracking-wider text-text-muted">
+        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-[11px] font-medium uppercase tracking-[0.14em] text-text-muted">
           <span v-if="p.client"><span class="text-text">{{ t('projects.aside.client') }}:</span> {{ p.client }}</span>
           <span v-if="p.material"><span class="text-text">{{ t('projects.aside.material') }}:</span> {{ p.material }}</span>
           <span v-if="p.year"><span class="text-text">{{ t('projects.aside.year') }}:</span> {{ p.year }}</span>

@@ -33,6 +33,6 @@ function onPick(e: Event) {
     <p class="text-[12px] text-text-muted mt-1">{{ t('quote.drop.subtitle') }}</p>
     <BaseButton class="mt-3" size="sm" @click="inputRef?.click()">{{ t('quote.drop.button') }}</BaseButton>
     <input ref="inputRef" type="file" multiple :accept="accept" class="hidden" @change="onPick">
-    <p class="mt-3 font-mono text-[10.5px] text-text-muted tracking-wider">{{ t('quote.drop.formats') }}</p>
+    <p class="mt-3 text-[11px] font-medium text-text-muted uppercase tracking-[0.14em]">{{ t('quote.drop.formats') }}</p>
   </div>
 </template>

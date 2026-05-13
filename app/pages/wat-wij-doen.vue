@@ -29,13 +29,13 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
       <BentoGrid v-for="(s, i) in sections" :key="i">
         <BentoTile
           :span="3"
-          :variant="i % 2 === 0 ? 'dark' : 'accent'"
+          :variant="i % 2 === 0 ? 'muted' : 'accent'"
           :eyebrow="s.eyebrow"
         >
           <h2 class="text-[24px] md:text-[28px] font-bold tracking-tight leading-tight max-w-[320px]">{{ s.heading }}</h2>
-          <p class="text-[13px] mt-2 max-w-[320px]" :class="i % 2 === 0 ? 'text-white/70' : 'text-white/85'">{{ s.body }}</p>
+          <p class="text-[13px] mt-2 max-w-[320px]" :class="i % 2 === 0 ? 'text-text-muted' : 'text-white/85'">{{ s.body }}</p>
           <template #illustration>
-            <SchemIllustration :name="schemFor(i)" class="w-28 h-28" :class="i % 2 === 0 ? 'text-[#7CC9C0]' : 'text-white'" />
+            <SchemIllustration :name="schemFor(i)" class="w-28 h-28" :class="i % 2 === 0 ? 'text-accent' : 'text-white'" />
           </template>
         </BentoTile>
 
@@ -45,7 +45,7 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
           :span="1"
           variant="muted"
         >
-          <p class="font-mono text-[10px] text-text-muted uppercase tracking-wider">{{ spec.k }}</p>
+          <p class="font-medium text-[11px] text-text-muted uppercase tracking-[0.14em]">{{ spec.k }}</p>
           <p class="text-[13px] font-medium leading-relaxed">{{ spec.v }}</p>
         </BentoTile>
       </BentoGrid>

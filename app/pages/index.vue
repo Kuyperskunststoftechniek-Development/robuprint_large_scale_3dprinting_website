@@ -17,7 +17,7 @@ const dark = heroTheme === 'dark'
 // Afspeelsnelheid van de print-animatie. Lager = langzamer.
 //   1.0 = standaard (±28 s print)   0.7 = rustig (±40 s)   0.5 = heel rustig (±56 s)   1.5 = sneller
 // Pas alleen dit getal aan om het tempo te wijzigen.
-const heroSpeed = 0.7
+const heroSpeed = 0.3
 </script>
 
 <template>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { isEmail, isNonEmpty } from '~/utils/validators'
 
-type UploadedFile = { uploadId: string; filename: string; size: number; progress: number }
 type LocalFile = {
   file: File
   progress: number
@@ -17,6 +16,9 @@ const { upload } = useChunkedUpload()
 const { getToken } = useTurnstile()
 
 const ACCEPT = '.stl,.step,.stp,.obj,.3mf,.iges,.igs,.x_t,.x_b'
+const ALLOWED_EXTS = new Set(ACCEPT.split(',').map((s) => s.trim().replace(/^\./, '').toLowerCase()))
+const MAX_FILE_BYTES = 1024 * 1024 * 1024
+const MAX_FILES = 20
 const materialOpts = computed(() => tm('quote.options.material') as string[])
 const millingOpts = computed(() => tm('quote.options.milling') as string[])
 
@@ -32,13 +34,33 @@ const form = reactive({
 })
 const localFiles = ref<LocalFile[]>([])
 const errors = ref<Record<string, string>>({})
+const fileErrors = ref<string[]>([])
 const status = ref<'idle' | 'uploading' | 'submitting' | 'success' | 'error'>('idle')
 const turnstileEl = ref<HTMLElement | null>(null)
 
 function onFilesSelected(files: File[]) {
+  const rejected: string[] = []
   for (const f of files) {
+    const ext = f.name.includes('.') ? f.name.split('.').pop()!.toLowerCase() : ''
+    if (!ALLOWED_EXTS.has(ext)) {
+      rejected.push(t('quote.errors.bad_type', { name: f.name }))
+      continue
+    }
+    if (f.size === 0) {
+      rejected.push(t('quote.errors.empty_file', { name: f.name }))
+      continue
+    }
+    if (f.size > MAX_FILE_BYTES) {
+      rejected.push(t('quote.errors.too_large', { name: f.name }))
+      continue
+    }
+    if (localFiles.value.length >= MAX_FILES) {
+      rejected.push(t('quote.errors.too_many'))
+      break
+    }
     localFiles.value.push({ file: f, progress: 0, material: '', quantity: '' })
   }
+  fileErrors.value = rejected
 }
 function removeFile(idx: number) {
   localFiles.value.splice(idx, 1)
@@ -52,43 +74,36 @@ function fmtBytes(n: number) {
 
 function validate() {
   const e: Record<string, string> = {}
-  if (!isNonEmpty(form.name)) e.name = t('quote.fields.name')
-  if (!isEmail(form.email)) e.email = t('quote.fields.email')
-  if (!form.consent) e.consent = t('common.form.consent')
-  if (localFiles.value.length === 0) e.files = t('quote.drop.title')
+  if (!isNonEmpty(form.name)) e.name = t('common.form.required')
+  if (!isEmail(form.email)) e.email = t('common.form.invalid_email')
+  if (!form.consent) e.consent = t('common.form.consent_required')
+  if (localFiles.value.length === 0) e.files = t('common.form.files_required')
   for (const [i, f] of localFiles.value.entries()) {
-    if (!isNonEmpty(f.material)) e[`file_${i}_material`] = t('quote.fields.material')
-    if (!isNonEmpty(f.quantity)) e[`file_${i}_quantity`] = t('quote.fields.quantity')
+    if (!isNonEmpty(f.material)) e[`file_${i}_material`] = t('common.form.required')
+    if (!isNonEmpty(f.quantity)) e[`file_${i}_quantity`] = t('common.form.required')
   }
   errors.value = e
   return Object.keys(e).length === 0
 }
 
-async function uploadAll(): Promise<UploadedFile[]> {
+async function uploadAll(): Promise<void> {
   status.value = 'uploading'
-  const out: UploadedFile[] = []
-  for (let i = 0; i < localFiles.value.length; i++) {
-    const entry = localFiles.value[i]
-    if (entry.uploadId) {
-      out.push({ uploadId: entry.uploadId, filename: entry.file.name, size: entry.file.size, progress: 100 })
-      continue
-    }
+  for (const entry of localFiles.value) {
+    if (entry.uploadId) continue
     try {
       const result = await upload(entry.file, (pct) => { entry.progress = pct })
       entry.uploadId = result.uploadId
-      out.push({ ...result, progress: 100 })
     } catch (err) {
       entry.error = (err as Error).message
       throw err
     }
   }
-  return out
 }
 
 async function onSubmit() {
   if (!validate()) return
   try {
-    const uploaded = await uploadAll()
+    await uploadAll()
     status.value = 'submitting'
     const token = turnstileEl.value ? await getToken(turnstileEl.value) : 'dev-no-turnstile'
     await request('/quote/submit', {
@@ -101,12 +116,12 @@ async function onSubmit() {
         company: form.company,
         email: form.email,
         phone: form.phone,
-        files: uploaded.map((f, i) => ({
-          upload_id: f.uploadId,
-          filename: f.filename,
-          size: f.size,
-          material: localFiles.value[i].material,
-          quantity: localFiles.value[i].quantity,
+        files: localFiles.value.map((entry) => ({
+          upload_id: entry.uploadId,
+          filename: entry.file.name,
+          size: entry.file.size,
+          material: entry.material,
+          quantity: entry.quantity,
         })),
         turnstile_token: token,
       },
@@ -126,6 +141,7 @@ async function onSubmit() {
 
     <FileDropzone :accept="ACCEPT" @files-selected="onFilesSelected" />
     <p v-if="errors.files" class="text-[11px] text-red-600 mt-2">{{ errors.files }}</p>
+    <p v-for="msg in fileErrors" :key="msg" class="text-[11px] text-red-600 mt-2">{{ msg }}</p>
 
     <ul class="mt-3 space-y-3">
       <li v-for="(entry, idx) in localFiles" :key="idx" class="p-3 bg-surface border border-border rounded-[var(--radius-md)] space-y-3">
@@ -175,12 +191,12 @@ async function onSubmit() {
         </div>
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.deadline') }}</label>
-          <BaseInput v-model="form.deadline" :placeholder="t('quote.fields.deadline_placeholder')" />
+          <BaseInput v-model="form.deadline" :placeholder="t('quote.fields.deadline_placeholder')" :maxlength="120" />
         </div>
       </div>
       <div class="mt-4">
         <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.description') }}</label>
-        <BaseTextarea v-model="form.description" :placeholder="t('quote.fields.description_placeholder')" />
+        <BaseTextarea v-model="form.description" :placeholder="t('quote.fields.description_placeholder')" :maxlength="5000" />
       </div>
     </section>
 
@@ -189,23 +205,23 @@ async function onSubmit() {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.name') }} <span class="text-accent">*</span></label>
-          <BaseInput v-model="form.name" autocomplete="name" />
+          <BaseInput v-model="form.name" autocomplete="name" :maxlength="200" />
           <p v-if="errors.name" class="text-[11px] text-red-600 mt-1">{{ errors.name }}</p>
         </div>
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.company') }}</label>
-          <BaseInput v-model="form.company" autocomplete="organization" />
+          <BaseInput v-model="form.company" autocomplete="organization" :maxlength="200" />
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.email') }} <span class="text-accent">*</span></label>
-          <BaseInput v-model="form.email" type="email" autocomplete="email" />
+          <BaseInput v-model="form.email" type="email" autocomplete="email" :maxlength="254" />
           <p v-if="errors.email" class="text-[11px] text-red-600 mt-1">{{ errors.email }}</p>
         </div>
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.phone') }}</label>
-          <BaseInput v-model="form.phone" type="tel" autocomplete="tel" />
+          <BaseInput v-model="form.phone" type="tel" autocomplete="tel" :maxlength="80" />
         </div>
       </div>
     </section>

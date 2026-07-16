@@ -11,9 +11,13 @@
   --color-accent: #1652F0;
   --color-accent-hover: #1342C7;
   --color-accent-soft: #EBF1FF;
+  /* Hero: donker scène-decor + lichtblauw accent (gespiegeld in heroScene/scene.ts) */
+  --color-hero-night: #0B0E14;
+  --color-hero-highlight: #A9C2FF;
 
   --shadow-tile: 0 1px 2px rgba(11,11,15,0.04), 0 4px 12px rgba(11,11,15,0.04);
-  --shadow-tile-hover: 0 2px 4px rgba(11,11,15,0.06), 0 12px 28px rgba(11,11,15,0.08);
+  --shadow-tile-hover: 0 2px 4px rgba(11,11,15,0.07), 0 18px 40px rgba(11,11,15,0.12);
+  --shadow-btn: 0 1px 2px rgba(11,11,15,0.12), 0 4px 14px rgba(22,82,240,0.28);
 
   --font-sans: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
@@ -25,9 +29,9 @@
 }
 
 .label-eyebrow {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -40,10 +44,58 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Fijn blauwdruk-raster voor decoratieve vlakken */
+.blueprint-grid {
+  background-image:
+    linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(90deg, currentColor 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Accentvlakken: gradiënt met zachte lichtinval i.p.v. vlak blauw */
+.accent-panel {
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(255, 255, 255, 0.16) 0%, transparent 45%),
+    linear-gradient(135deg, #2563FF 0%, var(--color-accent) 48%, #0E3BB8 100%);
+}
+
+/* Actieve navigatie-link: accentstreepje eronder */
+.nav-active {
+  color: var(--color-text);
+}
+.nav-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -21px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
+/* Trapsgewijze reveal binnen een bento-grid */
+.bento-stagger > *:nth-child(2) { --reveal-delay: 60ms; }
+.bento-stagger > *:nth-child(3) { --reveal-delay: 120ms; }
+.bento-stagger > *:nth-child(4) { --reveal-delay: 180ms; }
+.bento-stagger > *:nth-child(5) { --reveal-delay: 240ms; }
+.bento-stagger > *:nth-child(n+6) { --reveal-delay: 300ms; }
+
 [data-reveal-target] {
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(14px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
 }
 [data-reveal-target][data-reveal="true"] {
   opacity: 1;

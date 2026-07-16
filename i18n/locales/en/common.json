@@ -17,13 +17,20 @@
     "phone": "+31 13 509 66 11",
     "rights": "All rights reserved."
   },
-  "lang": { "nl": "NL", "en": "EN" },
+  "lang": {
+    "nl": "NL",
+    "en": "EN"
+  },
   "form": {
     "required_marker": "*",
     "submit": "Send",
     "submitting": "Sending...",
     "success": "Thanks — we'll be in touch within 2 business days.",
     "error_generic": "Something went wrong. Please try again or email us directly.",
-    "consent": "I agree to the processing of my data per the privacy policy."
+    "consent": "I agree to the processing of my data per the privacy policy.",
+    "required": "This field is required.",
+    "invalid_email": "Enter a valid e-mail address.",
+    "consent_required": "Please agree to the processing of your data.",
+    "files_required": "Add at least one file."
   }
 }

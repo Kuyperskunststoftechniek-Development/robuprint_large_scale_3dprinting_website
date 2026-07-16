@@ -5,7 +5,11 @@
     "title_accent": "too big",
     "title_tail": "for ordinary 3D printing.",
     "subtitle": "HDPE and PP, robotic-arm extrusion, 4 × 4 × 8 m build envelope, post-mill finish. From Hapert to clients in NL/BE/DE.",
-    "cta": "Request a quote"
+    "cta": "Request a quote",
+    "cta_secondary": "View projects",
+    "spec_1": "4 × 4 × 8 m build volume",
+    "spec_2": "HDPE · PP · recyclate",
+    "spec_3": "Print + post-mill in one cell"
   },
   "tiles": {
     "envelope_eyebrow": "Build envelope",

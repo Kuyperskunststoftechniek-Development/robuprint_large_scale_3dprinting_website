@@ -23,9 +23,29 @@
     "phone": "Phone (optional)"
   },
   "options": {
-    "material": ["HDPE", "PP", "Food-grade HDPE", "Advise me"],
-    "quantity": ["1 (prototype)", "2 – 5", "6 – 25", "25+"],
-    "milling": ["No", "Yes, for clean finish", "Not sure"]
+    "material": [
+      "HDPE",
+      "PP",
+      "Food-grade HDPE",
+      "Advise me"
+    ],
+    "quantity": [
+      "1 (prototype)",
+      "2 – 5",
+      "6 – 25",
+      "25+"
+    ],
+    "milling": [
+      "No",
+      "Yes, for clean finish",
+      "Not sure"
+    ]
   },
-  "submit": "Send request"
+  "submit": "Send request",
+  "errors": {
+    "too_large": "File exceeds 1 GB: {name}",
+    "empty_file": "File is empty: {name}",
+    "bad_type": "File type not supported: {name}",
+    "too_many": "A maximum of 20 files per request."
+  }
 }

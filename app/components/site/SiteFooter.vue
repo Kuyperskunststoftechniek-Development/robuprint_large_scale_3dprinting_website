@@ -5,39 +5,42 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="border-t border-border bg-bg mt-24">
-    <div class="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-[13px] text-text-muted">
+  <footer class="bg-[#0B0B0F] text-white/60 mt-24">
+    <div class="max-w-[1200px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10 text-[13px]">
       <div class="md:col-span-2">
-        <p class="font-bold text-text text-[15px] mb-2">{{ t('common.company') }}</p>
-        <p class="text-[12px]">{{ t('common.parent_company_line') }}</p>
+        <NuxtLink :to="localePath('/')" class="inline-flex items-center gap-2 text-white">
+          <BrandMark />
+        </NuxtLink>
+        <p class="mt-3 text-[12px] max-w-[320px]">{{ t('common.parent_company_line') }}</p>
+        <p class="mt-6 font-mono text-[10.5px] tracking-[0.14em] uppercase text-white/40">{{ t('common.tagline_short') }}</p>
       </div>
 
       <div>
-        <p class="font-medium text-text mb-3 text-[12px] uppercase tracking-wider">{{ t('common.nav.what_we_do') }}</p>
-        <ul class="space-y-2">
-          <li><NuxtLink :to="localePath('/wat-wij-doen')">{{ t('common.nav.what_we_do') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/materialen')">{{ t('common.nav.materials') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/projecten')">{{ t('common.nav.projects') }}</NuxtLink></li>
+        <p class="font-mono font-medium text-white/40 mb-4 text-[10.5px] uppercase tracking-[0.14em]">{{ t('common.nav.what_we_do') }}</p>
+        <ul class="space-y-2.5">
+          <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/wat-wij-doen')">{{ t('common.nav.what_we_do') }}</NuxtLink></li>
+          <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/materialen')">{{ t('common.nav.materials') }}</NuxtLink></li>
+          <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/projecten')">{{ t('common.nav.projects') }}</NuxtLink></li>
         </ul>
       </div>
 
       <div>
-        <p class="font-medium text-text mb-3 text-[12px] uppercase tracking-wider">Info</p>
-        <ul class="space-y-2">
-          <li><NuxtLink :to="localePath('/over-ons')">{{ t('common.nav.about') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/contact')">{{ t('common.nav.contact') }}</NuxtLink></li>
-          <li><NuxtLink :to="localePath('/offerte')">{{ t('common.nav.quote_cta') }}</NuxtLink></li>
+        <p class="font-mono font-medium text-white/40 mb-4 text-[10.5px] uppercase tracking-[0.14em]">Info</p>
+        <ul class="space-y-2.5">
+          <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/over-ons')">{{ t('common.nav.about') }}</NuxtLink></li>
+          <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/contact')">{{ t('common.nav.contact') }}</NuxtLink></li>
+          <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/offerte')">{{ t('common.nav.quote_cta') }} →</NuxtLink></li>
         </ul>
-        <div class="mt-6 rounded-[var(--radius-md)] bg-surface-muted text-text p-3 text-[12px] leading-relaxed border border-border">
+        <div class="mt-6 rounded-[var(--radius-md)] bg-white/[0.04] border border-white/10 p-3.5 font-mono text-[11px] leading-relaxed text-white/50">
           <p>{{ t('common.footer.kvk') }}</p>
           <p>{{ t('common.footer.btw') }}</p>
-          <p class="text-text-muted mt-1">{{ t('common.footer.address') }}</p>
-          <p class="mt-1"><a href="tel:+31135096611" class="text-accent hover:underline">{{ t('common.footer.phone') }}</a></p>
+          <p class="mt-1.5">{{ t('common.footer.address') }}</p>
+          <p class="mt-1.5"><a href="tel:+31135096611" class="text-white/80 hover:text-white transition-colors">{{ t('common.footer.phone') }}</a></p>
         </div>
       </div>
     </div>
-    <div class="border-t border-border">
-      <p class="max-w-[1200px] mx-auto px-6 py-4 text-[11px] text-text-muted">© {{ year }} {{ t('common.company') }} — {{ t('common.footer.rights') }}</p>
+    <div class="border-t border-white/10">
+      <p class="max-w-[1200px] mx-auto px-6 py-5 font-mono text-[10.5px] tracking-[0.1em] text-white/35">© {{ year }} {{ t('common.company') }} — {{ t('common.footer.rights') }}</p>
     </div>
   </footer>
 </template>

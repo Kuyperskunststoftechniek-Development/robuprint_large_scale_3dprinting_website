@@ -57,4 +57,37 @@ describe('uploadFileInChunks', () => {
       onProgress: () => {},
     })).rejects.toThrow(/upload failed/i)
   })
+
+  it('retries a chunk after a transient network error', async () => {
+    fetchMock.mockRejectedValueOnce(new TypeError('Failed to fetch'))
+    const blob = makeBlob(100)
+    const onProgress = vi.fn()
+    await uploadFileInChunks({
+      url: 'https://api.test/quote/upload',
+      file: blob as File,
+      filename: 'a.stl',
+      uploadId: 'u-4',
+      chunkSize: CHUNK,
+      onProgress,
+      retryDelayMs: 1,
+    })
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+    expect(onProgress).toHaveBeenCalledWith(1, 1)
+  })
+
+  it('gives up after exhausting retry attempts', async () => {
+    fetchMock.mockRejectedValue(new TypeError('Failed to fetch'))
+    const blob = makeBlob(100)
+    await expect(uploadFileInChunks({
+      url: 'https://api.test/quote/upload',
+      file: blob as File,
+      filename: 'a.stl',
+      uploadId: 'u-5',
+      chunkSize: CHUNK,
+      onProgress: () => {},
+      maxAttempts: 3,
+      retryDelayMs: 1,
+    })).rejects.toThrow(/failed to fetch/i)
+    expect(fetchMock).toHaveBeenCalledTimes(3)
+  })
 })

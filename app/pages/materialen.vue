@@ -50,7 +50,7 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
         :key="i"
         :span="2"
       >
-        <p class="font-medium text-[11px] uppercase tracking-[0.14em] text-text-muted">{{ s.k }}</p>
+        <p class="font-mono font-medium text-[10.5px] uppercase tracking-[0.14em] text-text-muted">{{ s.k }}</p>
         <p class="text-[15px] font-semibold mt-1">{{ s.v }}</p>
       </BentoTile>
     </BentoGrid>

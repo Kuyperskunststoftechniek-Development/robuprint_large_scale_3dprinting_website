@@ -12,10 +12,10 @@ const turnstileEl = ref<HTMLElement | null>(null)
 
 function validate() {
   const e: Record<string, string> = {}
-  if (!isNonEmpty(form.name)) e.name = t('contact.fields.name')
-  if (!isEmail(form.email)) e.email = t('contact.fields.email')
-  if (!isNonEmpty(form.message)) e.message = t('contact.fields.message')
-  if (!form.consent) e.consent = t('common.form.consent')
+  if (!isNonEmpty(form.name)) e.name = t('common.form.required')
+  if (!isEmail(form.email)) e.email = t('common.form.invalid_email')
+  if (!isNonEmpty(form.message)) e.message = t('common.form.required')
+  if (!form.consent) e.consent = t('common.form.consent_required')
   errors.value = e
   return Object.keys(e).length === 0
 }
@@ -47,28 +47,28 @@ async function onSubmit() {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.name') }} <span class="text-accent">*</span></label>
-        <BaseInput v-model="form.name" autocomplete="name" required />
+        <BaseInput v-model="form.name" autocomplete="name" required :maxlength="200" />
         <p v-if="errors.name" class="text-[11px] text-red-600 mt-1">{{ errors.name }}</p>
       </div>
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.company') }}</label>
-        <BaseInput v-model="form.company" autocomplete="organization" />
+        <BaseInput v-model="form.company" autocomplete="organization" :maxlength="200" />
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.email') }} <span class="text-accent">*</span></label>
-        <BaseInput v-model="form.email" type="email" autocomplete="email" required />
+        <BaseInput v-model="form.email" type="email" autocomplete="email" required :maxlength="254" />
         <p v-if="errors.email" class="text-[11px] text-red-600 mt-1">{{ errors.email }}</p>
       </div>
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.phone') }}</label>
-        <BaseInput v-model="form.phone" type="tel" autocomplete="tel" />
+        <BaseInput v-model="form.phone" type="tel" autocomplete="tel" :maxlength="80" />
       </div>
     </div>
     <div>
       <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.message') }} <span class="text-accent">*</span></label>
-      <BaseTextarea v-model="form.message" :rows="6" required />
+      <BaseTextarea v-model="form.message" :rows="6" required :maxlength="5000" />
       <p v-if="errors.message" class="text-[11px] text-red-600 mt-1">{{ errors.message }}</p>
     </div>
     <label class="flex items-start gap-2 text-[12px] text-text-muted">

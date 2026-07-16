@@ -4,7 +4,7 @@ withDefaults(defineProps<{ gap?: 'sm' | 'md' }>(), { gap: 'md' })
 
 <template>
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 bento-stagger"
     :class="gap === 'sm' ? 'gap-2' : 'gap-3.5'"
   >
     <slot />

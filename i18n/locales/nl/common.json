@@ -17,13 +17,20 @@
     "phone": "013 509 66 11",
     "rights": "Alle rechten voorbehouden."
   },
-  "lang": { "nl": "NL", "en": "EN" },
+  "lang": {
+    "nl": "NL",
+    "en": "EN"
+  },
   "form": {
     "required_marker": "*",
     "submit": "Verstuur",
     "submitting": "Bezig...",
     "success": "Bedankt — we nemen binnen 2 werkdagen contact op.",
     "error_generic": "Er ging iets mis. Probeer het opnieuw of mail ons direct.",
-    "consent": "Ik ga akkoord met de verwerking van mijn gegevens conform de privacyverklaring."
+    "consent": "Ik ga akkoord met de verwerking van mijn gegevens conform de privacyverklaring.",
+    "required": "Dit veld is verplicht.",
+    "invalid_email": "Vul een geldig e-mailadres in.",
+    "consent_required": "Ga akkoord met de verwerking van je gegevens.",
+    "files_required": "Voeg minimaal één bestand toe."
   }
 }

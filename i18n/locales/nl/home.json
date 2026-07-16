@@ -5,7 +5,11 @@
     "title_accent": "te groot zijn",
     "title_tail": "voor reguliere 3D-print.",
     "subtitle": "HDPE en PP, robotic-arm extrusie, 4 × 4 × 8 m bouwruimte, post-mill finish.",
-    "cta": "Offerte aanvragen"
+    "cta": "Offerte aanvragen",
+    "cta_secondary": "Bekijk projecten",
+    "spec_1": "4 × 4 × 8 m bouwvolume",
+    "spec_2": "HDPE · PP · recyclaat",
+    "spec_3": "Print + post-mill in één cel"
   },
   "tiles": {
     "envelope_eyebrow": "Build envelope",

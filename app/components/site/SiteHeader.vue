@@ -26,8 +26,8 @@ const mobileOpen = ref(false)
           v-for="item in navItems"
           :key="item.to"
           :to="item.to"
-          class="hover:text-text transition-colors"
-          active-class="text-text"
+          class="relative hover:text-text transition-colors"
+          active-class="nav-active"
         >
           {{ item.label }}
         </NuxtLink>
@@ -36,7 +36,7 @@ const mobileOpen = ref(false)
       <div class="flex items-center gap-3">
         <NuxtLink
           :to="localePath('/offerte')"
-          class="hidden md:inline-flex items-center text-[12.5px] font-medium px-4 py-2 bg-accent text-white rounded-[var(--radius-md)] hover:bg-accent-hover transition-colors"
+          class="hidden md:inline-flex items-center text-[12.5px] font-medium px-4 py-2 bg-accent text-white rounded-[var(--radius-md)] hover:bg-accent-hover shadow-[var(--shadow-btn)] transition-all hover:-translate-y-px"
         >
           {{ t('common.nav.quote_cta') }} →
         </NuxtLink>

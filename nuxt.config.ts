@@ -1,8 +1,41 @@
 import tailwindcss from '@tailwindcss/vite'
 
+// Security headers for all routes. CSP allows exactly what the site uses:
+// self-hosted assets, inline scripts/styles (Nuxt hydration payload + Vue
+// style bindings), Cloudflare Turnstile, and the RoBuPRINT API.
+const securityHeaders = {
+  'Content-Security-Policy': [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data:",
+    "font-src 'self' data:",
+    "connect-src 'self' https://api.robuprint.com https://challenges.cloudflare.com",
+    "frame-src https://challenges.cloudflare.com",
+    "worker-src 'self' blob:",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    'upgrade-insecure-requests',
+  ].join('; '),
+  'Strict-Transport-Security': 'max-age=63072000; includeSubDomains',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+}
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-05-01',
   devtools: { enabled: true },
+  // Only in production builds: the CSP would block the localhost API and
+  // Vite's dev tooling during development.
+  $production: {
+    routeRules: {
+      '/**': { headers: securityHeaders },
+    },
+  },
   modules: [
     '@nuxtjs/i18n',
     '@nuxt/content',

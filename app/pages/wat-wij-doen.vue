@@ -16,6 +16,13 @@ const sections = computed(() => tm('capabilities.sections') as Section[])
 
 const SCHEM = ['envelope', 'robot-arm', 'shaft', 'layer-stack'] as const
 function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
+
+// Hoofdtegel vult de ruimte die overblijft naast de spec-tegels (rij = 6 kolommen)
+function mainSpan(s: Section) {
+  const specs = Math.min(s.specs.length, 3)
+  if (specs === 0) return 6
+  return Math.min(6 - specs, 4) as 3 | 4
+}
 </script>
 
 <template>
@@ -28,7 +35,7 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
     <div class="space-y-6">
       <BentoGrid v-for="(s, i) in sections" :key="i">
         <BentoTile
-          :span="3"
+          :span="mainSpan(s)"
           :variant="i % 2 === 0 ? 'muted' : 'accent'"
           :eyebrow="s.eyebrow"
         >
@@ -45,7 +52,7 @@ function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
           :span="1"
           variant="muted"
         >
-          <p class="font-medium text-[11px] text-text-muted uppercase tracking-[0.14em]">{{ spec.k }}</p>
+          <p class="font-mono font-medium text-[10.5px] text-text-muted uppercase tracking-[0.14em]">{{ spec.k }}</p>
           <p class="text-[13px] font-medium leading-relaxed">{{ spec.v }}</p>
         </BentoTile>
       </BentoGrid>

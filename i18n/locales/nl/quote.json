@@ -23,9 +23,29 @@
     "phone": "Telefoon (optioneel)"
   },
   "options": {
-    "material": ["HDPE", "PP", "Food-grade HDPE", "Advies graag"],
-    "quantity": ["1 (prototype)", "2 – 5", "6 – 25", "25+"],
-    "milling": ["Nee", "Ja, voor strakke finish", "Onzeker"]
+    "material": [
+      "HDPE",
+      "PP",
+      "Food-grade HDPE",
+      "Advies graag"
+    ],
+    "quantity": [
+      "1 (prototype)",
+      "2 – 5",
+      "6 – 25",
+      "25+"
+    ],
+    "milling": [
+      "Nee",
+      "Ja, voor strakke finish",
+      "Onzeker"
+    ]
   },
-  "submit": "Verstuur aanvraag"
+  "submit": "Verstuur aanvraag",
+  "errors": {
+    "too_large": "Bestand is groter dan 1 GB: {name}",
+    "empty_file": "Bestand is leeg: {name}",
+    "bad_type": "Bestandstype niet ondersteund: {name}",
+    "too_many": "Maximaal 20 bestanden per aanvraag."
+  }
 }

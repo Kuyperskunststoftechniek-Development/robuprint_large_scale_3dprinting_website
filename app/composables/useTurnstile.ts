@@ -13,6 +13,11 @@ const SCRIPT_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render
 
 let scriptPromise: Promise<void> | null = null
 
+// Rendering twice into the same container makes Turnstile throw, so remember
+// the widget id per container and remove the old widget before re-rendering
+// (e.g. when the user retries after a failed submit).
+const widgetIds = new WeakMap<HTMLElement, string>()
+
 function loadTurnstileScript(): Promise<void> {
   if (typeof window === 'undefined') return Promise.resolve()
   if (window.turnstile) return Promise.resolve()
@@ -23,7 +28,10 @@ function loadTurnstileScript(): Promise<void> {
     s.src = SCRIPT_SRC
     s.async = true
     s.defer = true
-    s.onerror = () => reject(new Error('Turnstile failed to load'))
+    s.onerror = () => {
+      scriptPromise = null
+      reject(new Error('Turnstile failed to load'))
+    }
     document.head.appendChild(s)
   })
   return scriptPromise
@@ -41,11 +49,22 @@ export function useTurnstile() {
     await loadTurnstileScript()
     return new Promise((resolve, reject) => {
       if (!window.turnstile) return reject(new Error('Turnstile not available'))
-      window.turnstile.render(container, {
-        sitekey: siteKey,
-        callback: (token) => resolve(token),
-        'error-callback': () => reject(new Error('Turnstile challenge failed')),
-      })
+      const previous = widgetIds.get(container)
+      if (previous !== undefined) {
+        try { window.turnstile.remove(previous) } catch { /* already gone */ }
+        widgetIds.delete(container)
+        container.innerHTML = ''
+      }
+      try {
+        const id = window.turnstile.render(container, {
+          sitekey: siteKey,
+          callback: (token) => resolve(token),
+          'error-callback': () => reject(new Error('Turnstile challenge failed')),
+        })
+        widgetIds.set(container, id)
+      } catch (err) {
+        reject(err instanceof Error ? err : new Error('Turnstile render failed'))
+      }
     })
   }
 

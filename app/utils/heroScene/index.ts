@@ -46,10 +46,12 @@ const SUBJECTS: Record<HeroSubject, SubjectConfig> = {
       vaseToolpath({ ...VASE_DEFAULTS, samplesPerLayer: Math.round(VASE_DEFAULTS.samplesPerLayer * s) }),
     beadWidth: 0.026,
     beadHeight: VASE_DEFAULTS.layerHeight * 1.15,
-    camDist: 3.9,
-    camBasePitch: -0.14,
-    target: [-0.85, 0.5, 0],
-    craneFactor: 0.5,
+    // Ruimer kader zodat de hele robot (hoogste elleboog-stand bij de start)
+    // samen met de vaas van begin tot eind in beeld blijft.
+    camDist: 5.7,
+    camBasePitch: -0.09,
+    target: [-1.0, 1.15, 0],
+    craneFactor: 0.18,
     railLength: 4,
     railZ: -2.4, // binnen het bereik (~2,9 m) van de echte robot
 

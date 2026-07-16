@@ -3,6 +3,7 @@ import {
   Group,
   Mesh,
   MeshStandardMaterial,
+  Quaternion,
   Sprite,
   SpriteMaterial,
   Vector3,
@@ -27,12 +28,21 @@ const P3 = new Vector3(650, 0, 1960) // A3 elleboog-pitch
 const P5 = new Vector3(2246, 0, 2015) // A5 pols-pitch
 const FLANGE_X = 2365 // flensvlak (x) op de hoogte van A5
 
-// Extruder-plaatsing in het flensframe (mm): om de as z geroteerd zodat de
-// lange as (y) langs de flensnormaal valt; nozzle-einde op lokaal y = -423.
-const EXT_ROT_Z = Math.PI / 2
-const EXT_X = 200 // langs de flensnormaal naar buiten (motor vrij van de pols)
-const EXT_Z = -80 // montageplaat (z 0..160) centreren
-const EXT_NOZZLE = 423 // afstand flensframe-origin → nozzletip langs de normaal
+// Extruder HAAKS op as 6 gemonteerd: de lange as staat loodrecht op de
+// flensnormaal en wijst recht omlaag. As 5 draait mee (zie apply) zodat de
+// flensnormaal horizontaal blijft terwijl de nozzle verticaal georiënteerd blijft.
+//
+// Montage-rotatie: eerst om +x (nozzle omlaag), dan om +z (montageplaat vlak
+// tegen het flensvlak, nozzle gecentreerd op de reikstraal).
+const EXT_QUAT = new Quaternion()
+  .setFromAxisAngle(new Vector3(1, 0, 0), Math.PI / 2)
+  .premultiply(new Quaternion().setFromAxisAngle(new Vector3(0, 0, 1), Math.PI / 2))
+// STL-nozzle (0, -422.6, 73) na EXT_QUAT, vóór translatie: (73, 0, -422.6).
+const NOZZLE_ROT = new Vector3(73, 0, -422.6)
+// Gekozen nozzle-tip in het flensframe (mm): iets vóór en ruim onder het flensvlak.
+const NOZZLE_FLANGE = new Vector3(100, 0, -600)
+// Translatie zodat de geroteerde nozzle exact op NOZZLE_FLANGE valt.
+const EXT_POS = NOZZLE_FLANGE.clone().sub(NOZZLE_ROT)
 
 const PLATE_TOP = 0.33 // bovenkant sledeplaat (wereld, m) — robotvoet staat hierop
 const MM = 0.001
@@ -44,7 +54,9 @@ const L1 = P3.clone().sub(P2).length() * MM
 const L2 = P5.clone().sub(P3).length() * MM
 const REST1 = Math.atan2(P3.z - P2.z, P3.x - P2.x) // elevatie bovenarm in exportpose
 const REST2 = Math.atan2(P5.z - P3.z, P5.x - P3.x) // elevatie onderarm in exportpose
-const WRIST_CLEAR = (FLANGE_X - P5.x + EXT_X + EXT_NOZZLE) * MM
+// Nozzle-tip t.o.v. het polspunt P5 (m): naar voren langs de reikstraal + omlaag.
+const NOZZLE_FWD = (FLANGE_X - P5.x + NOZZLE_FLANGE.x) * MM
+const NOZZLE_DROP = -NOZZLE_FLANGE.z * MM
 const IK_EPS = 0.02
 
 const PART_STYLE: Record<string, 'body' | 'dark' | 'black' | 'steel'> = {
@@ -128,8 +140,8 @@ export async function buildCadMachine(
   flangeG.position.set(FLANGE_X - P5.x, 0, 0)
   wristG.add(flangeG)
   const extruder = part('extruder')
-  extruder.rotation.z = EXT_ROT_Z
-  extruder.position.set(EXT_X, 0, EXT_Z)
+  extruder.quaternion.copy(EXT_QUAT)
+  extruder.position.copy(EXT_POS)
   flangeG.add(extruder)
 
   // Subtiele warmtegloed op de nozzletip (sprite-schaal in mm binnen de assembly).
@@ -143,7 +155,7 @@ export async function buildCadMachine(
     }),
   )
   glow.scale.setScalar(160)
-  glow.position.set(EXT_X + EXT_NOZZLE, 0, EXT_Z + 80)
+  glow.position.copy(NOZZLE_FLANGE)
   flangeG.add(glow)
 
   // IK-state: huidige (gelerpte) waarden.
@@ -151,14 +163,14 @@ export async function buildCadMachine(
   const solved = { yaw: 0, t2: 0, t3: 0 }
 
   function solve(target: Vector3): void {
-    const wx = target.x
-    const wy = target.y + WRIST_CLEAR
-    const wz = target.z
-    const dx = wx - current.x
-    const dzH = wz - railZ
+    // Nozzle zit NOZZLE_DROP onder en NOZZLE_FWD vóór het polspunt P5 (langs de
+    // reikstraal). Het polspunt ligt dus hoger en NOZZLE_FWD dichter bij de basis.
+    const wy = target.y + NOZZLE_DROP
+    const dx = target.x - current.x
+    const dzH = target.z - railZ
     const dHoriz = Math.max(0.3, Math.hypot(dx, dzH))
     solved.yaw = Math.atan2(-dzH, dx)
-    const planar = Math.max(0.15, dHoriz - R0)
+    const planar = Math.max(0.15, dHoriz - NOZZLE_FWD - R0)
     const dy = wy - SHOULDER_H
     const d = Math.min(L1 + L2 - IK_EPS, Math.max(Math.abs(L1 - L2) + IK_EPS, Math.hypot(planar, dy)))
     const a = Math.atan2(dy, planar)
@@ -176,8 +188,9 @@ export async function buildCadMachine(
     yawG.rotation.z = current.yaw
     shoulderG.rotation.y = current.t2
     elbowG.rotation.y = current.t3
-    // A5 houdt de flens (en dus de extruder) exact verticaal omlaag.
-    wristG.rotation.y = Math.PI / 2 - current.t2 - current.t3
+    // A5 compenseert de arm-elevatie zodat de flensnormaal horizontaal blijft;
+    // de haaks gemonteerde extruder wijst daardoor altijd recht omlaag.
+    wristG.rotation.y = -current.t2 - current.t3
   }
 
   function pose(nozzleTarget: Vector3, dt: number): void {

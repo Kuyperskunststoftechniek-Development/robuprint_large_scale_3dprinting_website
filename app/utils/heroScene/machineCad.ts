@@ -40,7 +40,8 @@ const EXT_QUAT = new Quaternion()
 // STL-nozzle (0, -422.6, 73) na EXT_QUAT, vóór translatie: (73, 0, -422.6).
 const NOZZLE_ROT = new Vector3(73, 0, -422.6)
 // Gekozen nozzle-tip in het flensframe (mm): iets vóór en ruim onder het flensvlak.
-const NOZZLE_FLANGE = new Vector3(100, 0, -600)
+// z zo gekozen dat de montageplaat gelijk ligt met het A6-flensvlak (i.p.v. eronder).
+const NOZZLE_FLANGE = new Vector3(100, 0, -423)
 // Translatie zodat de geroteerde nozzle exact op NOZZLE_FLANGE valt.
 const EXT_POS = NOZZLE_FLANGE.clone().sub(NOZZLE_ROT)
 

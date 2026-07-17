@@ -15,11 +15,12 @@ const sections = computed(() => tm('about.sections') as Section[])
 </script>
 
 <template>
-  <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
+  <div class="max-w-[1200px] mx-auto px-6 pt-20 md:pt-28 pb-24">
 
-    <section class="max-w-[760px] mb-12" data-reveal-target>
-      <h1 class="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.04]">{{ t('about.title') }}</h1>
-      <p class="mt-4 text-text-muted text-[15px] max-w-[620px]">{{ t('about.lead') }}</p>
+    <section class="max-w-[760px] mb-14 md:mb-20" data-reveal-target>
+      <p class="label-eyebrow mb-4"><span class="inline-block w-1.5 h-1.5 rounded-full bg-accent mr-2 align-middle" />{{ t('about.eyebrow') }}</p>
+      <h1 class="text-[44px] md:text-[68px] font-extrabold tracking-[-0.03em] leading-[1.0]">{{ t('about.title') }}</h1>
+      <p class="mt-5 text-text-muted text-[16px] md:text-[17px] leading-relaxed max-w-[620px]">{{ t('about.lead') }}</p>
     </section>
 
     <BentoGrid>

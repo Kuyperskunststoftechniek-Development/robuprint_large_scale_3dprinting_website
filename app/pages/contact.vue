@@ -9,9 +9,10 @@ onMounted(() => observeAll())
 </script>
 
 <template>
-  <div class="max-w-[1200px] mx-auto px-6 py-20">
-    <h1 class="text-[40px] md:text-[48px] font-extrabold tracking-tight">{{ t('contact.title') }}</h1>
-    <p class="mt-4 text-text-muted text-[15px] max-w-[600px]">{{ t('contact.lead') }}</p>
+  <div class="max-w-[1200px] mx-auto px-6 pt-20 md:pt-28 pb-24">
+    <p class="label-eyebrow mb-4"><span class="inline-block w-1.5 h-1.5 rounded-full bg-accent mr-2 align-middle" />{{ t('contact.eyebrow') }}</p>
+    <h1 class="text-[44px] md:text-[68px] font-extrabold tracking-[-0.03em] leading-[1.0]">{{ t('contact.title') }}</h1>
+    <p class="mt-5 text-text-muted text-[16px] md:text-[17px] leading-relaxed max-w-[600px]">{{ t('contact.lead') }}</p>
 
     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="md:col-span-2">

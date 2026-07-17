@@ -34,7 +34,9 @@ export const PALETTES: Record<HeroTheme, Palette> = {
     ground: 0xfbfaf8,
     hemiSky: 0xffffff,
     hemiGround: 0xd8d4ca,
+    hemiIntensity: 1.15,
     dir: 0xffffff,
+    dirIntensity: 2.2,
     shadowOpacity: 0.22,
   },
   dark: {
@@ -42,15 +44,17 @@ export const PALETTES: Record<HeroTheme, Palette> = {
     grid: 0xa9c2ff,
     gridOpacity: 0.08,
     envelope: 0xa9c2ff,
-    bead: 0xd9dee8,
+    bead: 0xdfe4ee,
     beadHot: 0xf2e4c9, // vers gesmolten kunststof: warm, glanzend
     machine: 0xff5f13, // industrieel robot-oranje (merkloos), iets warmer voor donkere scène
-    machineAccent: 0x3a3e46, // antraciet gietwerk/motoren
+    machineAccent: 0x474d58, // antraciet gietwerk/motoren, iets opgelicht voor leesbaarheid
     figure: 0x8a93a3,
     ground: 0x0b0e14,
-    hemiSky: 0x9fb4e8,
-    hemiGround: 0x1a2030,
+    hemiSky: 0xb6c8ef,
+    hemiGround: 0x2b3145,
+    hemiIntensity: 2,
     dir: 0xeff3ff,
+    dirIntensity: 3,
     shadowOpacity: 0.5,
   },
 }
@@ -182,8 +186,8 @@ export function buildEnvironment(palette: Palette, withShadows: boolean): Enviro
   scene.background = null // CSS levert de achtergrondkleur (renderer alpha: true)
   scene.fog = new Fog(palette.fog, 9, 24)
 
-  const hemi = new HemisphereLight(palette.hemiSky, palette.hemiGround, 1.15)
-  const dir = new DirectionalLight(palette.dir, 2.2)
+  const hemi = new HemisphereLight(palette.hemiSky, palette.hemiGround, palette.hemiIntensity)
+  const dir = new DirectionalLight(palette.dir, palette.dirIntensity)
   dir.position.set(4, 7, 3)
   if (withShadows) {
     dir.castShadow = true

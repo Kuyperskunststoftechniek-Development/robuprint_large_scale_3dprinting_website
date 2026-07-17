@@ -30,11 +30,11 @@ onMounted(() => observeAll())
         v-if="project?.cover"
         :src="project.cover"
         :alt="project.title"
-        class="w-full rounded-[var(--radius-xl)] mb-8 aspect-[16/10] object-cover"
+        class="w-full rounded-[var(--radius-xl)] ring-1 ring-white/10 mb-8 aspect-[16/10] object-cover"
         sizes="100vw md:760px"
         loading="eager"
       />
-      <div class="prose prose-neutral">
+      <div class="prose">
         <h1 v-if="project?.title">{{ project.title }}</h1>
         <ContentRenderer v-if="project" :value="project" />
       </div>
@@ -47,7 +47,7 @@ onMounted(() => observeAll())
           :key="i"
           :src="g"
           :alt="`${project.title} — ${i + 2}`"
-          class="w-full rounded-[var(--radius-md)] aspect-[4/3] object-cover"
+          class="w-full rounded-[var(--radius-md)] ring-1 ring-white/10 aspect-[4/3] object-cover"
           sizes="50vw md:380px"
           loading="lazy"
         />

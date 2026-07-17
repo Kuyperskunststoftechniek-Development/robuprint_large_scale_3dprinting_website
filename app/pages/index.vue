@@ -32,12 +32,12 @@ const heroSpeed = 0.15
       <div
         class="absolute inset-0 pointer-events-none"
         :class="dark
-          ? 'bg-gradient-to-r from-black/75 via-black/40 to-transparent'
+          ? 'bg-gradient-to-r from-[#0A0C10]/85 via-[#0A0C10]/45 to-transparent'
           : 'bg-gradient-to-r from-bg/95 via-bg/55 to-transparent'"
       />
       <div
         v-if="dark"
-        class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/50 via-transparent to-transparent"
+        class="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A0C10]/60 via-transparent to-transparent"
       />
 
       <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6">
@@ -63,7 +63,7 @@ const heroSpeed = 0.15
           <div class="mt-8 flex flex-wrap items-center gap-3">
             <NuxtLink
               :to="localePath('/offerte')"
-              class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 bg-accent text-white rounded-[var(--radius-md)] hover:bg-accent-hover shadow-[var(--shadow-btn)] transition-all hover:-translate-y-px"
+              class="inline-flex items-center text-[13px] font-semibold px-5 py-2.5 bg-accent text-bg rounded-[var(--radius-md)] hover:bg-accent-hover shadow-[var(--shadow-btn)] transition-all hover:-translate-y-px"
             >
               {{ t('home.hero.cta') }} →
             </NuxtLink>
@@ -95,10 +95,14 @@ const heroSpeed = 0.15
       </div>
     </section>
 
-    <div class="max-w-[1200px] mx-auto px-6 pt-12 md:pt-16 pb-12">
+    <div class="relative max-w-[1200px] mx-auto px-6 pt-16 md:pt-24 pb-24">
+      <div
+        class="absolute inset-x-0 top-0 h-[480px] blueprint-grid text-hero-highlight/[0.04] [mask-image:linear-gradient(to_bottom,black,transparent)] pointer-events-none"
+        aria-hidden="true"
+      />
       <BentoGrid>
         <BentoTile :span="3" variant="muted" :eyebrow="t('home.tiles.envelope_eyebrow')">
-          <p class="text-[48px] md:text-[56px] font-extrabold tracking-[-0.03em] leading-none mt-1">4×4×8</p>
+          <p class="text-[64px] md:text-[84px] font-extrabold tracking-[-0.04em] leading-none mt-1 glow-number">4×4×8</p>
           <p class="font-mono text-[10.5px] tracking-[0.14em] text-text-muted">{{ t('home.tiles.envelope_caption') }}</p>
           <p class="text-[13px] text-text-muted mt-2 max-w-[280px]">{{ t('home.tiles.envelope_body') }}</p>
           <template #illustration>
@@ -110,7 +114,7 @@ const heroSpeed = 0.15
           <h2 class="text-[20px] md:text-[22px] font-bold leading-snug max-w-[320px]">{{ t('home.tiles.process_title') }}</h2>
           <p class="text-[13px] text-white/80 mt-1 max-w-[300px]">{{ t('home.tiles.process_body') }}</p>
           <template #illustration>
-            <SchemIllustration name="robot-arm" class="w-24 h-24 text-white" />
+            <SchemIllustration name="robot-arm" class="w-24 h-24 text-accent" />
           </template>
         </BentoTile>
 
@@ -139,10 +143,10 @@ const heroSpeed = 0.15
       </BentoGrid>
 
       <section class="relative overflow-hidden mt-6 rounded-[var(--radius-xl)] accent-panel text-white p-7 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-reveal-target>
-        <div class="absolute inset-0 blueprint-grid text-white/[0.07] pointer-events-none" aria-hidden="true" />
-        <SchemIllustration name="robot-arm" class="absolute -right-6 -bottom-8 w-44 h-44 text-white/15 pointer-events-none" aria-hidden="true" />
+        <div class="absolute inset-0 blueprint-grid text-hero-highlight/[0.08] pointer-events-none" aria-hidden="true" />
+        <SchemIllustration name="robot-arm" class="absolute -right-6 -bottom-8 w-44 h-44 text-accent/20 pointer-events-none" aria-hidden="true" />
         <h2 class="relative text-[20px] md:text-[24px] font-bold leading-snug max-w-[520px]">{{ t('home.cta_band.title') }}</h2>
-        <NuxtLink :to="localePath('/offerte')" class="relative inline-flex items-center self-start md:self-auto text-[13px] font-medium px-5 py-2.5 bg-white text-accent rounded-[var(--radius-md)] hover:bg-white/90 transition-all hover:-translate-y-px shadow-[0_2px_10px_rgba(0,0,0,0.18)]">
+        <NuxtLink :to="localePath('/offerte')" class="relative inline-flex items-center self-start md:self-auto text-[13px] font-semibold px-5 py-2.5 bg-accent text-bg rounded-[var(--radius-md)] hover:bg-accent-hover transition-all hover:-translate-y-px shadow-[var(--shadow-btn)]">
           {{ t('home.cta_band.button') }} →
         </NuxtLink>
       </section>

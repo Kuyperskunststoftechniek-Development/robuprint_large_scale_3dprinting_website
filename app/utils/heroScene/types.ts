@@ -39,6 +39,8 @@ export interface Palette {
   ground: number
   hemiSky: number
   hemiGround: number
+  hemiIntensity: number
   dir: number
+  dirIntensity: number
   shadowOpacity: number
 }

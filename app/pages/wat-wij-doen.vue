@@ -26,10 +26,11 @@ function mainSpan(s: Section) {
 </script>
 
 <template>
-  <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
-    <section class="max-w-[760px] mb-12" data-reveal-target>
-      <h1 class="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.04]">{{ t('capabilities.title') }}</h1>
-      <p class="mt-4 text-text-muted text-[15px] max-w-[600px]">{{ t('capabilities.lead') }}</p>
+  <div class="max-w-[1200px] mx-auto px-6 pt-20 md:pt-28 pb-24">
+    <section class="max-w-[760px] mb-14 md:mb-20" data-reveal-target>
+      <p class="label-eyebrow mb-4"><span class="inline-block w-1.5 h-1.5 rounded-full bg-accent mr-2 align-middle" />{{ t('capabilities.eyebrow') }}</p>
+      <h1 class="text-[44px] md:text-[68px] font-extrabold tracking-[-0.03em] leading-[1.0]">{{ t('capabilities.title') }}</h1>
+      <p class="mt-5 text-text-muted text-[16px] md:text-[17px] leading-relaxed max-w-[600px]">{{ t('capabilities.lead') }}</p>
     </section>
 
     <div class="space-y-6">
@@ -42,7 +43,7 @@ function mainSpan(s: Section) {
           <h2 class="text-[24px] md:text-[28px] font-bold tracking-tight leading-tight max-w-[320px]">{{ s.heading }}</h2>
           <p class="text-[13px] mt-2 max-w-[320px]" :class="i % 2 === 0 ? 'text-text-muted' : 'text-white/85'">{{ s.body }}</p>
           <template #illustration>
-            <SchemIllustration :name="schemFor(i)" class="w-28 h-28" :class="i % 2 === 0 ? 'text-accent' : 'text-white'" />
+            <SchemIllustration :name="schemFor(i)" class="w-28 h-28 text-accent" />
           </template>
         </BentoTile>
 

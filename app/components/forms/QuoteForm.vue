@@ -140,13 +140,13 @@ async function onSubmit() {
     <p class="text-[14px] text-text-muted mb-8">{{ t('quote.lead') }}</p>
 
     <FileDropzone :accept="ACCEPT" @files-selected="onFilesSelected" />
-    <p v-if="errors.files" class="text-[11px] text-red-600 mt-2">{{ errors.files }}</p>
-    <p v-for="msg in fileErrors" :key="msg" class="text-[11px] text-red-600 mt-2">{{ msg }}</p>
+    <p v-if="errors.files" class="text-[11px] text-red-400 mt-2">{{ errors.files }}</p>
+    <p v-for="msg in fileErrors" :key="msg" class="text-[11px] text-red-400 mt-2">{{ msg }}</p>
 
     <ul class="mt-3 space-y-3">
       <li v-for="(entry, idx) in localFiles" :key="idx" class="p-3 bg-surface border border-border rounded-[var(--radius-md)] space-y-3">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 bg-accent text-white rounded-md flex items-center justify-center text-[10px] font-semibold tracking-wider">
+          <div class="w-9 h-9 bg-accent text-bg rounded-md flex items-center justify-center text-[10px] font-semibold tracking-wider">
             {{ entry.file.name.split('.').pop()?.toUpperCase().slice(0,3) }}
           </div>
           <div class="flex-1 min-w-0">
@@ -154,7 +154,7 @@ async function onSubmit() {
             <p class="text-[11px] text-text-muted">
               {{ fmtBytes(entry.file.size) }}
               <span v-if="entry.progress > 0 && entry.progress < 100"> · {{ entry.progress }}%</span>
-              <span v-if="entry.error" class="text-red-600"> · {{ entry.error }}</span>
+              <span v-if="entry.error" class="text-red-400"> · {{ entry.error }}</span>
             </p>
             <div v-if="entry.progress > 0 && entry.progress < 100" class="h-[3px] bg-border rounded mt-2 overflow-hidden">
               <div class="h-full bg-accent" :style="{ width: entry.progress + '%' }" />
@@ -169,12 +169,12 @@ async function onSubmit() {
             <div class="flex gap-1.5 flex-wrap">
               <BasePill v-for="m in materialOpts" :key="m" :selected="entry.material === m" @click="entry.material = m">{{ m }}</BasePill>
             </div>
-            <p v-if="errors[`file_${idx}_material`]" class="text-[11px] text-red-600 mt-1">{{ errors[`file_${idx}_material`] }}</p>
+            <p v-if="errors[`file_${idx}_material`]" class="text-[11px] text-red-400 mt-1">{{ errors[`file_${idx}_material`] }}</p>
           </div>
           <div>
             <label class="block text-[11px] font-medium mb-1.5">{{ t('quote.fields.quantity') }} <span class="text-accent">*</span></label>
             <BaseInput v-model="entry.quantity" type="number" min="1" inputmode="numeric" />
-            <p v-if="errors[`file_${idx}_quantity`]" class="text-[11px] text-red-600 mt-1">{{ errors[`file_${idx}_quantity`] }}</p>
+            <p v-if="errors[`file_${idx}_quantity`]" class="text-[11px] text-red-400 mt-1">{{ errors[`file_${idx}_quantity`] }}</p>
           </div>
         </div>
       </li>
@@ -206,7 +206,7 @@ async function onSubmit() {
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.name') }} <span class="text-accent">*</span></label>
           <BaseInput v-model="form.name" autocomplete="name" :maxlength="200" />
-          <p v-if="errors.name" class="text-[11px] text-red-600 mt-1">{{ errors.name }}</p>
+          <p v-if="errors.name" class="text-[11px] text-red-400 mt-1">{{ errors.name }}</p>
         </div>
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.company') }}</label>
@@ -217,7 +217,7 @@ async function onSubmit() {
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.email') }} <span class="text-accent">*</span></label>
           <BaseInput v-model="form.email" type="email" autocomplete="email" :maxlength="254" />
-          <p v-if="errors.email" class="text-[11px] text-red-600 mt-1">{{ errors.email }}</p>
+          <p v-if="errors.email" class="text-[11px] text-red-400 mt-1">{{ errors.email }}</p>
         </div>
         <div>
           <label class="block text-[12px] font-medium mb-1.5">{{ t('quote.fields.phone') }}</label>
@@ -237,9 +237,9 @@ async function onSubmit() {
            t('quote.submit') }} →
       </BaseButton>
     </div>
-    <p v-if="errors.consent" class="text-[11px] text-red-600 mt-2">{{ errors.consent }}</p>
+    <p v-if="errors.consent" class="text-[11px] text-red-400 mt-2">{{ errors.consent }}</p>
     <div ref="turnstileEl" class="mt-3" />
     <p v-if="status === 'success'" class="text-[13px] text-accent mt-3">{{ t('common.form.success') }}</p>
-    <p v-else-if="status === 'error'" class="text-[13px] text-red-600 mt-3">{{ t('common.form.error_generic') }}</p>
+    <p v-else-if="status === 'error'" class="text-[13px] text-red-400 mt-3">{{ t('common.form.error_generic') }}</p>
   </form>
 </template>

@@ -18,10 +18,11 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
 </script>
 
 <template>
-  <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
-    <section class="max-w-[760px] mb-12" data-reveal-target>
-      <h1 class="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.04]">{{ t('materials.title') }}</h1>
-      <p class="mt-4 text-text-muted text-[15px] max-w-[620px]">{{ t('materials.lead') }}</p>
+  <div class="max-w-[1200px] mx-auto px-6 pt-20 md:pt-28 pb-24">
+    <section class="max-w-[760px] mb-14 md:mb-20" data-reveal-target>
+      <p class="label-eyebrow mb-4"><span class="inline-block w-1.5 h-1.5 rounded-full bg-accent mr-2 align-middle" />{{ t('materials.eyebrow') }}</p>
+      <h1 class="text-[44px] md:text-[68px] font-extrabold tracking-[-0.03em] leading-[1.0]">{{ t('materials.title') }}</h1>
+      <p class="mt-5 text-text-muted text-[16px] md:text-[17px] leading-relaxed max-w-[620px]">{{ t('materials.lead') }}</p>
     </section>
 
     <BentoGrid>
@@ -41,7 +42,7 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
       <BentoTile :span="6" variant="accent" :eyebrow="t('materials.recycle_heading')">
         <h2 class="text-[22px] md:text-[26px] font-bold leading-tight max-w-[640px]">{{ t('materials.recycle_body') }}</h2>
         <template #illustration>
-          <SchemIllustration name="recyclate-flow" class="w-40 h-20 text-white" />
+          <SchemIllustration name="recyclate-flow" class="w-40 h-20 text-accent" />
         </template>
       </BentoTile>
 

@@ -14,7 +14,7 @@ const mobileOpen = ref(false)
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 bg-bg/85 backdrop-blur border-b border-border">
+  <header class="sticky top-0 z-50 bg-bg/70 backdrop-blur-md border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-6">
       <NuxtLink :to="localePath('/')" class="inline-flex items-center gap-2 font-bold text-[15px] tracking-tight">
         <BrandMark />
@@ -36,7 +36,7 @@ const mobileOpen = ref(false)
       <div class="flex items-center gap-3">
         <NuxtLink
           :to="localePath('/offerte')"
-          class="hidden md:inline-flex items-center text-[12.5px] font-medium px-4 py-2 bg-accent text-white rounded-[var(--radius-md)] hover:bg-accent-hover shadow-[var(--shadow-btn)] transition-all hover:-translate-y-px"
+          class="hidden md:inline-flex items-center text-[12.5px] font-semibold px-4 py-2 bg-accent text-bg rounded-[var(--radius-md)] hover:bg-accent-hover shadow-[var(--shadow-btn)] transition-all hover:-translate-y-px"
         >
           {{ t('common.nav.quote_cta') }} →
         </NuxtLink>

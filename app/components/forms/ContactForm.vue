@@ -48,7 +48,7 @@ async function onSubmit() {
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.name') }} <span class="text-accent">*</span></label>
         <BaseInput v-model="form.name" autocomplete="name" required :maxlength="200" />
-        <p v-if="errors.name" class="text-[11px] text-red-600 mt-1">{{ errors.name }}</p>
+        <p v-if="errors.name" class="text-[11px] text-red-400 mt-1">{{ errors.name }}</p>
       </div>
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.company') }}</label>
@@ -59,7 +59,7 @@ async function onSubmit() {
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.email') }} <span class="text-accent">*</span></label>
         <BaseInput v-model="form.email" type="email" autocomplete="email" required :maxlength="254" />
-        <p v-if="errors.email" class="text-[11px] text-red-600 mt-1">{{ errors.email }}</p>
+        <p v-if="errors.email" class="text-[11px] text-red-400 mt-1">{{ errors.email }}</p>
       </div>
       <div>
         <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.phone') }}</label>
@@ -69,18 +69,18 @@ async function onSubmit() {
     <div>
       <label class="block text-[12px] font-medium mb-1.5">{{ t('contact.fields.message') }} <span class="text-accent">*</span></label>
       <BaseTextarea v-model="form.message" :rows="6" required :maxlength="5000" />
-      <p v-if="errors.message" class="text-[11px] text-red-600 mt-1">{{ errors.message }}</p>
+      <p v-if="errors.message" class="text-[11px] text-red-400 mt-1">{{ errors.message }}</p>
     </div>
     <label class="flex items-start gap-2 text-[12px] text-text-muted">
       <input v-model="form.consent" type="checkbox" class="mt-0.5">
       <span>{{ t('common.form.consent') }}</span>
     </label>
-    <p v-if="errors.consent" class="text-[11px] text-red-600">{{ errors.consent }}</p>
+    <p v-if="errors.consent" class="text-[11px] text-red-400">{{ errors.consent }}</p>
     <div ref="turnstileEl" />
     <BaseButton type="submit" variant="accent" :disabled="status === 'submitting'">
       {{ status === 'submitting' ? t('common.form.submitting') : t('contact.submit') }}
     </BaseButton>
     <p v-if="status === 'success'" class="text-[13px] text-accent">{{ t('common.form.success') }}</p>
-    <p v-else-if="status === 'error'" class="text-[13px] text-red-600">{{ t('common.form.error_generic') }}</p>
+    <p v-else-if="status === 'error'" class="text-[13px] text-red-400">{{ t('common.form.error_generic') }}</p>
   </form>
 </template>

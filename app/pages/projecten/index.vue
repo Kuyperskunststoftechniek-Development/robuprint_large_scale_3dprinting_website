@@ -24,10 +24,11 @@ function slugOf(path: string) {
 </script>
 
 <template>
-  <div class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
-    <section class="max-w-[760px] mb-10" data-reveal-target>
-      <h1 class="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.04]">{{ t('projects.title') }}</h1>
-      <p class="mt-4 text-text-muted text-[15px] max-w-[620px]">{{ t('projects.lead') }}</p>
+  <div class="max-w-[1200px] mx-auto px-6 pt-20 md:pt-28 pb-24">
+    <section class="max-w-[760px] mb-14 md:mb-20" data-reveal-target>
+      <p class="label-eyebrow mb-4"><span class="inline-block w-1.5 h-1.5 rounded-full bg-accent mr-2 align-middle" />{{ t('projects.eyebrow') }}</p>
+      <h1 class="text-[44px] md:text-[68px] font-extrabold tracking-[-0.03em] leading-[1.0]">{{ t('projects.title') }}</h1>
+      <p class="mt-5 text-text-muted text-[16px] md:text-[17px] leading-relaxed max-w-[620px]">{{ t('projects.lead') }}</p>
     </section>
 
     <div v-if="!projects || projects.length === 0" class="rounded-xl border border-border bg-surface-muted p-10 text-center text-text-muted">
@@ -40,7 +41,7 @@ function slugOf(path: string) {
           v-for="p in projects"
           :key="p.path"
           :href="`#${slugOf(p.path)}`"
-          class="inline-flex items-center text-[13px] font-medium px-4 py-2 rounded-full border border-border hover:bg-accent hover:text-white hover:border-accent transition-colors"
+          class="inline-flex items-center text-[13px] font-medium px-4 py-2 rounded-full border border-border hover:bg-accent hover:text-bg hover:border-accent transition-colors"
         >
           {{ p.title }}
         </a>
@@ -57,7 +58,7 @@ function slugOf(path: string) {
           v-if="p.cover"
           :src="p.cover"
           :alt="p.title"
-          class="w-full aspect-[21/9] object-cover rounded-[var(--radius-xl)] mb-8"
+          class="w-full aspect-[21/9] object-cover rounded-[var(--radius-xl)] ring-1 ring-white/10 mb-8"
           sizes="100vw md:1200px"
           loading="lazy"
         />
@@ -68,7 +69,7 @@ function slugOf(path: string) {
           <span v-if="p.material"><span class="text-text">{{ t('projects.aside.material') }}:</span> {{ p.material }}</span>
           <span v-if="p.year"><span class="text-text">{{ t('projects.aside.year') }}:</span> {{ p.year }}</span>
         </div>
-        <div class="prose prose-neutral max-w-[760px] mt-8">
+        <div class="prose max-w-[760px] mt-8">
           <ContentRenderer :value="p" />
         </div>
         <div
@@ -80,7 +81,7 @@ function slugOf(path: string) {
             :key="i"
             :src="g"
             :alt="`${p.title} — ${i + 2}`"
-            class="w-full aspect-[4/3] object-cover rounded-[var(--radius-md)]"
+            class="w-full aspect-[4/3] object-cover rounded-[var(--radius-md)] ring-1 ring-white/10"
             sizes="100vw md:580px"
             loading="lazy"
           />

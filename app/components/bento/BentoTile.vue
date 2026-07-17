@@ -39,26 +39,25 @@ const tag = props.to ? 'NuxtLink' : 'div'
     :class="[
       SPAN_CLASS[span],
       VARIANT_CLASS[variant],
-      to ? 'shadow-[var(--shadow-tile)] hover:shadow-[var(--shadow-tile-hover)] hover:-translate-y-0.5 cursor-pointer' : 'shadow-[var(--shadow-tile)]',
+      to ? 'shadow-[var(--shadow-tile)] hover:shadow-[var(--shadow-tile-hover)] hover:border-border-strong hover:-translate-y-0.5 cursor-pointer' : 'shadow-[var(--shadow-tile)]',
     ]"
   >
     <div
       v-if="variant === 'accent'"
-      class="absolute inset-0 blueprint-grid text-white/[0.07] pointer-events-none"
+      class="absolute inset-0 blueprint-grid text-hero-highlight/[0.08] pointer-events-none"
       aria-hidden="true"
     />
 
     <p
       v-if="eyebrow"
-      class="relative font-mono font-medium text-[10.5px] tracking-[0.14em] uppercase"
-      :class="variant === 'accent' ? 'text-white/80' : 'text-accent'"
+      class="relative font-mono font-medium text-[10.5px] tracking-[0.14em] uppercase text-accent"
     >{{ eyebrow }}</p>
 
     <slot />
 
     <div
       v-if="to"
-      class="absolute right-5 top-5 w-7 h-7 rounded-full border flex items-center justify-center text-[13px] transition-all duration-200 group-hover:bg-accent group-hover:text-white group-hover:border-accent"
+      class="absolute right-5 top-5 w-7 h-7 rounded-full border flex items-center justify-center text-[13px] transition-all duration-200 group-hover:bg-accent group-hover:text-bg group-hover:border-accent"
       :class="variant === 'accent' ? 'border-white/40 text-white' : 'border-border text-text-muted'"
       aria-hidden="true"
     >↗</div>

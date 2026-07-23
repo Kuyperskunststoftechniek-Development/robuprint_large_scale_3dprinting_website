@@ -43,7 +43,6 @@ function onContextLost(): void {
 }
 
 onMounted(async () => {
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches
   let gl: WebGL2RenderingContext | null = null
   try {
     gl = canvasEl.value!.getContext('webgl2', {
@@ -66,7 +65,10 @@ onMounted(async () => {
     theme: props.theme,
     speed: props.speed,
     quality: props.quality,
-    reduced,
+    // Bewust géén prefers-reduced-motion-tak: de printloop is de kern van de
+    // hero en draait voor elke bezoeker. Windows met "animatie-effecten uit"
+    // meldt reduce, wat anders een stilstaand, voltooid object opleverde.
+    reduced: false,
     onFirstRender: () => {
       ready.value = true
     },
@@ -77,12 +79,6 @@ onMounted(async () => {
   }
   handle = created
   canvasEl.value!.addEventListener('webglcontextlost', onContextLost)
-
-  if (reduced) {
-    // Statisch voltooid object, geen RAF-loop.
-    handle.renderOnce()
-    return
-  }
 
   io = new IntersectionObserver(
     ([entry]) => {

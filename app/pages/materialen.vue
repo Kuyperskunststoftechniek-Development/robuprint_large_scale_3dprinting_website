@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 const { t, tm } = useI18n()
-useHead({ title: `${t('materials.title')} · ${t('common.company')}` })
+usePageSeo('materials')
 
 definePageMeta({
   alias: ['/en/materials'],
@@ -10,7 +10,8 @@ definePageMeta({
 const { observeAll } = useReveal()
 onMounted(() => observeAll())
 
-interface MaterialEntry { name: string; tagline: string; body: string; props: string[] }
+interface MaterialEntry { name: string; tagline: string; body: string; props: string[]; link?: string }
+const localePath = useLocalePath()
 interface SpecPair { k: string; v: string }
 
 const materials = computed(() => tm('materials.items') as MaterialEntry[])
@@ -37,6 +38,11 @@ const recycleSpecs = computed(() => tm('materials.recycle_specs') as SpecPair[])
         <ul class="text-[12px] text-text-muted mt-3 space-y-1">
           <li v-for="(p, k) in m.props" :key="k">— {{ p }}</li>
         </ul>
+        <NuxtLink
+          v-if="m.link"
+          :to="localePath('/foodgrade-hdpe-bekleding-assen-rollen')"
+          class="relative mt-3 inline-flex items-center text-[13px] font-semibold text-accent hover:underline underline-offset-2"
+        >{{ m.link }} →</NuxtLink>
       </BentoTile>
 
       <BentoTile :span="6" variant="accent" :eyebrow="t('materials.recycle_heading')">

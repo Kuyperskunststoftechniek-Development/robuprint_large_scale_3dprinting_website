@@ -18,6 +18,7 @@ const year = new Date().getFullYear()
       <div>
         <p class="font-mono font-medium text-white/40 mb-4 text-[10.5px] uppercase tracking-[0.14em]">{{ t('common.nav.what_we_do') }}</p>
         <ul class="space-y-2.5">
+          <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/foodgrade-hdpe-bekleding-assen-rollen')">{{ t('common.nav.shafts_rollers') }}</NuxtLink></li>
           <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/wat-wij-doen')">{{ t('common.nav.what_we_do') }}</NuxtLink></li>
           <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/materialen')">{{ t('common.nav.materials') }}</NuxtLink></li>
           <li><NuxtLink class="hover:text-white transition-colors" :to="localePath('/projecten')">{{ t('common.nav.projects') }}</NuxtLink></li>

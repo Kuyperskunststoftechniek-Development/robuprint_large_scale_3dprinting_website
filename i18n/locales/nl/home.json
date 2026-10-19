@@ -1,35 +1,32 @@
 {
   "hero": {
-    "eyebrow": "Robotic large-scale 3D printing",
-    "title_lead": "Onderdelen die",
-    "title_accent": "te groot zijn",
-    "title_tail": "voor reguliere 3D-print.",
-    "subtitle": "HDPE en PP, robotic-arm extrusie, 4 × 4 × 8 m bouwruimte, post-mill finish.",
+    "eyebrow": "Foodgrade HDPE voor de voedingsindustrie",
+    "title_lead": "Foodgrade HDPE-bekleding van",
+    "title_accent": "assen en rollen",
+    "title_tail": "",
+    "subtitle": "Wij printen foodgrade HDPE met een robot direct op uw as of rol en frezen de laag na in dezelfde cel. Tot Ø600 × 3500 mm, nieuw of als herbekleding, levertijd 3 weken.",
     "cta": "Offerte aanvragen",
-    "cta_secondary": "Bekijk projecten",
-    "spec_1": "4 × 4 × 8 m bouwvolume",
-    "spec_2": "HDPE · PP · recyclaat",
-    "spec_3": "Print + post-mill in één cel"
+    "cta_secondary": "Meer over assen en rollen",
+    "call": "Bel 013 509 66 11",
+    "spec_1": "Max. Ø600 × 3500 mm",
+    "spec_2": "Foodgrade HDPE · HDPE · PP",
+    "spec_3": "Print + frees in één cel"
   },
   "tiles": {
-    "envelope_eyebrow": "Build envelope",
+    "envelope_eyebrow": "Bouwvolume",
     "envelope_caption": "METER (W × D × H) — 128 m³",
-    "envelope_body": "Eén stuk printen waar anderen moeten lassen of segmenteren.",
-
-    "process_eyebrow": "Print + post-mill",
+    "envelope_body": "Naast assen en rollen printen wij in één stuk waar anderen moeten lassen of segmenteren.",
+    "process_eyebrow": "Print + frees",
     "process_title": "Dezelfde robot frees de finish strak na.",
-    "process_body": "Geen layer-lines waar het niet hoeft. Hybrid additive + subtractive in één opstelling.",
-
+    "process_body": "Geen laaglijnen waar het niet hoeft. Printen en frezen in één opstelling.",
     "materials_eyebrow": "Materialen",
     "materials_title": "HDPE & PP",
     "materials_body": "Polyolefinen op deze schaal — bij ons standaard. Inclusief food-grade HDPE.",
-
     "recyclate_eyebrow": "Circulair",
     "recyclate_title": "Eigen recyclaat",
     "recyclate_body": "Single-stream restmateriaal direct uit Kuypers Kunststoftechniek. Traceerbaar tot batch.",
-
-    "layers_eyebrow": "Process",
-    "layers_title": "Layer voor layer",
+    "layers_eyebrow": "Proces",
+    "layers_title": "Laag voor laag",
     "layers_body": "FGF pellet-extrusie via robot-arm. Snel, schoon, schaalbaar."
   },
   "projects": {
@@ -40,5 +37,14 @@
   "cta_band": {
     "title": "Onderdeel in gedachten? Stuur 'm op voor een offerte.",
     "button": "Offerte aanvragen"
+  },
+  "shafts": {
+    "eyebrow": "Assen en rollen",
+    "title": "Versleten rol? Wij bekleden hem opnieuw, zonder mal.",
+    "body": "Foodgrade HDPE direct op uw as of rol geprint en nagefreesd. Ook voor één stuk of een kleine serie.",
+    "link": "Bekijk de foodgrade bekleding"
+  },
+  "also": {
+    "heading": "Ook voor grote onderdelen"
   }
 }

@@ -18,3 +18,6 @@ By default we use **food-grade HDPE in the familiar blue** for food contact, or 
 Finishing happens in the same setup. A smooth cylinder can be delivered straight off the printer, but we can also **print patterns into the surface directly, or mill them in afterwards** — grip profiles, transport profiles, or shapes that suit the product running over the roller.
 
 Conventionally, cladding shafts is a multi-step process with shrink sleeves, cast bonds or mechanical fixing — labour-intensive and with hard limits on shape. Printing directly onto the core gives us **one continuous, well-bonded layer**, better dimensional accuracy, and the freedom to adapt geometry to what the application actually needs. Fewer steps, better quality, and shapes that simply weren't deliverable before.
+
+
+[More about food-grade HDPE coating of shafts and rollers →](/en/food-grade-hdpe-coating-shafts-rollers)

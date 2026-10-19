@@ -1,0 +1,36 @@
+{
+  "home": {
+    "title": "Food-grade HDPE coating of shafts and rollers · RoBuPRINT",
+    "description": "We robot-print food-grade HDPE onto your shaft or roller, up to Ø600 × 3500 mm. New or recoating, 3-week lead time. Request a quote."
+  },
+  "foodgrade": {
+    "title": "Food-grade HDPE coating of shafts and rollers · RoBuPRINT",
+    "description": "Robot-printed food-grade HDPE coating on your shaft or roller, up to Ø600 × 3500 mm. New or recoating, milled to size, 3-week lead time."
+  },
+  "capabilities": {
+    "title": "What we do: shafts, rollers, large-scale printing · RoBuPRINT",
+    "description": "Food-grade HDPE coating of shafts and rollers, plus robotic 3D printing and milling of large parts in HDPE and PP. Hapert, the Netherlands."
+  },
+  "materials": {
+    "title": "Materials: food-grade HDPE, HDPE, PP, recyclate · RoBuPRINT",
+    "description": "Food-grade HDPE, HDPE, PP and recycled material from Kuypers Kunststoftechniek for robotic 3D printing and coating of shafts and rollers."
+  },
+  "projects": {
+    "title": "Projects: plastic rollers for the food industry · RoBuPRINT",
+    "description": "Examples of printed HDPE parts: food-grade rollers, infrastructure reducers and furniture made of recycled HDPE."
+  },
+  "about": {
+    "title": "About RoBuPRINT, part of Kuypers Kunststoftechniek",
+    "description": "RoBuPRINT in Hapert robot-prints HDPE and PP and coats shafts and rollers. Part of Kuypers Kunststoftechniek."
+  },
+  "contact": {
+    "title": "Contact · RoBuPRINT",
+    "description": "Contact RoBuPRINT, Diamantweg 48, Hapert, the Netherlands. Call +31 13 509 66 11 or request a quote."
+  },
+  "quote": {
+    "title": "Request a quote · RoBuPRINT",
+    "description": "Request a quote for coating a shaft or roller, or for a large printed part. Reply within 2 working days."
+  },
+  "fallback_description": "Food-grade HDPE coating of shafts and rollers and robotic large-scale 3D printing in HDPE and PP. RoBuPRINT, Hapert.",
+  "og_image_alt": "Blue food-grade HDPE roller by RoBuPRINT"
+}

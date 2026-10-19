@@ -1,36 +1,64 @@
 {
   "title": "Wat wij doen",
-  "eyebrow": "Capaciteiten — 4×4×8 m",
-  "lead": "Robotische extrusie van HDPE en PP op grote schaal, met geïntegreerd nafrezen — alles in één opstelling.",
+  "eyebrow": "Capaciteiten — assen, rollen en grootformaat",
+  "lead": "Wij bekleden assen en rollen met foodgrade HDPE en printen daarnaast grote onderdelen in HDPE en PP, met nafrezen in dezelfde opstelling.",
   "sections": [
     {
-      "eyebrow": "PRINT",
+      "eyebrow": "ASSEN & ROLLEN",
+      "heading": "Foodgrade HDPE-bekleding van assen en rollen",
+      "body": "Wij printen foodgrade HDPE (blauw), HDPE of PP met een robot direct op uw as of rol en frezen de laag na in dezelfde cel. Nieuw of als herbekleding van een versleten rol. Geschikt voor deegrollen in de food sector, transportrollen en geleide- en spanrollen, of een volledige kunststofas.",
+      "specs": [
+        {
+          "k": "Diameter",
+          "v": "tot Ø600 mm"
+        },
+        {
+          "k": "Lengte",
+          "v": "tot 3500 mm, groter in overleg"
+        },
+        {
+          "k": "Capaciteit en levertijd",
+          "v": "ca. 20 assen per week, levertijd 3 weken"
+        }
+      ],
+      "schem": "shaft",
+      "cta": "Meer over bekleding van assen en rollen"
+    },
+    {
+      "eyebrow": "GROOTFORMAAT PRINTEN",
       "heading": "Robotic large-scale 3D printing",
       "body": "Een industriële robotarm met granulaat-extruder bouwt onderdelen laag voor laag op tot 4 × 4 × 8 meter. Geen formaatbeperkingen door printbed-grenzen.",
       "specs": [
-        { "k": "Build envelope", "v": "4 × 4 × 8 m" },
-        { "k": "Proces", "v": "FGF (Fused Granulate Fabrication)" },
-        { "k": "Materialen", "v": "HDPE, PP, food-grade HDPE" }
-      ]
+        {
+          "k": "Build envelope",
+          "v": "4 × 4 × 8 m"
+        },
+        {
+          "k": "Proces",
+          "v": "FGF (Fused Granulate Fabrication)"
+        },
+        {
+          "k": "Materialen",
+          "v": "HDPE, PP, food-grade HDPE"
+        }
+      ],
+      "schem": "envelope"
     },
     {
       "eyebrow": "FREES",
       "heading": "Subtractief nafrezen",
       "body": "Dezelfde robot wisselt naar een freesopzet en bewerkt het geprinte onderdeel na voor strakke vlakken, scherpe kanten en pasvlakken op tolerantie.",
       "specs": [
-        { "k": "Tolerantie", "v": "tot ±0.2 mm" },
-        { "k": "Toepassing", "v": "Pasvlakken, montagepunten, decoratieve finish" }
-      ]
-    },
-    {
-      "eyebrow": "ROLLEN & ASSEN",
-      "heading": "Kunststof rollen & assen",
-      "body": "Metalen assen bekleden met HDPE, PP of food-grade blauwe HDPE — of een volledige kunststofas printen. Geschikt voor transportrollers, deegrollers in de food sector, geleide- en spanrollen, en het vernieuwen van versleten kunststof op bestaande rollen.",
-      "specs": [
-        { "k": "Diameter", "v": "tot Ø600 mm" },
-        { "k": "Lengte", "v": "tot 3000 mm, groter in overleg" },
-        { "k": "Materialen", "v": "HDPE, PP, food-grade blauwe HDPE" }
-      ]
+        {
+          "k": "Tolerantie",
+          "v": "tot ±0.2 mm"
+        },
+        {
+          "k": "Toepassing",
+          "v": "Pasvlakken, montagepunten, decoratieve finish"
+        }
+      ],
+      "schem": "robot-arm"
     }
   ]
 }

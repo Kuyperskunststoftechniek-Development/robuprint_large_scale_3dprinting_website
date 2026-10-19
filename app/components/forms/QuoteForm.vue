@@ -136,7 +136,7 @@ async function onSubmit() {
 <template>
   <form class="bg-surface border border-border rounded-[var(--radius-xl)] p-8 md:p-10 max-w-[780px] mx-auto" @submit.prevent="onSubmit">
     <p class="font-medium text-[11px] text-accent uppercase tracking-[0.14em] mb-2">{{ t('quote.section_project') }}</p>
-    <h1 class="text-[28px] font-semibold tracking-tight mb-2">{{ t('quote.title') }}</h1>
+    <h2 class="text-[28px] font-semibold tracking-tight mb-2">{{ t('quote.title') }}</h2>
     <p class="text-[14px] text-text-muted mb-8">{{ t('quote.lead') }}</p>
 
     <FileDropzone :accept="ACCEPT" @files-selected="onFilesSelected" />

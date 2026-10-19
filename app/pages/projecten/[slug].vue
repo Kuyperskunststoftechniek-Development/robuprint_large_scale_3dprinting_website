@@ -15,7 +15,7 @@ if (!project.value) {
   throw createError({ statusCode: 404, statusMessage: 'Project not found', fatal: true })
 }
 
-useHead({ title: `${project.value.title} · ${t('common.company')}` })
+usePageSeo({ title: `${project.value.title} · ${t('common.company')}`, description: project.value.summary })
 
 definePageMeta({ alias: ['/en/projects/:slug'] })
 
@@ -46,7 +46,7 @@ onMounted(() => observeAll())
           v-for="(g, i) in project.gallery"
           :key="i"
           :src="g"
-          :alt="`${project.title} — ${i + 2}`"
+          :alt="`${project.title} (${t('projects.photo')} ${i + 2})`"
           class="w-full rounded-[var(--radius-md)] ring-1 ring-white/10 aspect-[4/3] object-cover"
           sizes="50vw md:380px"
           loading="lazy"

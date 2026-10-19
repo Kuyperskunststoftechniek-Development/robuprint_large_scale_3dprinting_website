@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 const { t, tm } = useI18n()
-useHead({ title: `${t('capabilities.title')} · ${t('common.company')}` })
+usePageSeo('capabilities')
 
 definePageMeta({
   alias: ['/en/capabilities'],
@@ -11,11 +11,12 @@ const { observeAll } = useReveal()
 onMounted(() => observeAll())
 
 interface Spec { k: string; v: string }
-interface Section { eyebrow: string; heading: string; body: string; specs: Spec[] }
+interface Section { eyebrow: string; heading: string; body: string; specs: Spec[]; schem?: string; cta?: string }
 const sections = computed(() => tm('capabilities.sections') as Section[])
 
 const SCHEM = ['envelope', 'robot-arm', 'shaft', 'layer-stack'] as const
-function schemFor(i: number) { return SCHEM[i % SCHEM.length] }
+function schemFor(s: Section, i: number) { return s.schem ?? SCHEM[i % SCHEM.length] }
+const localePath = useLocalePath()
 
 // Hoofdtegel vult de ruimte die overblijft naast de spec-tegels (rij = 6 kolommen)
 function mainSpan(s: Section) {
@@ -42,8 +43,13 @@ function mainSpan(s: Section) {
         >
           <h2 class="text-[24px] md:text-[28px] font-bold tracking-tight leading-tight max-w-[320px]">{{ s.heading }}</h2>
           <p class="text-[13px] mt-2 max-w-[320px]" :class="i % 2 === 0 ? 'text-text-muted' : 'text-white/85'">{{ s.body }}</p>
+          <NuxtLink
+            v-if="s.cta"
+            :to="localePath('/foodgrade-hdpe-bekleding-assen-rollen')"
+            class="relative mt-3 inline-flex items-center text-[13px] font-semibold text-accent hover:underline underline-offset-2"
+          >{{ s.cta }} →</NuxtLink>
           <template #illustration>
-            <SchemIllustration :name="schemFor(i)" class="w-28 h-28 text-accent" />
+            <SchemIllustration :name="schemFor(s, i)" class="w-28 h-28 text-accent" />
           </template>
         </BentoTile>
 

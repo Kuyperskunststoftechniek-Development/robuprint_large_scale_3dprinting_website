@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 const { t } = useI18n()
-useHead({ title: `${t('quote.title')} · ${t('common.company')}` })
+usePageSeo('quote')
 definePageMeta({ alias: ['/en/quote'] })
 
 const { observeAll } = useReveal()

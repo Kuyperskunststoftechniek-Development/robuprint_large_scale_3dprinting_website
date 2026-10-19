@@ -18,3 +18,5 @@ Standaard pakken we **food-grade HDPE in het herkenbare blauw** voor voedingstoe
 Het afwerken gebeurt in dezelfde opstelling. Een gladde cilinder is direct af te leveren, maar we kunnen ook **patronen direct meeprinten of in een tweede stap infrezen** — bijvoorbeeld profielen voor grip, transport of vormgeving van het product dat over de rol loopt.
 
 Conventioneel is het bekleden van assen een meerstaps proces met krimpkousen, gietverbindingen of mechanische bevestiging — bewerkelijk en met beperkingen op vorm. Door direct te printen op de kern krijgen we **een hechte laag in één doorgaande beweging**, betere maatvastheid en de vrijheid om de geometrie aan te passen aan wat de toepassing eigenlijk nodig heeft. Minder bewerkingen, hogere kwaliteit, en geometrieën die voorheen simpelweg niet te leveren waren.
+
+[Meer over foodgrade HDPE-bekleding van assen en rollen →](/foodgrade-hdpe-bekleding-assen-rollen)

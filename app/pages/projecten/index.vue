@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 const { t, locale } = useI18n()
-useHead({ title: `${t('projects.title')} · ${t('common.company')}` })
+usePageSeo('projects')
 
 const { observeAll } = useReveal()
 onMounted(() => observeAll())
@@ -80,7 +80,7 @@ function slugOf(path: string) {
             v-for="(g, i) in p.gallery"
             :key="i"
             :src="g"
-            :alt="`${p.title} — ${i + 2}`"
+            :alt="`${p.title} (${t('projects.photo')} ${i + 2})`"
             class="w-full aspect-[4/3] object-cover rounded-[var(--radius-md)] ring-1 ring-white/10"
             sizes="100vw md:580px"
             loading="lazy"

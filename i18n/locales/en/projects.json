@@ -1,7 +1,7 @@
 {
   "title": "Projects",
   "eyebrow": "Projects — Case studies",
-  "lead": "A rolling selection of what we've made. Photos and case studies coming.",
+  "lead": "A selection of what we've made, led by plastic rollers for the food industry.",
   "empty": "First cases coming soon.",
   "view_project": "View project →",
   "back_to_projects": "← Back to projects",
@@ -9,5 +9,6 @@
     "client": "Client",
     "material": "Material",
     "year": "Year"
-  }
+  },
+  "photo": "photo"
 }

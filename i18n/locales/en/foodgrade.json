@@ -1,0 +1,96 @@
+{
+  "breadcrumb": "Shafts & rollers",
+  "hero": {
+    "eyebrow": "For the food industry",
+    "title": "Food-grade HDPE coating of shafts and rollers",
+    "subtitle": "We robot-print food-grade HDPE directly onto your shaft or roller and mill the layer to size in the same cell. Up to Ø600 × 3500 mm, new or as a recoat, delivered in 3 weeks.",
+    "cta": "Request a quote",
+    "call": "Call +31 13 509 66 11",
+    "image_alt": "Blue food-grade HDPE coating on a roller, milled to size",
+    "facts": ["Max. Ø600 mm", "Max. length 3500 mm", "3-week lead time", "Part of Kuypers Kunststoftechniek"]
+  },
+  "problem": {
+    "heading": "Worn rollers cost you downtime",
+    "items": [
+      "Rollers and shafts in food production wear, get damaged, or fall short of hygiene requirements on contact surfaces.",
+      "New rollers in special materials often have long lead times, especially for small quantities or non-standard sizes.",
+      "Conventional coatings need a mould or casting tool, so they rarely pay off for one roller or a small series.",
+      "As a result, worn shafts are often replaced instead of repaired."
+    ]
+  },
+  "solution": {
+    "heading": "Food-grade HDPE, printed on your shaft or roller",
+    "body": "RoBuPRINT prints food-grade HDPE with a robot arm directly onto a metal or plastic core. In the same cell we mill the layer to a dimensionally accurate running surface, smooth or with a milled pattern. No mould, no casting tool: even a single piece or a small series is feasible. The same process works for recoating a worn roller."
+  },
+  "why": {
+    "heading": "Why food-grade HDPE from RoBuPRINT",
+    "items": [
+      { "k": "Food-grade material", "v": "We print food-grade HDPE (blue), odour- and taste-neutral and hygienically cleanable." },
+      { "k": "No mould needed", "v": "No casting tool or die; also for unique sizes and small series." },
+      { "k": "Recoat instead of replace", "v": "A new layer on your existing shaft or roller." },
+      { "k": "Milled to size", "v": "Tolerance up to ±0.2 mm, smooth or patterned (e.g. for dough rollers, grip or transport)." },
+      { "k": "Light and easy to clean", "v": "Low friction, low weight, low moisture absorption and hygienic to clean." },
+      { "k": "In-house expertise", "v": "Part of Kuypers Kunststoftechniek, with in-house material knowledge and supply." }
+    ]
+  },
+  "uses": {
+    "heading": "For rollers and shafts in the food industry",
+    "items": [
+      { "k": "Dough rollers", "v": "Smooth or patterned." },
+      { "k": "Conveyor rollers", "v": "Low friction, easy to clean." },
+      { "k": "Guide rollers", "v": "Dimensionally accurate running surface." }
+    ],
+    "note": "Also for conveyor systems and internal transport, and for industrial environments in HDPE or PP without a food-grade requirement. We work for, among others, the bakery industry."
+  },
+  "capacity": {
+    "heading": "Capacity and dimensions",
+    "rows": [
+      { "k": "Max. diameter", "v": "Ø600 mm" },
+      { "k": "Max. length", "v": "3500 mm" },
+      { "k": "Capacity", "v": "approx. 20 shafts per week" },
+      { "k": "Lead time", "v": "3 weeks" },
+      { "k": "Materials", "v": "Food-grade HDPE (blue), HDPE, PP" },
+      { "k": "Finish", "v": "Milled, smooth or patterned, tolerance up to ±0.2 mm" },
+      { "k": "Region", "v": "The Netherlands and Flanders, then Germany" }
+    ],
+    "note": "Larger or bulkier? Ask about the options; we assess those separately."
+  },
+  "steps": {
+    "heading": "In 4 steps to your coated part",
+    "items": [
+      { "k": "Send your details", "v": "Diameter, length, quantity and a photo or drawing via the quote form, or call us." },
+      { "k": "We assess", "v": "A first estimate or follow-up questions within 2 working days." },
+      { "k": "Print and mill", "v": "Robot printing in food-grade HDPE and finishing in the same cell." },
+      { "k": "Delivery", "v": "Within 3 weeks, in the Netherlands and Flanders." }
+    ]
+  },
+  "example": {
+    "heading": "Example: food-grade rollers for the food industry",
+    "body": "Plastic cladding on metal or plastic shafts, smooth or with a milled-in pattern, in food-grade blue HDPE. Client: food industry.",
+    "link": "View the project",
+    "alt_1": "Food-grade blue HDPE roller, overview",
+    "alt_2": "Food-grade blue HDPE roller, detail of the running surface"
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "items": [
+      { "q": "Which sizes can you coat?", "a": "Up to Ø600 mm and 3500 mm in length. Larger or bulkier: ask us and we will assess it separately." },
+      { "q": "How fast can you deliver?", "a": "Lead time is 3 weeks. We process approx. 20 shafts per week." },
+      { "q": "Can a worn roller be recoated?", "a": "Yes. We apply a new layer to your existing shaft or roller; an existing plastic core can also be recoated." },
+      { "q": "Is the material suitable for food contact?", "a": "We use food-grade HDPE. If your process has a specific requirement, mention it in your request and we will include it in our assessment." },
+      { "q": "Smooth or patterned?", "a": "Both. A pattern can be printed directly or milled in." },
+      { "q": "Do you work with small quantities?", "a": "Yes, even a single piece, because no mould is needed." },
+      { "q": "What do I need for a quote?", "a": "Diameter, length, quantity, desired layer thickness (or \"don't know\") and preferably a photo or drawing." }
+    ]
+  },
+  "closing": {
+    "heading": "A shaft or roller to coat?",
+    "body": "Send diameter, length and a photo. You will receive a first estimate within 2 working days.",
+    "cta": "Request a quote",
+    "address": "or call +31 13 509 66 11 (Diamantweg 48, Hapert)"
+  },
+  "jsonld": {
+    "service_name": "Food-grade HDPE coating of shafts and rollers",
+    "service_type": "Coating of shafts and rollers with HDPE"
+  }
+}

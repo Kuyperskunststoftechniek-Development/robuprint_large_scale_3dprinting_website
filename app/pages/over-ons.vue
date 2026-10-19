@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 const { t, tm } = useI18n()
-useHead({ title: `${t('about.title')} · ${t('common.company')}` })
+usePageSeo('about')
 
 definePageMeta({
   alias: ['/en/about'],

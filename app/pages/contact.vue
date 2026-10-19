@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 const { t } = useI18n()
-useHead({ title: `${t('contact.title')} · ${t('common.company')}` })
+usePageSeo('contact')
 definePageMeta({ alias: ['/en/contact'] })
 
 const { observeAll } = useReveal()
@@ -31,7 +31,7 @@ onMounted(() => observeAll())
           <a href="tel:+31135096611" class="text-[14px] underline-offset-2 hover:underline">013 509 66 11</a>
         </BentoTile>
         <BentoTile :span="2" variant="accent" eyebrow="E-mail">
-          <a href="mailto:info@robuprint.nl" class="text-[14px] text-white underline-offset-2 hover:underline">info@robuprint.nl</a>
+          <a href="mailto:info@robuprint.com" class="text-[14px] text-white underline-offset-2 hover:underline">info@robuprint.com</a>
         </BentoTile>
       </aside>
     </div>

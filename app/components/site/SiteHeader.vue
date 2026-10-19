@@ -3,6 +3,7 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 
 const navItems = computed(() => [
+  { to: localePath('/foodgrade-hdpe-bekleding-assen-rollen'), label: t('common.nav.shafts_rollers') },
   { to: localePath('/wat-wij-doen'), label: t('common.nav.what_we_do') },
   { to: localePath('/materialen'), label: t('common.nav.materials') },
   { to: localePath('/projecten'), label: t('common.nav.projects') },

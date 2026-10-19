@@ -6,6 +6,8 @@ import nlAbout from './locales/nl/about.json'
 import nlProjects from './locales/nl/projects.json'
 import nlContact from './locales/nl/contact.json'
 import nlQuote from './locales/nl/quote.json'
+import nlSeo from './locales/nl/seo.json'
+import nlFoodgrade from './locales/nl/foodgrade.json'
 import enCommon from './locales/en/common.json'
 import enHome from './locales/en/home.json'
 import enCapabilities from './locales/en/capabilities.json'
@@ -14,12 +16,14 @@ import enAbout from './locales/en/about.json'
 import enProjects from './locales/en/projects.json'
 import enContact from './locales/en/contact.json'
 import enQuote from './locales/en/quote.json'
+import enSeo from './locales/en/seo.json'
+import enFoodgrade from './locales/en/foodgrade.json'
 
 export default defineI18nConfig(() => ({
   legacy: false,
   fallbackLocale: 'nl',
   messages: {
-    nl: { common: nlCommon, home: nlHome, capabilities: nlCapabilities, materials: nlMaterials, about: nlAbout, projects: nlProjects, contact: nlContact, quote: nlQuote },
-    en: { common: enCommon, home: enHome, capabilities: enCapabilities, materials: enMaterials, about: enAbout, projects: enProjects, contact: enContact, quote: enQuote },
+    nl: { common: nlCommon, home: nlHome, capabilities: nlCapabilities, materials: nlMaterials, about: nlAbout, projects: nlProjects, contact: nlContact, quote: nlQuote, seo: nlSeo, foodgrade: nlFoodgrade },
+    en: { common: enCommon, home: enHome, capabilities: enCapabilities, materials: enMaterials, about: enAbout, projects: enProjects, contact: enContact, quote: enQuote, seo: enSeo, foodgrade: enFoodgrade },
   },
 }))

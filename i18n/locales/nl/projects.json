@@ -1,7 +1,7 @@
 {
   "title": "Projecten",
   "eyebrow": "Projecten — Case studies",
-  "lead": "Een doorlopende selectie van wat we hebben gemaakt. Foto's en case studies komen binnen.",
+  "lead": "Een selectie van wat we hebben gemaakt, met kunststof rollen voor de food-industrie voorop.",
   "empty": "De eerste cases volgen binnenkort.",
   "view_project": "Bekijk project →",
   "back_to_projects": "← Terug naar projecten",
@@ -9,5 +9,6 @@
     "client": "Klant",
     "material": "Materiaal",
     "year": "Jaar"
-  }
+  },
+  "photo": "foto"
 }

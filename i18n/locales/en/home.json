@@ -1,33 +1,30 @@
 {
   "hero": {
-    "eyebrow": "Robotic large-scale 3D printing",
-    "title_lead": "Parts that are",
-    "title_accent": "too big",
-    "title_tail": "for ordinary 3D printing.",
-    "subtitle": "HDPE and PP, robotic-arm extrusion, 4 × 4 × 8 m build envelope, post-mill finish. From Hapert to clients in NL/BE/DE.",
+    "eyebrow": "Food-grade HDPE for the food industry",
+    "title_lead": "Food-grade HDPE coating of",
+    "title_accent": "shafts and rollers",
+    "title_tail": "",
+    "subtitle": "We robot-print food-grade HDPE directly onto your shaft or roller and mill the layer to size in the same cell. Up to Ø600 × 3500 mm, new or as a recoat, 3-week lead time.",
     "cta": "Request a quote",
-    "cta_secondary": "View projects",
-    "spec_1": "4 × 4 × 8 m build volume",
-    "spec_2": "HDPE · PP · recyclate",
-    "spec_3": "Print + post-mill in one cell"
+    "cta_secondary": "More about shafts and rollers",
+    "call": "Call +31 13 509 66 11",
+    "spec_1": "Max. Ø600 × 3500 mm",
+    "spec_2": "Food-grade HDPE · HDPE · PP",
+    "spec_3": "Print + mill in one cell"
   },
   "tiles": {
     "envelope_eyebrow": "Build envelope",
     "envelope_caption": "METRES (W × D × H) — 128 m³",
-    "envelope_body": "Print in one piece what others have to weld or segment.",
-
+    "envelope_body": "Besides shafts and rollers, we print in one piece what others have to weld or segment.",
     "process_eyebrow": "Print + post-mill",
     "process_title": "The same robot mills the finish smooth.",
     "process_body": "No layer lines where you don't want them. Hybrid additive + subtractive in one cell.",
-
     "materials_eyebrow": "Materials",
     "materials_title": "HDPE & PP",
     "materials_body": "Polyolefins at this scale — our standard. Includes food-grade HDPE.",
-
     "recyclate_eyebrow": "Circular",
     "recyclate_title": "Own recyclate",
     "recyclate_body": "Single-stream offcuts straight from Kuypers Kunststoftechniek. Traceable to batch.",
-
     "layers_eyebrow": "Process",
     "layers_title": "Layer by layer",
     "layers_body": "FGF pellet extrusion via robot arm. Fast, clean, scalable."
@@ -40,5 +37,14 @@
   "cta_band": {
     "title": "Got a part in mind? Send it over for a quote.",
     "button": "Request a quote"
+  },
+  "shafts": {
+    "eyebrow": "Shafts and rollers",
+    "title": "Worn roller? We recoat it, no mould needed.",
+    "body": "Food-grade HDPE printed directly onto your shaft or roller and milled to size. Also for a single piece or a small series.",
+    "link": "See the food-grade coating"
+  },
+  "also": {
+    "heading": "Also for large parts"
   }
 }

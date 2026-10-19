@@ -4,7 +4,7 @@ import type { HeroSubject, HeroTheme } from '~/utils/heroScene/types'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
-useHead({ title: `${t('common.company')} — ${t('common.tagline_short')}` })
+usePageSeo('home')
 
 const { observeAll } = useReveal()
 onMounted(() => observeAll())
@@ -68,7 +68,7 @@ const heroSpeed = 0.15
               {{ t('home.hero.cta') }} →
             </NuxtLink>
             <NuxtLink
-              :to="localePath('/projecten')"
+              :to="localePath('/foodgrade-hdpe-bekleding-assen-rollen')"
               class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 border rounded-[var(--radius-md)] backdrop-blur-sm transition-all"
               :class="dark
                 ? 'text-white border-white/30 hover:bg-white/10 hover:border-white/50'
@@ -76,6 +76,11 @@ const heroSpeed = 0.15
             >
               {{ t('home.hero.cta_secondary') }}
             </NuxtLink>
+            <a
+              href="tel:+31135096611"
+              class="inline-flex items-center text-[13px] font-medium px-2 py-2.5 underline-offset-2 hover:underline"
+              :class="dark ? 'text-white/85' : 'text-text-muted'"
+            >{{ t('home.hero.call') }}</a>
           </div>
         </div>
       </div>
@@ -100,6 +105,18 @@ const heroSpeed = 0.15
         class="absolute inset-x-0 top-0 h-[480px] blueprint-grid text-hero-highlight/[0.04] [mask-image:linear-gradient(to_bottom,black,transparent)] pointer-events-none"
         aria-hidden="true"
       />
+      <BentoGrid class="mb-10">
+        <BentoTile :span="6" variant="accent" :to="localePath('/foodgrade-hdpe-bekleding-assen-rollen')" :eyebrow="t('home.shafts.eyebrow')">
+          <h2 class="text-[22px] md:text-[28px] font-bold leading-snug max-w-[520px]">{{ t('home.shafts.title') }}</h2>
+          <p class="text-[13px] text-white/85 max-w-[520px]">{{ t('home.shafts.body') }}</p>
+          <p class="relative text-[13px] font-semibold text-white mt-1">{{ t('home.shafts.link') }} →</p>
+          <template #illustration>
+            <SchemIllustration name="shaft" class="w-28 h-28 text-accent" />
+          </template>
+        </BentoTile>
+      </BentoGrid>
+
+      <h2 class="text-[22px] md:text-[28px] font-bold tracking-tight mb-5" data-reveal-target>{{ t('home.also.heading') }}</h2>
       <BentoGrid>
         <BentoTile :span="3" variant="muted" :eyebrow="t('home.tiles.envelope_eyebrow')">
           <p class="text-[64px] md:text-[84px] font-extrabold tracking-[-0.04em] leading-none mt-1 glow-number">4×4×8</p>

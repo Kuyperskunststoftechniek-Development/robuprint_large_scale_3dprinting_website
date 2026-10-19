@@ -92,11 +92,21 @@ export default defineNuxtConfig({
       { code: 'nl', language: 'nl-NL', name: 'Nederlands' },
       { code: 'en', language: 'en-GB', name: 'English' },
     ],
+    customRoutes: 'config',
+    pages: {
+      'foodgrade-hdpe-bekleding-assen-rollen': {
+        nl: '/foodgrade-hdpe-bekleding-assen-rollen',
+        en: '/food-grade-hdpe-coating-shafts-rollers',
+      },
+    },
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'robuprint_locale',
       redirectOn: 'root',
     },
+  },
+  image: {
+    quality: 75,
   },
   vite: {
     plugins: [tailwindcss()],

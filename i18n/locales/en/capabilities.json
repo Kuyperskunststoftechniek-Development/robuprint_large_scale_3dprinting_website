@@ -1,36 +1,64 @@
 {
   "title": "Capabilities",
-  "eyebrow": "Capabilities — 4×4×8 m",
-  "lead": "Robotic extrusion of HDPE and PP at large scale, with integrated post-milling — all in a single setup.",
+  "eyebrow": "Capabilities — shafts, rollers and large-scale",
+  "lead": "We coat shafts and rollers with food-grade HDPE and also print large parts in HDPE and PP, with post-milling in the same setup.",
   "sections": [
     {
-      "eyebrow": "PRINT",
+      "eyebrow": "SHAFTS & ROLLERS",
+      "heading": "Food-grade HDPE coating of shafts and rollers",
+      "body": "We robot-print food-grade HDPE (blue), HDPE or PP directly onto your shaft or roller and mill the layer to size in the same cell. New or as a recoat of a worn roller. Suited for dough rollers in food, conveyor rollers, guide and tension rollers, or a complete plastic shaft.",
+      "specs": [
+        {
+          "k": "Diameter",
+          "v": "up to Ø600 mm"
+        },
+        {
+          "k": "Length",
+          "v": "up to 3500 mm, larger on request"
+        },
+        {
+          "k": "Capacity and lead time",
+          "v": "approx. 20 shafts per week, 3-week lead time"
+        }
+      ],
+      "schem": "shaft",
+      "cta": "More about coating shafts and rollers"
+    },
+    {
+      "eyebrow": "LARGE-SCALE PRINTING",
       "heading": "Robotic large-scale 3D printing",
       "body": "An industrial robot arm with a granulate extruder builds parts layer by layer up to 4 × 4 × 8 metres. No bed-size limits, no welded seams in the final piece.",
       "specs": [
-        { "k": "Build envelope", "v": "4 × 4 × 8 m" },
-        { "k": "Process", "v": "FGF (Fused Granulate Fabrication)" },
-        { "k": "Materials", "v": "HDPE, PP, food-grade HDPE" }
-      ]
+        {
+          "k": "Build envelope",
+          "v": "4 × 4 × 8 m"
+        },
+        {
+          "k": "Process",
+          "v": "FGF (Fused Granulate Fabrication)"
+        },
+        {
+          "k": "Materials",
+          "v": "HDPE, PP, food-grade HDPE"
+        }
+      ],
+      "schem": "envelope"
     },
     {
       "eyebrow": "MILL",
       "heading": "Subtractive post-milling",
       "body": "The same robot switches to a milling head and finishes the printed part for clean surfaces, sharp edges, and mating faces to tolerance. No round-trip to a separate CNC machine.",
       "specs": [
-        { "k": "Tolerance", "v": "to ±0.2 mm" },
-        { "k": "Use", "v": "Mating faces, mounting points, decorative finish" }
-      ]
-    },
-    {
-      "eyebrow": "ROLLERS & SHAFTS",
-      "heading": "Plastic rollers & shafts",
-      "body": "Cladding steel shafts in HDPE, PP or food-grade blue HDPE — or printing a complete plastic shaft. Used for conveyor rollers, dough rollers in food, guide and tension rollers, and renewing worn cladding on existing rollers.",
-      "specs": [
-        { "k": "Diameter", "v": "up to Ø600 mm" },
-        { "k": "Length", "v": "up to 3000 mm, larger on request" },
-        { "k": "Materials", "v": "HDPE, PP, food-grade blue HDPE" }
-      ]
+        {
+          "k": "Tolerance",
+          "v": "to ±0.2 mm"
+        },
+        {
+          "k": "Use",
+          "v": "Mating faces, mounting points, decorative finish"
+        }
+      ],
+      "schem": "robot-arm"
     }
   ]
 }

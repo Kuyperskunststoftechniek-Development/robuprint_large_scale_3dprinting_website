@@ -4,30 +4,51 @@
     "title_lead": "Food-grade HDPE coating of",
     "title_accent": "shafts and rollers",
     "title_tail": "",
-    "subtitle": "We robot-print food-grade HDPE directly onto your shaft or roller and mill the layer to size in the same cell. Up to Ø600 × 3500 mm, new or as a recoat, 3-week lead time.",
+    "subtitle": "Food-grade HDPE directly on your shaft or roller, smooth or patterned. Up to Ø600 × 3500 mm, new or as a recoat, 3-week lead time. Also reducers, furniture and other large parts in one piece.",
     "cta": "Request a quote",
-    "cta_secondary": "More about shafts and rollers",
+    "cta_secondary": "View projects",
     "call": "Call +31 13 509 66 11",
     "spec_1": "Max. Ø600 × 3500 mm",
     "spec_2": "Food-grade HDPE · HDPE · PP",
-    "spec_3": "Print + mill in one cell"
+    "spec_3": "No mould, no tooling costs"
+  },
+  "gallery": {
+    "eyebrow": "What we make",
+    "heading": "Want to see the result? This comes out of our production.",
+    "lead": "Rollers, reducers and furniture in HDPE: a selection of recent orders. Every piece made to measure, even as a single unit.",
+    "all": "All projects",
+    "categories": {
+      "rollers": "Rollers",
+      "infra": "Infrastructure",
+      "furniture": "Furniture"
+    },
+    "items": {
+      "roller_dimples": { "title": "Roller with dimple pattern", "spec": "Food-grade HDPE, blue" },
+      "roller_grooved": { "title": "Roller with grooved profile", "spec": "Food-grade HDPE, blue" },
+      "roller_spiral": { "title": "Roller with spiral profile", "spec": "Food-grade HDPE, blue" },
+      "reducer": { "title": "Eccentric reducer", "spec": "HDPE, SDR17" },
+      "reducer_flange": { "title": "Reducer with printed flange", "spec": "HDPE, SDR17" },
+      "planter": { "title": "Planter with wave shape", "spec": "HDPE, 100% recyclate" },
+      "chair": { "title": "Lounge chair", "spec": "HDPE, 100% recyclate" },
+      "vase": { "title": "Vase with twisted form", "spec": "HDPE, 100% recyclate" }
+    }
   },
   "tiles": {
     "envelope_eyebrow": "Build envelope",
     "envelope_caption": "METRES (W × D × H) — 128 m³",
     "envelope_body": "Besides shafts and rollers, we print in one piece what others have to weld or segment.",
-    "process_eyebrow": "Print + post-mill",
-    "process_title": "The same robot mills the finish smooth.",
-    "process_body": "No layer lines where you don't want them. Hybrid additive + subtractive in one cell.",
+    "process_eyebrow": "Finish",
+    "process_title": "Clean finish, exactly to size.",
+    "process_body": "Smooth surfaces and dimensionally accurate ends, with no extra operations elsewhere.",
     "materials_eyebrow": "Materials",
     "materials_title": "HDPE & PP",
     "materials_body": "Polyolefins at this scale — our standard. Includes food-grade HDPE.",
     "recyclate_eyebrow": "Circular",
     "recyclate_title": "Own recyclate",
     "recyclate_body": "Single-stream offcuts straight from Kuypers Kunststoftechniek. Traceable to batch.",
-    "layers_eyebrow": "Process",
-    "layers_title": "Layer by layer",
-    "layers_body": "FGF pellet extrusion via robot arm. Fast, clean, scalable."
+    "layers_eyebrow": "Lead time",
+    "layers_title": "Delivered fast",
+    "layers_body": "No mould needed: single pieces and small series are quick and affordable too."
   },
   "projects": {
     "eyebrow": "Recent projects",

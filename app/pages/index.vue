@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import type { HeroSubject, HeroTheme } from '~/utils/heroScene/types'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -8,58 +7,30 @@ usePageSeo('home')
 
 const { observeAll } = useReveal()
 onMounted(() => observeAll())
-
-// Definitieve keuze (15-07-2026): golfvaas op donker thema.
-const heroSubject: HeroSubject = 'vase'
-const heroTheme: HeroTheme = 'dark'
-const dark = heroTheme === 'dark'
-
-// Afspeelsnelheid van de print-animatie. Lager = langzamer.
-//   1.0 = standaard (±28 s print)   0.7 = rustig (±40 s)   0.5 = heel rustig (±56 s)   1.5 = sneller
-// Pas alleen dit getal aan om het tempo te wijzigen.
-const heroSpeed = 0.15
 </script>
 
 <template>
   <div>
     <section
-      class="relative overflow-hidden min-h-[calc(100svh-65px)] flex items-center"
-      :class="dark ? 'bg-hero-night text-white' : 'bg-bg text-text'"
+      class="relative overflow-hidden bg-hero-night text-white"
       data-reveal-target
     >
-      <HeroScene :subject="heroSubject" :theme="heroTheme" :speed="heroSpeed" />
-
       <div
-        class="absolute inset-0 pointer-events-none"
-        :class="dark
-          ? 'bg-gradient-to-r from-[#0A0C10]/85 via-[#0A0C10]/45 to-transparent'
-          : 'bg-gradient-to-r from-bg/95 via-bg/55 to-transparent'"
-      />
-      <div
-        v-if="dark"
-        class="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A0C10]/60 via-transparent to-transparent"
+        class="absolute inset-0 blueprint-grid text-hero-highlight/[0.05] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] pointer-events-none"
+        aria-hidden="true"
       />
 
-      <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6">
-        <div class="max-w-[780px] py-16 pb-28 md:pb-32">
-          <p
-            class="font-mono font-medium text-[10.5px] tracking-[0.16em] uppercase mb-4"
-            :class="dark ? 'text-white/90' : 'text-text-muted'"
-          >
-            <span
-              class="inline-block w-1.5 h-1.5 rounded-full mr-2 align-middle"
-              :class="dark ? 'bg-hero-highlight' : 'bg-accent'"
-            />{{ t('home.hero.eyebrow') }}
+      <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 pt-14 md:pt-20 pb-24 md:pb-28 grid lg:grid-cols-[1fr_minmax(0,540px)] gap-10 lg:gap-14 items-center">
+        <div class="max-w-[640px]">
+          <p class="font-mono font-medium text-[10.5px] tracking-[0.16em] uppercase mb-4 text-white/90">
+            <span class="inline-block w-1.5 h-1.5 rounded-full mr-2 align-middle bg-hero-highlight" />{{ t('home.hero.eyebrow') }}
           </p>
-          <h1 class="text-[40px] md:text-[64px] font-extrabold tracking-tight leading-[1.02]">
+          <h1 class="text-[40px] md:text-[60px] font-extrabold tracking-tight leading-[1.02]">
             {{ t('home.hero.title_lead') }}
-            <em class="not-italic" :class="dark ? 'text-hero-highlight' : 'text-accent'">{{ t('home.hero.title_accent') }}</em>
+            <em class="not-italic text-hero-highlight">{{ t('home.hero.title_accent') }}</em>
             {{ t('home.hero.title_tail') }}
           </h1>
-          <p
-            class="mt-5 text-[15px] md:text-[16px] max-w-[560px] leading-relaxed"
-            :class="dark ? 'text-white/80' : 'text-text-muted'"
-          >{{ t('home.hero.subtitle') }}</p>
+          <p class="mt-5 text-[15px] md:text-[16px] max-w-[560px] leading-relaxed text-white/80">{{ t('home.hero.subtitle') }}</p>
           <div class="mt-8 flex flex-wrap items-center gap-3">
             <NuxtLink
               :to="localePath('/offerte')"
@@ -68,31 +39,23 @@ const heroSpeed = 0.15
               {{ t('home.hero.cta') }} →
             </NuxtLink>
             <NuxtLink
-              :to="localePath('/foodgrade-hdpe-bekleding-assen-rollen')"
-              class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 border rounded-[var(--radius-md)] backdrop-blur-sm transition-all"
-              :class="dark
-                ? 'text-white border-white/30 hover:bg-white/10 hover:border-white/50'
-                : 'text-text border-border hover:bg-black/5 hover:border-text/30'"
+              :to="localePath('/projecten')"
+              class="inline-flex items-center text-[13px] font-medium px-5 py-2.5 border rounded-[var(--radius-md)] backdrop-blur-sm transition-all text-white border-white/30 hover:bg-white/10 hover:border-white/50"
             >
               {{ t('home.hero.cta_secondary') }}
             </NuxtLink>
             <a
               href="tel:+31135096611"
-              class="inline-flex items-center text-[13px] font-medium px-2 py-2.5 underline-offset-2 hover:underline"
-              :class="dark ? 'text-white/85' : 'text-text-muted'"
+              class="inline-flex items-center text-[13px] font-medium px-2 py-2.5 underline-offset-2 hover:underline text-white/85"
             >{{ t('home.hero.call') }}</a>
           </div>
         </div>
+
+        <HeroShowcase />
       </div>
 
-      <div
-        class="absolute bottom-0 inset-x-0 z-10 border-t backdrop-blur-sm"
-        :class="dark ? 'border-white/15 bg-black/25' : 'border-border bg-white/40'"
-      >
-        <div
-          class="max-w-[1200px] mx-auto px-6 py-3.5 flex flex-wrap gap-x-8 gap-y-1.5 font-mono text-[10.5px] tracking-[0.14em] uppercase"
-          :class="dark ? 'text-white/75' : 'text-text-muted'"
-        >
+      <div class="absolute bottom-0 inset-x-0 z-10 border-t backdrop-blur-sm border-white/15 bg-black/25">
+        <div class="max-w-[1200px] mx-auto px-6 py-3.5 flex flex-wrap gap-x-8 gap-y-1.5 font-mono text-[10.5px] tracking-[0.14em] uppercase text-white/75">
           <span>{{ t('home.hero.spec_1') }}</span>
           <span>{{ t('home.hero.spec_2') }}</span>
           <span>{{ t('home.hero.spec_3') }}</span>
@@ -101,10 +64,8 @@ const heroSpeed = 0.15
     </section>
 
     <div class="relative max-w-[1200px] mx-auto px-6 pt-16 md:pt-24 pb-24">
-      <div
-        class="absolute inset-x-0 top-0 h-[480px] blueprint-grid text-hero-highlight/[0.04] [mask-image:linear-gradient(to_bottom,black,transparent)] pointer-events-none"
-        aria-hidden="true"
-      />
+      <ProductGallery />
+
       <BentoGrid class="mb-10">
         <BentoTile :span="6" variant="accent" :to="localePath('/foodgrade-hdpe-bekleding-assen-rollen')" :eyebrow="t('home.shafts.eyebrow')">
           <h2 class="text-[22px] md:text-[28px] font-bold leading-snug max-w-[520px]">{{ t('home.shafts.title') }}</h2>

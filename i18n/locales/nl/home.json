@@ -4,30 +4,51 @@
     "title_lead": "Foodgrade HDPE-bekleding van",
     "title_accent": "assen en rollen",
     "title_tail": "",
-    "subtitle": "Wij printen foodgrade HDPE met een robot direct op uw as of rol en frezen de laag na in dezelfde cel. Tot Ø600 × 3500 mm, nieuw of als herbekleding, levertijd 3 weken.",
+    "subtitle": "Foodgrade HDPE direct op uw as of rol, glad of met patroon. Tot Ø600 × 3500 mm, nieuw of als herbekleding, levertijd 3 weken. Daarnaast verlopen, meubilair en andere grote onderdelen in één stuk.",
     "cta": "Offerte aanvragen",
-    "cta_secondary": "Meer over assen en rollen",
+    "cta_secondary": "Bekijk projecten",
     "call": "Bel 013 509 66 11",
     "spec_1": "Max. Ø600 × 3500 mm",
     "spec_2": "Foodgrade HDPE · HDPE · PP",
-    "spec_3": "Print + frees in één cel"
+    "spec_3": "Geen mal, geen opstartkosten"
+  },
+  "gallery": {
+    "eyebrow": "Wat wij maken",
+    "heading": "Resultaat zien? Dit komt uit onze productie.",
+    "lead": "Rollen, verlopen en meubilair in HDPE: een greep uit recente opdrachten. Elk stuk op maat, ook als enkel exemplaar.",
+    "all": "Alle projecten",
+    "categories": {
+      "rollers": "Rollen",
+      "infra": "Infra",
+      "furniture": "Meubilair"
+    },
+    "items": {
+      "roller_dimples": { "title": "Rol met noppenpatroon", "spec": "Foodgrade HDPE, blauw" },
+      "roller_grooved": { "title": "Rol met groefprofiel", "spec": "Foodgrade HDPE, blauw" },
+      "roller_spiral": { "title": "Rol met schroefprofiel", "spec": "Foodgrade HDPE, blauw" },
+      "reducer": { "title": "Excentrisch verloop", "spec": "HDPE, SDR17" },
+      "reducer_flange": { "title": "Verloop met geprinte flens", "spec": "HDPE, SDR17" },
+      "planter": { "title": "Plantenbak met golfvorm", "spec": "HDPE, 100% recyclaat" },
+      "chair": { "title": "Loungestoel", "spec": "HDPE, 100% recyclaat" },
+      "vase": { "title": "Vaas met getordeerde vorm", "spec": "HDPE, 100% recyclaat" }
+    }
   },
   "tiles": {
     "envelope_eyebrow": "Bouwvolume",
     "envelope_caption": "METER (W × D × H) — 128 m³",
     "envelope_body": "Naast assen en rollen printen wij in één stuk waar anderen moeten lassen of segmenteren.",
-    "process_eyebrow": "Print + frees",
-    "process_title": "Dezelfde robot frees de finish strak na.",
-    "process_body": "Geen laaglijnen waar het niet hoeft. Printen en frezen in één opstelling.",
+    "process_eyebrow": "Afwerking",
+    "process_title": "Strakke finish, exact op maat.",
+    "process_body": "Gladde oppervlakken en maathoudende uiteinden, zonder extra bewerkingen elders.",
     "materials_eyebrow": "Materialen",
     "materials_title": "HDPE & PP",
     "materials_body": "Polyolefinen op deze schaal — bij ons standaard. Inclusief food-grade HDPE.",
     "recyclate_eyebrow": "Circulair",
     "recyclate_title": "Eigen recyclaat",
     "recyclate_body": "Single-stream restmateriaal direct uit Kuypers Kunststoftechniek. Traceerbaar tot batch.",
-    "layers_eyebrow": "Proces",
-    "layers_title": "Laag voor laag",
-    "layers_body": "FGF pellet-extrusie via robot-arm. Snel, schoon, schaalbaar."
+    "layers_eyebrow": "Levertijd",
+    "layers_title": "Snel geleverd",
+    "layers_body": "Geen mal nodig: ook enkele stukken en kleine series zijn snel en betaalbaar."
   },
   "projects": {
     "eyebrow": "Recente projecten",
